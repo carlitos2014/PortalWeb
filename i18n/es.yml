@@ -1,0 +1,9 @@
+# Diccionario de ejemplo
+culture:                  Español
+dictionary:
+  default:
+    user:                 Usuario
+    pass:                 Contraseña
+    register:             Registrar
+  errors:
+    00001:                El nombre de usuario excede la longitud permitida (:longitud)
