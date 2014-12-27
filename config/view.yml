@@ -1,0 +1,7 @@
+all:
+  meta:
+    - charset="UTF-8"
+  javascript:
+    - jquery-1.11.1.min.js
+  stylesheet:
+    - main.css
