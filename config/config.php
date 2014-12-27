@@ -6,7 +6,7 @@ configClass::setRowGrid(10);
 
 configClass::setDbHost('127.0.0.1');
 configClass::setDbDriver('pgsql'); // pgsql
-configClass::setDbName('schema');
+configClass::setDbName('portal');
 configClass::setDbPort(5432); // 5432
 configClass::setDbUser('postgres');
 configClass::setDbPassword('postgres');
@@ -17,8 +17,8 @@ configClass::setDbDsn(
         . ';dbname=' . configClass::getDbName()
 );
 
-configClass::setPathAbsolute('/var/www/SohoFramework/');
-configClass::setUrlBase('http://127.0.0.1/SohoFramework/web/');
+configClass::setPathAbsolute('/var/www/PortalWeb/');
+configClass::setUrlBase('http://127.0.0.1/PortalWeb/web/');
 
 configClass::setScope('dev'); // prod
 configClass::setDefaultCulture('es');

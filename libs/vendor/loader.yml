@@ -9,9 +9,9 @@ mvcBasicPackage:
   - libs/vendor/interfaces/routingInterface.php
   - libs/vendor/interfaces/sessionInterface.php
   - libs/vendor/interfaces/tableInterface.php
-  # - libs/vendor/autoLoadClass.php
-  # - libs/vendor/cacheManagerClass.php
-  # - libs/vendor/configClass.php
+  - libs/vendor/autoLoadClass.php
+  - libs/vendor/cacheManagerClass.php
+  - libs/vendor/configClass.php
   - libs/vendor/controllerClass.php
   - libs/vendor/dispatchClass.php
   - libs/vendor/hookClass.php
@@ -22,4 +22,4 @@ mvcBasicPackage:
   - libs/vendor/sessionClass.php
   - libs/vendor/tableBaseClass.php
   - libs/vendor/viewClass.php
-  # - libs/yaml/sfYaml.php
+  - libs/yaml/sfYaml.php
