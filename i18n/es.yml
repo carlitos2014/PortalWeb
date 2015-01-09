@@ -1,9 +1,68 @@
-# Diccionario de ejemplo
+
+ # Diccionario 
+
+   #usuario
+
 culture:                  Español
-dictionary:
+dictionary:               
+  inicio:
+    tables:               Seleccione una tabla
+    usuario:              Ingresar a la tabla usuario
+ 
+  user:
+    newUser:              Registro de un nuevo usuario
+    user:                 Usuario
+    pass:                 Contraseña
+    register:             Registrar
+    editUser:             Modificar al usuario
+    edit:                 Editar
+    oldPass:              Vieja Contraseña
+    update:               Actualizar
+    newPass:              Nueva contraseña           
+    delete:               Borrar
+  
+  errors:
+    00001:                El nombre de usuario excede la longitud permitida (:longitud)
+  
+  
+  
+  datoUsuario:
+    newDataUser:          Registrar nuevos datos de usuario
+    name:                 Nombre
+    cc:                   Cedula
+    usuario_id:           Usuario id
+    lastName:             Apellido
+    register:             Registrar
+  
+  credencial:
+    register:             Registrar
+    name:                 Nombre
+    description:          Descripcion
+    newCredencial:        Registro de una nueva credencial
+  
+  usuarioCredencial:
+      new:                Registrar un nuevo usuario-credencial
+      id:                 Id
+      idUser:             Id del usuario
+      idCredencial:       Id de la credencial  
+  errors:
+    00001:                El nombre de usuario excede la longitud permitida (:longitud)
+    
   default:
     user:                 Usuario
     pass:                 Contraseña
     register:             Registrar
+    update:               Actualizar
+    delete:               Borrar
   errors:
-    00001:                El nombre de usuario excede la longitud permitida (:longitud)
+    00001:                El módulo y la acción solicitada, no existe.
+    00002:                La dirección que solicita no está registrada.
+    00003:                Los datos de usuario y contrseña son inválidos.
+#    00001:  Lo que buscas no existe
+#    10001:  Existe un error en la definición de los includes
+#    10002:  No hay definido un ambito (dev o prod) para la aplicación
+#    10003:  El arhivo %file% no existe
+#    10004:  El directorio %path% no pudo ser creado
+    
+    
+    

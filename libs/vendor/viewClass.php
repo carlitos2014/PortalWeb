@@ -72,6 +72,31 @@ namespace mvc\view {
       return $javascript;
     }
 
+//funcion estatica publica que incluye un favicon en las vistas del sistema
+    static public function genFavicon() {
+      $module = sessionClass::getInstance()->getModule();
+      $action = sessionClass::getInstance()->getAction();
+      $favicon = '';
+      $includes = cacheManagerClass::getInstance()->loadYaml(configClass::getPathAbsolute() . 'config/view.yml', 'viewYaml');
+      foreach ($includes['all']['favicon'] as $include) {
+        $favicon .= '<link rel="icon" href="' . configClass::getUrlBase() . 'img/' . $include .  '">';
+      }
+      if (isset($includes[$module][$action]['favicon'])) {
+        foreach ($includes[$module][$action]['favicon'] as $include) {
+          $favicon .= '<link rel="icon" href="' . configClass::getUrlBase() . 'img/' . $include .  '">';
+        }
+      }
+      return $favicon;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     static public function renderHTML($module, $template, $typeRender, $arg = array()) {
       if (isset($module) and isset($template)) {
         if (count($arg) > 0) {
@@ -89,7 +114,7 @@ namespace mvc\view {
             include_once configClass::getPathAbsolute() . "view/$module/$template.json.php";
             break;
           case 'pdf':
-            header(configClass::getHeaderPdf());
+            //header(configClass::getHeaderPdf());
             include_once configClass::getPathAbsolute() . "view/$module/$template.pdf.php";
             break;
           case 'javascript':

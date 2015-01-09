@@ -1,5 +1,15 @@
-default:
+shfSecurity:
   index:
+    security: false
+  logoin:
+    security: false
+  logout:
     security: true
-    credentials:
-      - [trabajador, cajero]
+
+#default:
+#  index:
+#    security: true
+#    credentials:
+#      - [admin, cajero]
+#  insert:
+#    security: true

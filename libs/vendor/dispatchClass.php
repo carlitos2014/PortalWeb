@@ -17,16 +17,16 @@ namespace mvc\dispatch {
   class dispatchClass {
 
     private static $instance;
-    
+
     public function __construct() {
-      
+
       if (!sessionClass::getInstance()->hasFirstCall()) {
         sessionClass::getInstance()->setFirstCall(true);
       }
     }
 
     /**
-     * 
+     *
      * @return dispatchClass
      */
     public static function getInstance() {
@@ -36,16 +36,20 @@ namespace mvc\dispatch {
       return self::$instance;
     }
 
-    public function main() {
+    public function main($module = null, $action = null) {
       try {
         i18nClass::setCulture(configClass::getDefaultCulture());
-        routingClass::getInstance()->registerModuleAndAction();
+        routingClass::getInstance()->registerModuleAndAction($module, $action);
         autoLoadClass::getInstance()->loadIncludes();
-        //hookClass::hooksIni();
+        hookClass::hooksIni();
         $this->loadModuleAndAction();
-        //hookClass::hooksEnd();
+        hookClass::hooksEnd();
       } catch (\Exception $exc) {
         echo $exc->getMessage();
+        echo '<br>';
+        echo '<pre>';
+        print_r($exc->getTrace());
+        echo '</pre>';
       }
     }
 

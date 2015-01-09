@@ -3,8 +3,9 @@
 namespace mvc\model\table {
 
   use mvc\interfaces\tableInterface;
-  use mvc\model\modelClass;
-  use mvc\config\configClass;
+  use mvc\model\modelClass as model;
+  use mvc\config\configClass as config;
+  use mvc\camelCase\camelCaseClass as camelCase;
 
   /**
    * Clase general para las tablas el cual define el CRUD
@@ -42,19 +43,19 @@ namespace mvc\model\table {
               $sql = $sql . 'AND ' . $field . ' = ' . ((is_numeric($value) === true) ? $value : "'$value' " );
             }
           }
-
-          modelClass::getInstance()->beginTransaction();
-          modelClass::getInstance()->exec($sql);
-          modelClass::getInstance()->commit();
+          
+          model::getInstance()->beginTransaction();
+          model::getInstance()->exec($sql);
+          model::getInstance()->commit();
         } else {
-          $data[self::$fieldDeleteAt] = date(configClass::getFormatTimestamp());
+          $data[self::$fieldDeleteAt] = date(config::getFormatTimestamp());
           self::update($fieldsAndValues, $data, $table);
         }
 
         return true;
       } catch (\PDOException $exc) {
         // en caso de haber un error entonces se devuelve todo y se deja como estaba
-        modelClass::getInstance()->rollback();
+        model::getInstance()->rollback();
         throw $exc;
       }
     }
@@ -99,8 +100,10 @@ namespace mvc\model\table {
         $line1 = '(';
         $line2 = 'VALUES (';
         foreach ($data as $field => $value) {
-          $line1 = $line1 . '"' . $field . '", ';
-          $line2 = $line2 . ((is_numeric($value) === true) ? $value : "'" . $value . "'") . ', ';
+          if ($field !== '__sequence') {
+            $line1 = ((config::getDbDriver() === 'mysql') ? $line1 . $field . ', ' : $line1 . '"' . $field . '", ' );
+            $line2 = $line2 . ((is_numeric($value) === true) ? $value : "'" . $value . "'") . ', ';
+          }
         }
 
         $newLeng = strlen($line1) - 2;
@@ -111,13 +114,17 @@ namespace mvc\model\table {
 
         $sql = $sql . $line1 . $line2;
 
-        modelClass::getInstance()->beginTransaction();
-        modelClass::getInstance()->exec($sql);
-        modelClass::getInstance()->commit();
-
-        return true;
+        model::getInstance()->beginTransaction();
+        model::getInstance()->exec($sql);
+        model::getInstance()->commit();
+        if (isset($data['__sequence'])) {
+          $lastInsertId = model::getInstance()->lastInsertId($data['__sequence']);
+        } else {
+          $lastInsertId = model::getInstance()->lastInsertId();
+        }
+        return $lastInsertId;
       } catch (\PDOException $exc) {
-        modelClass::getInstance()->rollback();
+        model::getInstance()->rollback();
         throw $exc;
       }
     }
@@ -162,8 +169,8 @@ namespace mvc\model\table {
         }
 
         if ($deletedLogical === false and is_array($where) === true) {
-          $sql = $sql . ' WHERE ';
-          $flag = true;
+          //$sql = $sql . ' WHERE ';
+          $flag = false;
         }
 
         if (is_array($where) === true) {
@@ -205,7 +212,7 @@ namespace mvc\model\table {
           $sql = $sql . ' LIMIT ' . $limit . ' OFFSET ' . $offset;
         }
 
-        return modelClass::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
+        return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
       } catch (\PDOException $exc) {
         throw $exc;
       }
@@ -245,13 +252,13 @@ namespace mvc\model\table {
           $flag++;
         }
 
-        modelClass::getInstance()->beginTransaction();
-        modelClass::getInstance()->exec($sql);
-        modelClass::getInstance()->commit();
+        model::getInstance()->beginTransaction();
+        model::getInstance()->exec($sql);
+        model::getInstance()->commit();
 
         return true;
       } catch (\PDOException $exc) {
-        modelClass::getInstance()->rollback();
+        model::getInstance()->rollback();
         throw $exc;
       }
     }

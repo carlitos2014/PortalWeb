@@ -1,4 +1,5 @@
 <?php
+
 session_name('mvcSite');
 session_start();
 ob_start();
