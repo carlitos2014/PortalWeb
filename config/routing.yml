@@ -1,0 +1,367 @@
+homepage:
+  url:    /
+  param:  { module: usuario, action: index, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+
+
+#tabla usuario, por defecto el  sistema entra a la visualizacion de esta tabla
+
+
+usuario_index:
+  url:    /usuario/index
+  param:  { module: usuario, action: index, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    
+usuario_insert:
+  url:    /usuario/insert
+  param:  { module: usuario, action: insert, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    
+usuario_create:
+  url:    /usuario/create
+  param:  { module: usuario, action: create, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    
+usuario_editar:
+  url:    /usuario/edit
+  param:  { module: usuario, action: edit, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php 
+    
+usuario_update:
+  url:    /usuario/update
+  param:  { module: usuario, action: update, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+usuario_delete:
+  url:    /usuario/delete
+  param:  { module: usuario, action: delete, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+usuario_deleteSelect:
+  url:    /usuario/deleteSelect
+  param:  { module: usuario, action: deleteSelect, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+usuario_reporte:
+  url:    /usuario/reporte
+  param:  { module: usuario, action: report, format: pdf }
+    
+    
+    
+    
+#tabla bitacora
+    
+bitacora_index:
+  url:    /bitacora/index
+  param:  { module: bitacora, action: index, format: html }
+  load:
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+bitacora_insert:
+  url:    /bitacora/insertar
+  param:  { module: bitacora, action: insert, format: html }
+  load:
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+bitacora_create:
+  url:    /bitacora/crear
+  param:  { module: bitacora, action: create, format: html }
+  load:
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+    
+    
+bitacora_editar:
+  url:    /bitacora/edit
+  param:  { module: bitacora, action: edit, format: html }
+  load:
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php 
+    
+    
+    
+ #tabla credencial
+    
+    
+     
+     
+credencial_index:
+  url:    /credencial/index
+  param:  { module: credencial, action: index, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    
+credencial_insert:
+  url:    /credencial/insertar
+  param:  { module: credencial, action: insert, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    
+credencial_create:
+  url:    /credencial/crear
+  param:  { module: credencial, action: create, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    
+credencial_editar:
+  url:    /credencial/edit
+  param:  { module: credencial , action: edit, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php 
+    
+credencial_update:
+  url:    /credencial/actualizar
+  param:  { module: credencial, action: update, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+
+credencial_delete:
+  url:    /credencial/eliminar
+  param:  { module: credencial, action: delete, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+
+credencial_deleteSelect:
+  url:    /credencial/eliminarSeleccion
+  param:  { module: credencial, action: deleteSelect, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+
+credencial_reporte:
+  url:    /credencial/reporte
+  param:  { module: credencial, action: report, format: pdf }
+    
+#tabla datoUsuario
+    
+    
+datoUsuario_index:
+  url:    /datoUsuario/index
+  param:  { module: default, action: index, format: html }
+  load:
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+    
+datoUsuario_insert:
+  url:    /datoUsuario/insertar
+  param:  { module: default, action: insert, format: html }
+  load:
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+    
+default_create:
+  url:    /datoUsuario/crear
+  param:  { module: default, action: create, format: html }
+  load:
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+    
+    
+    
+#tabla usuarioCredencial
+    
+    
+usuarioCredencial_index:
+  url:    /usuarioCredencial/index
+  param:  { module: usuarioCredencial, action: index, format: html }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+    
+usuarioCredencial_insert:
+  url:    /usuarioCredencial/insertar
+  param:  { module: usuarioCredencial, action: insert, format: html }
+  load:
+    - model/base/usuarioCrendencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+    
+usuarioCredencial_create:
+  url:    /usuarioCredencial/crear
+  param:  { module: usuarioCredencial, action: create, format: html }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+    
+    
+    
+    
+    
+    #diccionario para el modulo de recordarme
+    
+    
+    
+    
+recordarMe_index:
+  url:    /recordarMe/index
+  param:  { module: recordarMe, action: index, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+    
+recordarMe_insert:
+  url:    /recordarMe/insert
+  param:  { module: recordarMe, action: insert, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+    
+recordarMe_create:
+  url:    /recordarMe/create
+  param:  { module: recordarMe, action: create, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+    
+recordarMe_editar:
+  url:    /recordarMe/edit
+  param:  { module: recordarMe, action: edit, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php 
+    
+recordarMe_update:
+  url:    /recordarMe/actualizar
+  param:  { module: recordarMe, action: update, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+
+recordarMe_delete:
+  url:    /recordarMe/eliminar
+  param:  { module: recordarMe, action: delete, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+
+recordarMe_deleteSelect:
+  url:    /recordarMe/eliminarSeleccion
+  param:  { module: recordarMe, action: deleteSelect, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+
+recordarMe_reporte:
+  url:    /recordarMe/reporte
+  param:  { module: recordarMe, action: report, format: pdf }
+    
+    
+   ##-------------------------- EJEMPLO --------------------------##
+default_index:
+  url:    /usuarios/index
+  param:  { module: default, action: index, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_insert:
+  url:    /usuarios/insertar
+  param:  { module: default, action: insert, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_create:
+  url:    /usuarios/crear
+  param:  { module: default, action: create, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_edit:
+  url:    /usuario/editar
+  param:  { module: default, action: edit, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_update:
+  url:    /usuario/actualizar
+  param:  { module: default, action: update, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_delete:
+  url:    /usuario/eliminar
+  param:  { module: default, action: delete, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_deleteSelect:
+  url:    /usuario/eliminarSeleccion
+  param:  { module: default, action: deleteSelect, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_reporte:
+  url:    /usuario/reporte
+  param:  { module: default, action: report, format: pdf } 
+    
+#shfSecurity_index:
+#url: /signin
+#param: { module: shfSecurity, action: index, format: html }
+#load:
+#- model/base/usuarioBaseTableClass.php
+#- model/usuarioTableClass.php
+#shfSecurity_login:
+#url: /login
+#param: { module: shfSecurity, action: login, format: html }
+#load:
+#- model/base/usuarioBaseTableClass.php
+#- model/usuarioTableClass.php
+#- model/base/usuarioCredencialBaseTableClass.php
+#- model/usuarioCredencialTableClass.php
+#- model/base/credencialBaseTableClass.php
+#- model/credencialTableClass.php
+#- model/base/recordarMeBaseTableClass.php
+#- model/recordarMeTableClass.php
+#- hooks/logHookClass.php
+#- model/base/bitacoraBaseTableClass.php
+#- model/bitacoraTableClass.php
+#shfSecurity_logout:
+#url: /logout
+#param: { module: shfSecurity, action: logout, format: html }
+#load:
+#- model/base/recordarMeBaseTableClass.php
+#- model/recordarMeTableClass.php
+#- hooks/logHookClass.php
+#- model/base/bitacoraBaseTableClass.php
+#- model/bitacoraTableClass.php    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
