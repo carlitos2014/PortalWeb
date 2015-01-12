@@ -1,7 +1,0 @@
-browser.id=Chrome.INTEGRATED
-copy.src.files=false
-copy.src.on.open=false
-copy.src.target=/var/www/PortalWeb
-index.file=web/index.php
-run.as=LOCAL
-url=http://127.0.0.1/PortalWeb/
