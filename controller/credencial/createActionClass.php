@@ -15,33 +15,33 @@ use mvc\i18n\i18nClass as i18n;
  */
 class createActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      if (request::getInstance()->isMethod('POST')) {
+    public function execute() {
+        try {
+            if (request::getInstance()->isMethod('POST')) {
 
-        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
-        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
+                $nombre = request::getInstance()->getPost(credencialTableClass::getNameField(credencialTableClass::NOMBRE, true));
 
-        if (strlen($usuario) > usuarioTableClass::USER_LENGTH) {
-          throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => usuarioTableClass::USER_LENGTH)), 00001);
+
+                if (strlen($nombre) > credencialTableClass::NOMBRE_LENGTH) {
+                    throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => credencialTableClass::USER_LENGTH)), 00001);
+                }
+
+                $data = array(
+                    credencialTableClass::NOMBRE => $nombre
+                    
+                );
+                credencialTableClass::insert($data);
+                routing::getInstance()->redirect('credencial', 'index');
+            } else {
+                routing::getInstance()->redirect('credencial', 'index');
+            }
+        } catch (PDOException $exc) {
+            echo $exc->getMessage();
+            echo '<br>';
+            echo '<pre>';
+            print_r($exc->getTrace());
+            echo '</pre>';
         }
-
-        $data = array(
-            usuarioTableClass::USER => $usuario,
-            usuarioTableClass::PASSWORD => md5($password)
-        );
-        usuarioTableClass::insert($data);
-        routing::getInstance()->redirect('usuario', 'index');
-      } else {
-        routing::getInstance()->redirect('usuario', 'index');
-      }
-    } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
     }
-  }
 
 }

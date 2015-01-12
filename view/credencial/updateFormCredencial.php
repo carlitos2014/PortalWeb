@@ -34,7 +34,7 @@ use mvc\i18n\i18nClass as i18n ?>
 
     <div class="form-group">
         <div class="col-xs-offset-2 col-xs-10">
-            <button type="submit" class="btn btn-success" value="<?php echo i18n::__(((isset($objCredencial)) ? 'update' : 'register')) ?>">Crear</button>
+            <button type="submit" class="btn btn-success" value="<?php echo i18n::__(((isset($objCredencial)) ? 'update' : 'register')) ?>">Actualizar</button>
         </div>
     </div>
 </form>

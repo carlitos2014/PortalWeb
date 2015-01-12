@@ -54,6 +54,13 @@ dictionary:
     register:             Registrar
     update:               Actualizar
     delete:               Borrar
+    name:                 Nombre
+    new:                Registrar un nuevo usuario-credencial
+    id:                 Id
+    idUser:             Id del usuario
+    idCredencial:       Id de la credencial  
+  
+  
   errors:
     00001:                El módulo y la acción solicitada, no existe.
     00002:                La dirección que solicita no está registrada.

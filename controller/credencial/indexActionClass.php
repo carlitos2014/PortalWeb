@@ -28,7 +28,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             $orderBy = array(
                 credencialTableClass::ID
             );
-            $this->objCredencial = credencialTableClass::getAll($fields, FALSE, $orderBy, 'ASC');
+            $this->objCredencial = credencialTableClass::getAll($fields, true, $orderBy, 'ASC');
             $this->defineView('index', 'credencial', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();

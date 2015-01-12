@@ -19,15 +19,15 @@ class deleteActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $id = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::ID, true));
+        $id = request::getInstance()->getPost(recordarMeTableClass::getNameField(recordarmeTableClass::ID, true));
         
         $ids = array(
-            usuarioTableClass::ID => $id
+            recordarMeTableClass::ID => $id
         );
-        usuarioTableClass::delete($ids, true);
-        routing::getInstance()->redirect('default', 'index');
+        recordarMeTableClass::delete($ids, false);
+        routing::getInstance()->redirect('recordarMe', 'index');
       } else {
-        routing::getInstance()->redirect('default', 'index');
+        routing::getInstance()->redirect('recordarMe', 'index');
       }
     } catch (PDOException $exc) {
       echo $exc->getMessage();

@@ -17,9 +17,9 @@
         <link rel="icon" href="web/img/favicon.ico" type="image/x-icon">
     </head>
     <body>
-        
-        
-        
+
+
+
         <div class="jumbotron">
             <h1>Bienvenido al Indice de Tablas del Sistema</h1>
             <p>Por favor seleccione una tabla</p>
@@ -33,23 +33,21 @@
 
             </a>
             <a href="web/index.php/usuario/index" class="list-group-item list-group-item-success">Usuario</a>
-            
-            
             <a href="web/index.php/credencial/index" class="list-group-item list-group-item-warning">Credencial</a>
             <a href="web/index.php/usuarioCredencial/index" class="list-group-item list-group-item-danger">Credencial de Usuario</a>
             <a href="web/index.php/bitacora/index" class="list-group-item list-group-item-warning">Bitacora</a>
             <a href="web/index.php/recordarMe/index" class="list-group-item list-group-item-info">Recordar Me</a>
             <a href="web/index.php/datosUsuario/index" class="list-group-item list-group-item-success">Datos de Usuario</a>
             <a  class="list-group-item active"></a>
-        
+
         </div>
-        
-       <footer class="">
-            
+
+        <footer class="">
+
         </footer>
-    
-        
-        </body>
+
+
+    </body>
 </html>
 
 

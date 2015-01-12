@@ -1,81 +1,54 @@
 
-<?php
+<?php use mvc\routing\routingClass as routing ?>
 
-use mvc\routing\routingClass as routing ?>
-<?php $id = usuarioBaseTableClass::ID ?>
-
-
-
-<body>
-
+<?php $id =bitacoraTableClass::ID ?>
+<div class="container container-fluid">
+  <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('bitacora', 'deleteSelect') ?>" method="POST">
+    
     <table class="table">
-
+      <thead>
         <tr>
-            <th>Indice</th>
-            <th>Nombre de usuario</th>
-            <th>Activo</th>
-            <th>Ultimo Ingreso</th>
-<!--        
-            <th>Creado</th>
-            <th>Actualizado</th>
-            <th>Borrado</th>-->
-
-
-            <th>Accion</th>
+          <th><input type="checkbox" id="chkAll"></th>
+          <th>ID</th>
+          <th>ID de usuario</th>
+          <th>Accion</th>
+          <th>Tabla</th>
+          <th>Registro</th>
+          <th>Observacion</th>
+          <th>Fecha</th>
+        
+        
+        
         </tr>
-        <?php foreach ($objUsuarios as $row): ?>
-            <tr>
-                <td>
-                    <?php echo $row->id ?>
-                </td>
-                <td>
-                    <?php echo $row->user_name ?>
-                </td>
-
-
-
-                <td>
-                    <?php echo $row->actived ?>
-                </td>
-                <td>
-                    <?php echo $row->last_login_at ?>
-                </td>
-
-                <td>
-                    <button type="button" class="btn btn-warning" onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuario', 'edit', array(usuarioBaseTableClass::ID => $row -> $id)) ?>'">Modificar</button>
-                    <button type="button" class="btn btn-danger"   onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuario', 'delete', array(usuarioBaseTableClass::ID => $row -> $id)) ?>'">Eliminar</button>
-
-                </td>
-               
-
-
-
-    <!--                <td>
-                <?php //echo $row->password ?>
-                        </td>-->
-
-        <!--                <td>
-                <?php //echo $row->created_at ?>
-                        </td>-->
-
-        <!--                <td>
-                <?php //echo $value->updated_at ?>
-        </td>-->
-                <!--                
-                                <td>
-                <?php //echo $value->deleted_at ?>
-                                </td>-->
-
-            </tr>
-        <?php endforeach; ?>
-
-
-
+      </thead>
+      <tbody>
+        <?php foreach ($objBitacora as $bitacora): ?>
+          <tr>
+            <td><input type="checkbox" name="chk[]" value="<?php echo $bitacora->$id ?>"></td>
+            <td><?php echo $bitacora->id ?></td>
+            <td><?php echo $bitacora->usuario_id ?></td>
+            <td><?php echo $bitacora->accion?></td>
+            <td><?php echo $bitacora-> tabla?></td>
+            <td><?php echo $bitacora->registro?></td>
+            <td><?php echo $bitacora->observacion?></td>
+            <td><?php echo $bitacora->fecha?></td>
+<!--            <td>
+                              <a href="#" class="btn btn-warning btn-xs">Ver</a>
+              <a href="<?php echo routing::getInstance()->getUrlWeb('bitacora', 'edit', array(bitacoraTableClass::ID => $bitacora->$id)) ?>" class="btn btn-primary btn-xs">Editar</a>
+              <a href="#" onclick="confirmarEliminar(<?php echo $bitacora->$id ?>)" class="btn btn-danger btn-xs">Eliminar</a>
+            </td>-->
+          </tr>
+        <?php endforeach ?>
+      </tbody>
     </table>
+  </form>
+  <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('bitacora', 'delete') ?>" method="POST">
+    <input type="hidden" id="idDelete" name="<?php echo bitacoraTableClass::getNameField(bitacoraTableClass::ID, true) ?>">
+  </form>
+<!--<div style="margin-bottom: 10px; margin-top: 30px" align="center">
+      <a href="<?php echo routing::getInstance()->getUrlWeb('bitacora', 'insert') ?>" class="btn btn-success btn-xs">Nuevo</a>
+      <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar Seleccion</a>
+    </div>-->
 
-<center><button type="button" class="btn btn-success" onclick="location.href = 'http://127.0.0.1/PortalWeb/web/index.php/usuario/insert'">Nuevo</button><center>
 
-        </body>
-
-
-
+</div>

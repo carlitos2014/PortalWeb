@@ -19,23 +19,23 @@ class updateActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $id = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::ID, true));
-        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
-        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
+        $id = request::getInstance()->getPost(credencialTableClass::getNameField(credencialTableClass::ID, true));
+        $nombre = request::getInstance()->getPost(credencialTableClass::getNameField(credencialTableClass::NOMBRE, true));
+        
 
         $ids = array(
-            usuarioTableClass::ID => $id
+            credencialTableClass::ID => $id
         );
 
         $data = array(
-            usuarioTableClass::USER => $usuario,
-            usuarioTableClass::PASSWORD => $password
+            credencialTableClass::NOMBRE=> $nombre
+            
         );
 
-        usuarioTableClass::update($ids, $data);
+        credencialTableClass::update($ids, $data);
       }
 
-      routing::getInstance()->redirect('default', 'index');
+      routing::getInstance()->redirect('credencial', 'index');
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';

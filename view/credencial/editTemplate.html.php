@@ -1,6 +1,13 @@
 <?php use mvc\routing\routingClass as routing ?>
-<?php //use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
-<?php $usuario = usuarioTableClass::USER ?>
-<h1>EDITAR USUARIO <?php echo $objUsuario[0]->$usuario ?></h1>
-<?php view::includePartial('usuario/formUser', array('objUsuario' => $objUsuario, 'usuario' => $usuario)) ?>
+<?php $credencial = credencialTableClass::NOMBRE ?>
+    <div class="jumbotron">
+            <h1>Edicion de Credencial : <?php echo $objCredencial[0]->$credencial ?></h1>
+            <p>Modifique los siguientes campos</p>
+
+        </div>
+    
+    
+    
+    <?php view::includePartial('credencial/updateFormCredencial', array('objCredencial' => $objCredencial, 'credencial' => $credencial)) ?>

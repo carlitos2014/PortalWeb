@@ -45,7 +45,7 @@ class usuarioCredencialBaseTableClass extends tableBaseClass {
    * borrado físico de un registro en una tabla de la base de datos
    * @return PDOException|boolean
    */
-  public static function delete($ids, $deletedLogical = true, $table = null) {
+  public static function delete($ids, $deletedLogical = false, $table = null) {
     return parent::delete($ids, $deletedLogical, self::getNameTable());
   }
 
@@ -78,7 +78,7 @@ class usuarioCredencialBaseTableClass extends tableBaseClass {
    * variables publica los nombres de las columnas de la consulta o una
    * instancia de \PDOException en caso de fracaso.
    */
-  public static function getAll($fields, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null) {
+  public static function getAll($fields, $deletedLogical = true, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null) {
     return parent::getAll(self::getNameTable(), $fields, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
   }
 

@@ -13,22 +13,14 @@ use mvc\i18n\i18nClass as i18n;
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class deleteActionClass extends controllerClass implements controllerActionInterface {
+class reportActionClass extends controllerClass implements controllerActionInterface {
 
   public function execute() {
     try {
-      if (request::getInstance()->isMethod('POST')) {
-
-        $id = request::getInstance()->getPost(credencialTableClass::getNameField(credencialTableClass::ID, true));
-        
-        $ids = array(
-            credencialTableClass::ID => $id
-        );
-        credencialTableClass::delete($ids, true);
-        routing::getInstance()->redirect('credencial', 'index');
-      } else {
-        routing::getInstance()->redirect('credencial', 'index');
-      }
+      
+      $this->mensaje = 'Hola a todos';
+      
+      $this->defineView('index', 'usuario', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';

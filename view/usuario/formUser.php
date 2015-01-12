@@ -25,7 +25,7 @@ use mvc\i18n\i18nClass as i18n ?>
     <div class="form-group has-error">
         <label class="col-xs-2 control-label" for="inputError">Nombre de usuario</label>
         <div class="col-xs-10">
-<?php echo i18n::__('user') ?>:<input value="<?php echo ((isset($objUsuarios) == true) ? $objUsuarios[0]->$usuario : '') ?>" type="text" id="inputError" class="form-control" placeholder="Ingrese un Nombre de usuario valido" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>">
+<?php echo i18n::__('user') ?>:<input value="<?php echo ((isset($objUsuarios) == true) ? $objUsuarios[0]->user_name : '') ?>" type="text" id="inputError" class="form-control" placeholder="Ingrese un Nombre de usuario valido" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>">
 
         </div>
     </div>

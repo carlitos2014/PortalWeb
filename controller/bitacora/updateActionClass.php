@@ -19,23 +19,23 @@ class updateActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $id = request::getInstance()->getPost(usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::ID, true));
-        $usuarioId = request::getInstance()->getPost(usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::USUARIO_ID, true));
-        $credencialId = request::getInstance()->getPost(usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::CREDENCIAL_ID, true));
+        $id = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::ID, true));
+        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
+        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
 
         $ids = array(
-            usuarioCredencialTableClass::ID => $id
+            usuarioTableClass::ID => $id
         );
 
         $data = array(
-            usuarioCredencialTableClass::USUARIO_ID => $usuarioId,
-            usuarioCredencialTableClass::CREDENCIAL_ID=> $credencialId
+            usuarioTableClass::USER => $usuario,
+            usuarioTableClass::PASSWORD => $password
         );
 
-        usuarioCredencialTableClass::update($ids, $data);
+        usuarioTableClass::update($ids, $data);
       }
 
-      routing::getInstance()->redirect('usuarioCredencial', 'index');
+      routing::getInstance()->redirect('usuario', 'index');
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';

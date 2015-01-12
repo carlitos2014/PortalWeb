@@ -1,81 +1,45 @@
 
-<?php
-
-use mvc\routing\routingClass as routing ?>
-<?php $id = usuarioBaseTableClass::ID ?>
-
-
-
-<body>
-
+<?php use mvc\routing\routingClass as routing ?>
+<?php $usu = usuarioTableClass::USER ?>
+<?php $id = usuarioTableClass::ID ?>
+<div class="container container-fluid">
+  <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'deleteSelect') ?>" method="POST">
+    
     <table class="table">
-
+      <thead>
         <tr>
-            <th>Indice</th>
-            <th>Nombre de usuario</th>
-            <th>Activo</th>
-            <th>Ultimo Ingreso</th>
-<!--        
-            <th>Creado</th>
-            <th>Actualizado</th>
-            <th>Borrado</th>-->
-
-
-            <th>Accion</th>
+          <th><input type="checkbox" id="chkAll"></th>
+          <th>ID</th>
+          <th>Usuario</th>
+          <th>Ultimo Ingreso</th>
+          <th>Acciones</th>
         </tr>
-        <?php foreach ($objUsuarios as $row): ?>
-            <tr>
-                <td>
-                    <?php echo $row->id ?>
-                </td>
-                <td>
-                    <?php echo $row->user_name ?>
-                </td>
-
-
-
-                <td>
-                    <?php echo $row->actived ?>
-                </td>
-                <td>
-                    <?php echo $row->last_login_at ?>
-                </td>
-
-                <td>
-                    <button type="button" class="btn btn-warning" onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuario', 'edit', array(usuarioBaseTableClass::ID => $row -> $id)) ?>'">Modificar</button>
-                    <button type="button" class="btn btn-danger"   onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuario', 'delete', array(usuarioBaseTableClass::ID => $row -> $id)) ?>'">Eliminar</button>
-
-                </td>
-               
-
-
-
-    <!--                <td>
-                <?php //echo $row->password ?>
-                        </td>-->
-
-        <!--                <td>
-                <?php //echo $row->created_at ?>
-                        </td>-->
-
-        <!--                <td>
-                <?php //echo $value->updated_at ?>
-        </td>-->
-                <!--                
-                                <td>
-                <?php //echo $value->deleted_at ?>
-                                </td>-->
-
-            </tr>
-        <?php endforeach; ?>
-
-
-
+      </thead>
+      <tbody>
+        <?php foreach ($objUsuarios as $usuario): ?>
+          <tr>
+            <td><input type="checkbox" name="chk[]" value="<?php echo $usuario->$id ?>"></td>
+            <td><?php echo $usuario->$id ?></td>
+            <td><?php echo $usuario->$usu ?></td>
+            <td><?php echo $usuario->last_login_at ?></td>
+            
+            <td>
+                <!--              <a href="#" class="btn btn-warning btn-xs">Ver</a>-->
+              <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'edit', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="btn btn-warning">Editar</a>
+              <a href="#" onclick="confirmarEliminar(<?php echo $usuario->$id ?>)" class="btn btn-danger">Eliminar</a>
+            </td>
+          </tr>
+        <?php endforeach ?>
+      </tbody>
     </table>
+  </form>
+  <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'delete') ?>" method="POST">
+    <input type="hidden" id="idDelete" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>">
+  </form>
+<div style="margin-bottom: 10px; margin-top: 30px" align="center">
+      <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'insert') ?>" class="btn btn-success">Nuevo</a>
+      <a href="#" class="btn btn-danger " onclick="borrarSeleccion()">Borrar Seleccion</a>
+    </div>
 
-<center><button type="button" class="btn btn-success" onclick="location.href = 'http://127.0.0.1/PortalWeb/web/index.php/usuario/insert'">Nuevo</button><center>
 
-        </body>
-
-
-
+</div>

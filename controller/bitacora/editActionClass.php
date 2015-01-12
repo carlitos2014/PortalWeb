@@ -17,19 +17,19 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
   public function execute() {
     try {
-      if (request::getInstance()->hasRequest(credencialTableClass::ID)) {
+      if (request::getInstance()->hasRequest(usuarioTableClass::ID)) {
         $fields = array(
-            credencialTableClass::ID,
-            credencialTableClass::NOMBRE,
-           
+            usuarioTableClass::ID,
+            usuarioTableClass::USER,
+            usuarioTableClass::PASSWORD
         );
         $where = array(
-            credencialTableClass::ID => request::getInstance()->getRequest(credencialTableClass::ID)
+            usuarioTableClass::ID => request::getInstance()->getRequest(usuarioTableClass::ID)
         );
-        $this->objCredencial = credencialTableClass::getAll($fields, true, null, null, null, null, $where);
-        $this->defineView('edit', 'credencial', session::getInstance()->getFormatOutput());
+        $this->objUsuarios = usuarioTableClass::getAll($fields, true, null, null, null, null, $where);
+        $this->defineView('edit', 'usuario', session::getInstance()->getFormatOutput());
       } else {
-        routing::getInstance()->redirect('credencial', 'index');
+        routing::getInstance()->redirect('usuario', 'index');
       }
 //      if (request::getInstance()->isMethod('POST')) {
 //

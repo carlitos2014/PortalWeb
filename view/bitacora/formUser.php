@@ -4,8 +4,9 @@
 use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
-<?php $idUsuario = usuarioTableClass::ID ?>
-<?php $password = usuarioTableClass::PASSWORD ?>
+<?php $idUsuario = credencialTableClass::ID ?>
+
+<?php $password = credencialTableClass::NOMBRE ?>
 
 
 

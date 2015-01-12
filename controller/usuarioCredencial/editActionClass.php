@@ -17,19 +17,29 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
   public function execute() {
     try {
-      if (request::getInstance()->hasRequest(usuarioTableClass::ID)) {
+      if (request::getInstance()->hasRequest(usuarioCredencialTableClass::ID)) {
         $fields = array(
-            usuarioTableClass::ID,
-            usuarioTableClass::USER,
-            usuarioTableClass::PASSWORD
+            usuarioCredencialTableClass::ID,
+            usuarioCredencialTableClass::CREDENCIAL_ID,
+            usuarioCredencialTableClass::USUARIO_ID
         );
         $where = array(
-            usuarioTableClass::ID => request::getInstance()->getRequest(usuarioTableClass::ID)
+            usuarioCredencialTableClass::ID => request::getInstance()->getRequest(usuarioCredencialTableClass::ID)
         );
-        $this->objUsuario = usuarioTableClass::getAll($fields, true, null, null, null, null, $where);
-        $this->defineView('edit', 'default', session::getInstance()->getFormatOutput());
+        // en este caso, el getAll No me sirve
+        // debes traer es el nombre del usuario por ejemplo y de la credencial
+        // es decir, construir un SELECT ajustado a ese punto ¿me comprnedes?
+        //solamente el atributo o construir un metodo nuevo?
+        // construir un nuevo método ,en que clase?,
+        // ya te hago un ejemplo
+        // $this->objUsuarioCredencial = usuarioCredencialTableClass::getAll($fields, FALSE, null, null, null, null, $where);
+        
+        
+        $this->objUsuarioCredencial = usuarioCredencialTableClass::findById(request::getInstance()->getRequest(usuarioCredencialTableClass::ID));
+        $this->objUsuarioCredencial2 = usuarioCredencialTableClass::findUserId();
+        $this->defineView('edit', 'usuarioCredencial', session::getInstance()->getFormatOutput());
       } else {
-        routing::getInstance()->redirect('default', 'index');
+        routing::getInstance()->redirect('usuarioCredencial', 'index');
       }
 //      if (request::getInstance()->isMethod('POST')) {
 //
