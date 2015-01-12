@@ -1,0 +1,23 @@
+all:
+  meta:
+    - charset="UTF-8"
+  javascript:
+    - jquery-1.11.1.min.js
+    - index.js
+    - bootstrap.js
+  stylesheet:
+    - bootstrap.css
+    - main.css
+  favicon: favicon.ico
+    
+
+
+shfSecurity:
+  index:
+    stylesheet:
+      - signin.css
+
+#default:
+#  index:
+#    javascript:
+#      - index.js
