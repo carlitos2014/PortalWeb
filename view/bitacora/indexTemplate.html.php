@@ -2,6 +2,7 @@
 <?php use mvc\routing\routingClass as routing ?>
 
 <?php $id =bitacoraTableClass::ID ?>
+
 <div class="container container-fluid">
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('bitacora', 'deleteSelect') ?>" method="POST">
     
@@ -48,7 +49,9 @@
 <!--<div style="margin-bottom: 10px; margin-top: 30px" align="center">
       <a href="<?php echo routing::getInstance()->getUrlWeb('bitacora', 'insert') ?>" class="btn btn-success btn-xs">Nuevo</a>
       <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar Seleccion</a>
-    </div>-->
+      <a href="<?php echo routing::getInstance()->getUrlWeb('homePage', 'index') ?>"  class="btn btn-success ">Inicio</a>          
+
+</div>-->
 
 
 </div>

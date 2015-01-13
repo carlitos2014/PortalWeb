@@ -4,7 +4,7 @@
 //include './libs/vendor/interfaces/i18nInterface.php';
 //use i18n\i18nClass as i18n
 ?>
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -49,4 +49,4 @@
 
 
     </body>
-</html>
+</html>-->

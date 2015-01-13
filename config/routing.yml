@@ -1,9 +1,9 @@
 homepage:
-  url:    /
-  param:  { module: usuario, action: index, format: html }
-  load:
-    - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.php
+  url:    /homePage/index
+  param:  { module: homePage, action: index, format: html }
+  #load:
+   # - model/base/usuarioBaseTableClass.php
+    #- model/usuarioTableClass.php
 
 
 
