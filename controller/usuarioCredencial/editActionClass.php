@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use mvc\controller\controllerClass\credencial;
 
 /**
  * Description of ejemploClass
@@ -15,32 +16,51 @@ use mvc\i18n\i18nClass as i18n;
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      if (request::getInstance()->hasRequest(usuarioCredencialTableClass::ID)) {
-        $fields = array(
-            usuarioCredencialTableClass::ID,
-            usuarioCredencialTableClass::CREDENCIAL_ID,
-            usuarioCredencialTableClass::USUARIO_ID
-        );
-        $where = array(
-            usuarioCredencialTableClass::ID => request::getInstance()->getRequest(usuarioCredencialTableClass::ID)
-        );
-        // en este caso, el getAll No me sirve
-        // debes traer es el nombre del usuario por ejemplo y de la credencial
-        // es decir, construir un SELECT ajustado a ese punto ¿me comprnedes?
-        //solamente el atributo o construir un metodo nuevo?
-        // construir un nuevo método ,en que clase?,
-        // ya te hago un ejemplo
-        // $this->objUsuarioCredencial = usuarioCredencialTableClass::getAll($fields, FALSE, null, null, null, null, $where);
-        
-        
-        $this->objUsuarioCredencial = usuarioCredencialTableClass::findById(request::getInstance()->getRequest(usuarioCredencialTableClass::ID));
-        $this->objUsuarioCredencial2 = usuarioCredencialTableClass::findUserId();
-        $this->defineView('edit', 'usuarioCredencial', session::getInstance()->getFormatOutput());
-      } else {
-        routing::getInstance()->redirect('usuarioCredencial', 'index');
-      }
+    public function execute() {
+        try {
+            if (request::getInstance()->hasRequest(usuarioCredencialTableClass::ID)) {
+                $fields = array(
+                    usuarioCredencialTableClass::ID,
+                    usuarioCredencialTableClass::CREDENCIAL_ID,
+                    usuarioCredencialTableClass::USUARIO_ID
+                );
+
+
+
+
+
+                $where = array(
+                    usuarioCredencialTableClass::ID => request::getInstance()->getRequest(usuarioCredencialTableClass::ID)
+                );
+
+                $fields1 = array(
+                    credencialTableClass::ID,
+                    credencialTableClass::NOMBRE,
+                );
+                $where1 = array(
+                    credencialTableClass::ID => request::getInstance()->getRequest(credencialTableClass::ID)
+                );
+
+
+
+
+
+
+// en este caso, el getAll No me sirve
+                // debes traer es el nombre del usuario por ejemplo y de la credencial
+                // es decir, construir un SELECT ajustado a ese punto ¿me comprnedes?
+                //solamente el atributo o construir un metodo nuevo?
+                // construir un nuevo método ,en que clase?,
+                // ya te hago un ejemplo
+                // $this->objUsuarioCredencial = usuarioCredencialTableClass::getAll($fields, FALSE, null, null, null, null, $where);
+
+
+                $this->objUsuarioCredencial = usuarioCredencialTableClass::findById(request::getInstance()->getRequest(usuarioCredencialTableClass::ID));
+                $this->objCredencial1 = credencialTableClass::getAll($fields1, true, null, null, null, null, null);
+                $this->defineView('edit', 'usuarioCredencial', session::getInstance()->getFormatOutput());
+            } else {
+                routing::getInstance()->redirect('usuarioCredencial', 'index');
+            }
 //      if (request::getInstance()->isMethod('POST')) {
 //
 //        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USUARIO, true));
@@ -59,13 +79,13 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 //      } else {
 //        routing::getInstance()->redirect('default', 'index');
 //      }
-    } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+        } catch (PDOException $exc) {
+            echo $exc->getMessage();
+            echo '<br>';
+            echo '<pre>';
+            print_r($exc->getTrace());
+            echo '</pre>';
+        }
     }
-  }
 
 }

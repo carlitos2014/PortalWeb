@@ -30,7 +30,7 @@
             <a href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'index') ?>" class="list-group-item list-group-item-danger">Credencial de Usuario</a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('bitacora', 'index') ?>" class="list-group-item list-group-item-warning">Bitacora</a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('recordarMe', 'index') ?>" class="list-group-item list-group-item-info">Recordar Me</a>
-            <a href="<?php echo routing::getInstance()->getUrlWeb('datosUsuario', 'index') ?>" class="list-group-item list-group-item-success">Datos de Usuario</a>
+<!--            <a href="<?php //echo routing::getInstance()->getUrlWeb('datosUsuario', 'index') ?>" class="list-group-item list-group-item-success">Datos de Usuario</a>-->
             
 
         </div>

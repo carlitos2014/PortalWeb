@@ -21,15 +21,15 @@ class usuarioCredencialTableClass extends usuarioCredencialBaseTableClass {
     }
     
 
-public static function findUserId() {
-        try {
-            $sql = 'select credencial.id,credencial.nombre from credencial;';
-            
-            return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
-      } catch (\PDOException $exc) {
-        throw $exc;
-      }
-    }
+//public static function findUserId() {
+//        try {
+//            $sql = 'select credencial.id,credencial.nombre from credencial';
+//            
+//            return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
+//      } catch (\PDOException $exc) {
+//        throw $exc;
+//      }
+//    }
     
     
     

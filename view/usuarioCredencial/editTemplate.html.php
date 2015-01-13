@@ -6,4 +6,6 @@
             <p>Por favor llenar los siguientes campos</p>
 
         </div>
-<?php view::includePartial('usuarioCredencial/updateFormUsuarioCredencial', array('objUsuarioCredencial' => $objUsuarioCredencial)) ?>
+
+            <?php view::includePartial('usuarioCredencial/updateFormUsuarioCredencial', array('objCredencial1' => $objCredencial1,'objUsuarioCredencial' =>$objUsuarioCredencial)) ?>
+            
