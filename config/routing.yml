@@ -7,6 +7,18 @@ homepage:
 
 
 
+#homepage:
+#url: shfSecurity/index
+#param: { module: shfSecurity, action: index, format: html }
+#load:
+#- model/base/usuarioBaseTableClass.php
+#- model/usuarioTableClass.php
+
+
+
+
+
+
 #tabla usuario, por defecto el  sistema entra a la visualizacion de esta tabla
 
 
@@ -382,36 +394,38 @@ default_reporte:
   url:    /usuario/reporte
   param:  { module: default, action: report, format: pdf } 
     
-#shfSecurity_index:
-#url: /signin
-#param: { module: shfSecurity, action: index, format: html }
-#load:
-#- model/base/usuarioBaseTableClass.php
-#- model/usuarioTableClass.php
-#shfSecurity_login:
-#url: /login
-#param: { module: shfSecurity, action: login, format: html }
-#load:
-#- model/base/usuarioBaseTableClass.php
-#- model/usuarioTableClass.php
-#- model/base/usuarioCredencialBaseTableClass.php
-#- model/usuarioCredencialTableClass.php
-#- model/base/credencialBaseTableClass.php
-#- model/credencialTableClass.php
-#- model/base/recordarMeBaseTableClass.php
-#- model/recordarMeTableClass.php
-#- hooks/logHookClass.php
-#- model/base/bitacoraBaseTableClass.php
-#- model/bitacoraTableClass.php
-#shfSecurity_logout:
-#url: /logout
-#param: { module: shfSecurity, action: logout, format: html }
-#load:
-#- model/base/recordarMeBaseTableClass.php
-#- model/recordarMeTableClass.php
-#- hooks/logHookClass.php
-#- model/base/bitacoraBaseTableClass.php
-#- model/bitacoraTableClass.php    
+shfSecurity_index:
+ url: /signin
+ param: { module: shfSecurity, action: index, format: html }
+ load:
+   - model/base/usuarioBaseTableClass.php
+   - model/usuarioTableClass.php
+
+shfSecurity_login:
+ url: /login
+ param: { module: shfSecurity, action: login, format: html }
+ load:
+   - model/base/usuarioBaseTableClass.php
+   - model/usuarioTableClass.php
+   - model/base/usuarioCredencialBaseTableClass.php
+   - model/usuarioCredencialTableClass.php
+   - model/base/credencialBaseTableClass.php
+   - model/credencialTableClass.php
+   - model/base/recordarMeBaseTableClass.php
+   - model/recordarMeTableClass.php
+   - hooks/logHookClass.php
+   - model/base/bitacoraBaseTableClass.php
+   - model/bitacoraTableClass.php
+
+shfSecurity_logout:
+ url: /logout
+ param: { module: shfSecurity, action: logout, format: html }
+ load:
+   - model/base/recordarMeBaseTableClass.php
+   - model/recordarMeTableClass.php
+   - hooks/logHookClass.php
+   - model/base/bitacoraBaseTableClass.php
+   - model/bitacoraTableClass.php    
     
     
     

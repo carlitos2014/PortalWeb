@@ -6,10 +6,10 @@ shfSecurity:
   logout:
     security: true
 
-#default:
-#  index:
-#    security: true
-#    credentials:
-#      - [admin, cajero]
-#  insert:
-#    security: true
+default:
+  index:
+    security: true
+    credentials:
+      - [admin, cajero]
+  insert:
+    security: true

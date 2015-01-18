@@ -17,16 +17,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
     public function execute() {
         try {
-//            $fields = array(
-//                bitacoraTableClass::ID,
-//                bitacoraTableClass::FECHA,
-//                bitacoraTableClass::USUARIO_ID,
-//                bitacoraTableClass::ACCION,
-//                bitacoraTableClass::TABLA,
-//                bitacoraTableClass::REGISTRO,
-//                bitacoraTableClass::OBSERVACION
-//            );
-            //$this->objBitacora = bitacoraTableClass::getAll($fields, FALSE);
+
             $this->defineView('index', 'homePage', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
@@ -35,7 +26,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         }
 
 
-        //$this->defineView('ejemplo', 'default', session::getInstance()->getFormatOutput());
+        
     }
 
 }

@@ -34,7 +34,12 @@
             
 
         </div>
-
+        
+        <div style="margin-bottom: 10px; margin-top: 30px" align="center">
+        <a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>" class="btn-default">Login</a>
+        
+        
+        </div>
         <footer class="">
 
         </footer>
