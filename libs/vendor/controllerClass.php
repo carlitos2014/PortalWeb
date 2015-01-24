@@ -17,8 +17,10 @@ namespace mvc\controller {
     protected $arg;
 
     public function __construct() {
-      $this->arg = array();
-    }
+        
+        $this->arg = array();
+      
+     }
 
     public function setArgs($args) {
       $this->arg = $args;
@@ -30,6 +32,16 @@ namespace mvc\controller {
       $this->format = $format;
     }
 
+//    public function getDefineView(){
+//        
+//        return $this->view;
+//        
+//        
+//    }
+
+
+    
+    
     public function __destruct() {
       viewClass::renderHTML($this->module, $this->view, $this->format, $this->arg);
     }

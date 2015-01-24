@@ -5,7 +5,7 @@
     <?php echo \mvc\view\viewClass::genFavicon() ?>
     <?php echo \mvc\view\viewClass::genStylesheet() ?>
     <?php echo \mvc\view\viewClass::genJavascript() ?>
-  
+    <?php echo \mvc\view\viewClass::genTitle() ?>  
   
   </head>
   <body>

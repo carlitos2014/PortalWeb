@@ -9,7 +9,7 @@ all:
     - bootstrap.css
     - main.css
   favicon: favicon.ico
-    
+  title:   
 
 
 shfSecurity:

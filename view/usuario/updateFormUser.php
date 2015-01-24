@@ -1,9 +1,8 @@
 <?php //use mvc\routing\routingClass as routing  ?>
-<?php
-
-use mvc\routing\routingClass as routing ?>
-<?php
-use mvc\i18n\i18nClass as i18n ?>
+<?php $titulo='MOdificacion de usuario'?>
+<?php mvc\view\viewClass::genTitle($titulo)?>
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 <?php $idUsuario = usuarioTableClass::ID ?>
 <?php $password = usuarioTableClass::PASSWORD ?>
 

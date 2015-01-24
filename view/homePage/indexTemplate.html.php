@@ -2,22 +2,33 @@
 <?php
 
 use mvc\routing\routingClass as routing ?>
+<?php use mvc\controller\controllerClass ?>
 
 
-<!DOCTYPE html>
+<?php //$tit=new viewClass("index") ?>
+    
+    
+    <?php //echo \mvc\view\viewClass($tit) ?>
+
+  
+
+
+
+
+<!--<!DOCTYPE html>
 <html>
     <head>
 
         <title>Indice de tablas del Sistema</title>
 
     </head>
-    <body>
+    <body>-->
 
 
 
         <div class="jumbotron">
 
-            
+
 
 
             <div style="margin-bottom: 0px; margin-top: 0px" align="left">
@@ -43,7 +54,7 @@ use mvc\routing\routingClass as routing ?>
             <a href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'index') ?>" class="list-group-item list-group-item-danger">Credencial de Usuario</a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('bitacora', 'index') ?>" class="list-group-item list-group-item-warning">Bitacora</a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('recordarMe', 'index') ?>" class="list-group-item list-group-item-info">Recordar Me</a>
-<!--            <a href="<?php //echo routing::getInstance()->getUrlWeb('datosUsuario', 'index')    ?>" class="list-group-item list-group-item-success">Datos de Usuario</a>-->
+<!--            <a href="<?php //echo routing::getInstance()->getUrlWeb('datosUsuario', 'index')      ?>" class="list-group-item list-group-item-success">Datos de Usuario</a>-->
         </div>
 
 
