@@ -2,60 +2,40 @@
 <?php
 
 use mvc\routing\routingClass as routing ?>
-<?php use mvc\controller\controllerClass ?>
-
-
-<?php //$tit=new viewClass("index") ?>
-    
-    
-    <?php //echo \mvc\view\viewClass($tit) ?>
-
-  
 
 
 
 
-<!--<!DOCTYPE html>
-<html>
-    <head>
-
-        <title>Indice de tablas del Sistema</title>
-
-    </head>
-    <body>-->
-
-
-
-        <div class="jumbotron">
+<div class="jumbotron">
 
 
 
 
-            <div style="margin-bottom: 0px; margin-top: 0px" align="left">
-                <a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>" class="btn btn-success">Login</a>
+    <div style="margin-bottom: 0px; margin-top: 0px" align="left">
+        <a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>" class="btn btn-success">Login</a>
 
 
-                <a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>" class="btn btn-danger">Log out</a>
-            </div>
+        <a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>" class="btn btn-danger">Log out</a>
+    </div>
 
-            <h1>Bienvenido al Indice de Tablas del Sistema</h1>
-            <p>Por favor seleccione una tabla</p>
+    <h1>Bienvenido al Indice de Tablas del Sistema</h1>
+    <p>Por favor seleccione una tabla</p>
 
-        </div>
+</div>
 
 
 
-        <div class="list-group">
-            <a  class="list-group-item active">
+<div class="list-group">
+    <a  class="list-group-item active">
 
-            </a>
-            <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'index') ?>" class="list-group-item list-group-item-success">Usuario</a>
-            <a href="<?php echo routing::getInstance()->getUrlWeb('credencial', 'index') ?>" class="list-group-item list-group-item-warning">Credencial</a>
-            <a href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'index') ?>" class="list-group-item list-group-item-danger">Credencial de Usuario</a>
-            <a href="<?php echo routing::getInstance()->getUrlWeb('bitacora', 'index') ?>" class="list-group-item list-group-item-warning">Bitacora</a>
-            <a href="<?php echo routing::getInstance()->getUrlWeb('recordarMe', 'index') ?>" class="list-group-item list-group-item-info">Recordar Me</a>
-<!--            <a href="<?php //echo routing::getInstance()->getUrlWeb('datosUsuario', 'index')      ?>" class="list-group-item list-group-item-success">Datos de Usuario</a>-->
-        </div>
+    </a>
+    <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'index') ?>" class="list-group-item list-group-item-success">Usuario</a>
+    <a href="<?php echo routing::getInstance()->getUrlWeb('credencial', 'index') ?>" class="list-group-item list-group-item-warning">Credencial</a>
+    <a href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'index') ?>" class="list-group-item list-group-item-danger">Credencial de Usuario</a>
+    <a href="<?php echo routing::getInstance()->getUrlWeb('bitacora', 'index') ?>" class="list-group-item list-group-item-warning">Bitacora</a>
+    <a href="<?php echo routing::getInstance()->getUrlWeb('recordarMe', 'index') ?>" class="list-group-item list-group-item-info">Recordar Me</a>
+<!--            <a href="<?php //echo routing::getInstance()->getUrlWeb('datosUsuario', 'index')       ?>" class="list-group-item list-group-item-success">Datos de Usuario</a>-->
+</div>
 
 
 

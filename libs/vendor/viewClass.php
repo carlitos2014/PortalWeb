@@ -1,19 +1,19 @@
 <?php
 
 namespace mvc\view {
+
     use mvc\controller\controllerClass;
     use mvc\config\configClass;
     use mvc\session\sessionClass;
     use mvc\cache\cacheManagerClass;
+    use mvc\request\requestClass;
 
     /**
      * Description of viewClass - vyo͞o
      *
      * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
      */
-    class viewClass extends controllerClass{
-
-        private $view;
+    class viewClass extends controllerClass {
 
         static public function includeHandlerMessage() {
             include_once configClass::getPathAbsolute() . 'libs/vendor/view/handlerMessage.php';
@@ -82,91 +82,34 @@ namespace mvc\view {
 
             $includes = cacheManagerClass::getInstance()->loadYaml(configClass::getPathAbsolute() . 'config/view.yml', 'viewYaml');
 
-            $favicon = '<link rel="icon" href="' . configClass::getUrlBase() . 'img/' . $includes['all']['favicon'] . '" type="image/x-icon">';
+            $favicon = '<link  href="' . configClass::getUrlBase() . 'img/' . $includes['all']['favicon'] . '" rel="shortcut icon" type="image/x-icon"><br/><link  href="' . configClass::getUrlBase() . 'img/' . $includes['all']['favicon'] . '" rel="icon" type="image/x-icon">';
 
-//            foreach ($includes['all']['favicon'] as $include) {
-//                $favicon .= '<link rel="icon" href="' . configClass::getUrlBase() . 'img/' . $include . '" type="image/x-icon">';
-//            }
-//            if (isset($includes[$module][$action]['favicon'])) {
-//
-//                $favicon .= '<link rel="icon" href="' . configClass::getUrlBase() . 'img/' .$includes['all']['favicon'] . '" type="image/x-icon">';
-////foreach ($includes[$module][$action]['favicon'] as $include) {
-//                //$favicon .= '<link rel="icon" href="' . configClass::getUrlBase() . 'img/' . $include .  '" type="image/x-icon">';
-//                //}
-//            }
+
+ 
+            
+            
             return $favicon;
         }
 
 //funcion diseñada para integrar un titulo a cada vista de el sistema de el  portal
-//        public static function getTitle() {
-//      return self::$title;
-//    }
-//
-//    /**
-//     * Configuro la URL base del sistema
-//     * Ejemplo: http://localhost/MVC/web/
-//     *
-//     * @param string $url_base
-//     */
-
-
-//        public function __construct($titulo) {
-//            $this->titulo = $titulo;
-//        }
-
-
-//           public function setTitle($titulo) {
-//            $this->titulo = $titulo;
-//    }
-//        
-
-
-//        public function titulo(){
-//            
-//            
-//            
-//            $title='';
-//            
-//             $includes = cacheManagerClass::getInstance()->loadYaml(configClass::getPathAbsolute() . 'config/view.yml', 'viewYaml');
-//            
-//            return "<title>".$this->titulo.$includes['all']['title']."</title>";
-//            
-//            
-//        }
-
-public function __construct($view) {
-    parent::__construct($view);
-}
-
-
-
-
-
-
 //
         public static function genTitle() {
-//            $module = sessionClass::getInstance()->getModule();
-//
-//            $action = sessionClass::getInstance()->getAction();
-//        }
-//            $favicon = '';
+            $module = sessionClass::getInstance()->getModule();
+            $action = sessionClass::getInstance()->getAction();
+//        
+//            
 //
             $includes = cacheManagerClass::getInstance()->loadYaml(configClass::getPathAbsolute() . 'config/view.yml', 'viewYaml');
 //
-             
-            $title = '<title>'.$includes['all']['title'].'</title>';
-//            foreach ($includes['all']['favicon'] as $include) {
-//                $favicon .= '<link rel="icon" href="' . configClass::getUrlBase() . 'img/' . $include . '" type="image/x-icon">';
-//            }
-//            if (isset($includes[$module][$action]['favicon'])) {
-//
-//                $favicon .= '<link rel="icon" href="' . configClass::getUrlBase() . 'img/' .$includes['all']['favicon'] . '" type="image/x-icon">';
-//foreach ($includes[$module][$action]['favicon'] as $include) {
-//                //$favicon .= '<link rel="icon" href="' . configClass::getUrlBase() . 'img/' . $include .  '" type="image/x-icon">';
-//                //}
-//            }
+
+            $title = '<title>' . "PortalWeb" . ":" . $module . ' ' . $action . $includes['all']['title'] . '</title>';
+
             return $title;
         }
+
+        //renderizar las vistas
+
+
 
         static public function renderHTML($module, $template, $typeRender, $arg = array()) {
             if (isset($module) and isset($template)) {
