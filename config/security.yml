@@ -6,7 +6,7 @@ shfSecurity:
   logout:
     security: true
 
-default:
+homePage:
   index:
     security: true
     credentials:

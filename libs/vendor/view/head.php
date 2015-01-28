@@ -6,6 +6,6 @@
     <?php echo \mvc\view\viewClass::genStylesheet() ?>
     <?php echo \mvc\view\viewClass::genJavascript() ?>
     <?php echo \mvc\view\viewClass::genTitle() ?>  
-  
+    <?php //echo \mvc\view\viewClass::genSessionId() ?> 
   </head>
   <body>

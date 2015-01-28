@@ -1,21 +1,9 @@
 homepage:
-  url:    /homePage/index
+  url:    /
   param:  { module: homePage, action: index, format: html }
-  #load:
-   # - model/base/usuarioBaseTableClass.php
-    #- model/usuarioTableClass.php
-
-
-
-#homepage:
-#url: shfSecurity/index
-#param: { module: shfSecurity, action: index, format: html }
-#load:
-#- model/base/usuarioBaseTableClass.php
-#- model/usuarioTableClass.php
-
-
-
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
 
 
 

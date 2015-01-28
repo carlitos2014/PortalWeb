@@ -2,7 +2,8 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #eee;
-  background-image: url('../img/b1fabric026.jpg');
+  background-image: url('../img/background2.jpg');
+  background-size:100% auto;
 }
 
 .form-signin {

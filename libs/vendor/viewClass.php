@@ -75,19 +75,21 @@ namespace mvc\view {
         }
 
 //funcion estatica publica que incluye un favicon en las vistas del sistema
+
+
+
         static public function genFavicon() {
-//            $module = sessionClass::getInstance()->getModule();
-//            $action = sessionClass::getInstance()->getAction();
-//            $favicon = '';
+
+
 
             $includes = cacheManagerClass::getInstance()->loadYaml(configClass::getPathAbsolute() . 'config/view.yml', 'viewYaml');
 
             $favicon = '<link  href="' . configClass::getUrlBase() . 'img/' . $includes['all']['favicon'] . '" rel="shortcut icon" type="image/x-icon"><br/><link  href="' . configClass::getUrlBase() . 'img/' . $includes['all']['favicon'] . '" rel="icon" type="image/x-icon">';
 
 
- 
-            
-            
+
+
+
             return $favicon;
         }
 
@@ -107,7 +109,7 @@ namespace mvc\view {
             return $title;
         }
 
-        //renderizar las vistas
+ //renderizar las vistas
 
 
 
