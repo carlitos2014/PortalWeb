@@ -1,5 +1,6 @@
-<div class="container">
- <p class="text-muted">Desarrollado por Leonardo Betancourt-betancourt92@hotmail.com</p>
+<br>
+<div class="container" align="center">
+ <p class="text-muted" >Desarrollado por Leonardo Betancourt-betancourt92@hotmail.com</p>
 
 </div>
 
