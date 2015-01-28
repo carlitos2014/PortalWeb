@@ -12,10 +12,10 @@ use mvc\routing\routingClass as routing ?>
 
 
     <div style="margin-bottom: 0px; margin-top: 0px" align="left">
-        <a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>" class="btn btn-success">Login</a>
+<!--        <a href="<?php //echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>" class="btn btn-success">Login</a>-->
 
 
-        <a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>" class="btn btn-danger">Log out</a>
+<!--        <a href="<?php //echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>" class="btn btn-danger">Log out</a>-->
     </div>
 
     <h1>Bienvenido al Indice de Tablas del Sistema</h1>
