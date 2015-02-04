@@ -1,11 +1,7 @@
 homepage:
   url:    /
   param:  { module: homePage, action: index, format: html }
-  load:
-    - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.php
-
-
+ 
 
 #tabla usuario, por defecto el  sistema entra a la visualizacion de esta tabla
 
