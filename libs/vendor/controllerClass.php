@@ -41,10 +41,9 @@ namespace mvc\controller {
 
 
     
-    
-    public function __destruct() {
-      viewClass::renderHTML($this->module, $this->view, $this->format, $this->arg);
-    }
+    public function renderView() {
+viewClass::renderHTML($this->module, $this->view, $this->format, $this->arg);
+}
 
   }
 
