@@ -18,7 +18,7 @@ config::setDbDsn(
 );
 
 
-// Esto solo es necesario en caso de necesitar un socket para la DB
+    // Esto solo es necesario en caso de necesitar un socket para la DB
 //config::setDbUnixSocket('/tmp/mysql.sock');
 //
 //if (config::getDbUnixSocket() !== null) {
@@ -35,6 +35,7 @@ config::setDbDsn(
 //          . ';dbname=' . config::getDbName()
 //  );
 //}
+
 config::setPathAbsolute('/var/www/PortalWeb/');
 config::setUrlBase('http://127.0.0.1/PortalWeb/web/');
 
