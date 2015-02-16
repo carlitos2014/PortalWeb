@@ -18,7 +18,7 @@ use mvc\routing\routingClass as routing ?>
 <!--        <a href="<?php //echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>" class="btn btn-danger">Log out</a>-->
     </div>
 
-    <h1>Bienvenido al Indice de Tablas del Sistema</h1>
+    <h1>Administracion</h1>
     <p>Por favor seleccione una tabla</p>
 
 </div>

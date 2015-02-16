@@ -7,11 +7,11 @@
  */
 
 /**
- * Description of datoUsuarioBaseTableClass
+ * Description of TipoDocumentoBaseTableClass
  *
  * @author Leonardo
  */
-class datoUsuarioBaseTableClass {
+class tipoDocumentoBaseTableClass {
 
     //put your code here
 
@@ -20,23 +20,13 @@ class datoUsuarioBaseTableClass {
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
     const DELETED_AT = 'deleted_at';
-    const USUARIO_ID = 'usuario_id';
     const NOMBRE = 'nombre';
     const NOMBRE_LENGTH = 45;
-    const APELLIDO = 'apellido';
-    const APELLIDO_LENGTH = 45;
-    const CORREO = 'correo';
-    const CORREO_LENGTH = 70;
-    const GENERO = 'genero';
-    const FECHA_NACIMIENTO = 'fecha_nacimiento';
-    const LOCALIDAD_ID = 'localidad_id';
-    const TIPO_DOCUMENTO_ID = 'localidad_id';
-    const ORGANIZACION_ID = 'localidad_id';
 
     static public function getNameTable() {
 
 
-        return 'dato_usuario';
+        return 'tipo_documento';
     }
 
     public static function getNameField($field, $html = false, $table = null) {

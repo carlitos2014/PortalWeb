@@ -1,17 +1,11 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of datoUsuarioBaseTableClass
+ * Description of eventoBaseClass
  *
  * @author Leonardo
  */
-class datoUsuarioBaseTableClass {
+class eventoBaseTableClass {
 
     //put your code here
 
@@ -20,23 +14,30 @@ class datoUsuarioBaseTableClass {
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
     const DELETED_AT = 'deleted_at';
-    const USUARIO_ID = 'usuario_id';
+    const IMAGEN = 'imagen';
+    const IMAGEN_LENGTH = 37;
     const NOMBRE = 'nombre';
     const NOMBRE_LENGTH = 45;
-    const APELLIDO = 'apellido';
-    const APELLIDO_LENGTH = 45;
-    const CORREO = 'correo';
-    const CORREO_LENGTH = 70;
-    const GENERO = 'genero';
-    const FECHA_NACIMIENTO = 'fecha_nacimiento';
-    const LOCALIDAD_ID = 'localidad_id';
-    const TIPO_DOCUMENTO_ID = 'localidad_id';
-    const ORGANIZACION_ID = 'localidad_id';
+    const DESCRIPCION = 'descripcion';
+    const DESCRIPTION_LENGTH = 1024;
+    const FECHA_INICIAL_EVENTO = 'fecha_inicial_evento';
+    const FECHA_FINAL_EVENTO = 'fecha_final_evento';
+    const LUGAR_LATITUD = 'lugar_latitud';
+    const LUGAR_LATITUD_LENGTH = 100;
+    const LUGAR_LONGITUD = 'lugar_longitud';
+    const LUGAR_LONGITUD_LENGTH = 100;
+    const DIRECCION = 'direccion';
+    const DIRECCION_LENGTH = 150;
+    const COSTO = 'costo';
+    const USUARIO_ID = 'usuario_id';
+    const CATEGORIA_ID = 'categoria_id';
+    const FECHA_INICIAL_PUBLICACION = 'fecha_inicial_publicacion';
+    const FECHA_FINAL_PUBLICACION = 'fecha_final_publicacion';
 
     static public function getNameTable() {
 
 
-        return 'dato_usuario';
+        return 'evento';
     }
 
     public static function getNameField($field, $html = false, $table = null) {
