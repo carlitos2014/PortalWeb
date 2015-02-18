@@ -7,11 +7,11 @@
  */
 use mvc\model\table\tableBaseClass;
 /**
- * Description of datoUsuarioBaseTableClass
+ * Description of patrocinadorBaseTableClass
  *
  * @author Leonardo
  */
-class datoUsuarioBaseTableClass extends tableBaseClass{
+class patrocinadorBaseTableClass extends tableBaseClass{
 
     //put your code here
 
@@ -20,23 +20,19 @@ class datoUsuarioBaseTableClass extends tableBaseClass{
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
     const DELETED_AT = 'deleted_at';
-    const USUARIO_ID = 'usuario_id';
     const NOMBRE = 'nombre';
     const NOMBRE_LENGTH = 45;
-    const APELLIDO = 'apellido';
-    const APELLIDO_LENGTH = 45;
+    const TELEFONO = 'telefono';
+    const TELEFONO_LENGTH = 10;
     const CORREO = 'correo';
-    const CORREO_LENGTH = 70;
-    const GENERO = 'genero';
-    const FECHA_NACIMIENTO = 'fecha_nacimiento';
-    const LOCALIDAD_ID = 'localidad_id';
-    const TIPO_DOCUMENTO_ID = 'localidad_id';
-    const ORGANIZACION_ID = 'localidad_id';
+    const CORREO_LENGTH = 150;
+    const DIRECCION = 'DIRECCION';
+    const DIRECCION_LENGTH = 150;
 
     static public function getNameTable() {
 
 
-        return 'dato_usuario';
+        return 'patrocinador';
     }
 
     public static function getNameField($field, $html = false, $table = null) {

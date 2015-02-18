@@ -1,15 +1,13 @@
-<?php //use mvc\routing\routingClass as routing  ?>
-<?php $titulo='MOdificacion de usuario'?>
-<?php mvc\view\viewClass::genTitle($titulo)?>
-<?php use mvc\routing\routingClass as routing ?>
-<?php use mvc\i18n\i18nClass as i18n ?>
-<?php $idUsuario = usuarioTableClass::ID ?>
-<?php $password = usuarioTableClass::PASSWORD ?>
+<?php //use mvc\routing\routingClass as routing   ?>
+<?php $titulo = 'MOdificacion de usuario' ?>
+<?php mvc\view\viewClass::genTitle($titulo) ?>
+<?php
 
-
-
-
-
+use mvc\routing\routingClass as routing ?>
+<?php
+use mvc\i18n\i18nClass as i18n ?>
+    <?php $idUsuario = usuarioTableClass::ID ?>
+    <?php $password = usuarioTableClass::PASSWORD ?>
 
 <form class="form-horizontal" method="post" action="<?php echo routing::getInstance()->getUrlWeb('usuario', ((isset($objUsuarios)) ? 'update' : 'create')) ?>">
 <?php if (isset($objUsuarios) == true): ?>

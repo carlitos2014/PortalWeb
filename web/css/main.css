@@ -14,3 +14,16 @@ body {
   padding-top:20px;
 }
 
+.table > thead > tr > th:first-child,.table > tbody > tr > td{
+    
+    text-align: center;
+    
+    
+}
+
+.chk{
+    
+    width: 10px;
+    
+    
+}

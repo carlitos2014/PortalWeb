@@ -5,6 +5,8 @@ all:
     - jquery-1.11.1.min.js
     - index.js
     - bootstrap.js
+    - bootstrap-popover.js
+    - bootstrap-tooltip.js
   stylesheet:
     - bootstrap.css
     - main.css

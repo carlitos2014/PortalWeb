@@ -124,6 +124,7 @@ namespace mvc\model\table {
         }
         return $lastInsertId;
       } catch (\PDOException $exc) {
+        
         model::getInstance()->rollback();
         throw $exc;
       }

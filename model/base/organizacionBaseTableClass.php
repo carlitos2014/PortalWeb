@@ -7,36 +7,39 @@
  */
 use mvc\model\table\tableBaseClass;
 /**
- * Description of datoUsuarioBaseTableClass
+ * Description of organizacionBaseTableClass
  *
  * @author Leonardo
  */
-class datoUsuarioBaseTableClass extends tableBaseClass{
+class organizacionBaseTableClass  extends tableBaseClass{
 
     //put your code here
+
+
+
 
 
     const ID = 'id';
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
     const DELETED_AT = 'deleted_at';
-    const USUARIO_ID = 'usuario_id';
     const NOMBRE = 'nombre';
     const NOMBRE_LENGTH = 45;
-    const APELLIDO = 'apellido';
-    const APELLIDO_LENGTH = 45;
+    const DIRECCION = 'direccion';
+    const DIRECCION_LENGTH = 200;
+    const TELEFONO = 'telefono';
+    const TELEFONO_LENGTH = 45;
+    const FAX = 'fax';
+    const FAX_LENGTH = 45;
     const CORREO = 'correo';
-    const CORREO_LENGTH = 70;
-    const GENERO = 'genero';
-    const FECHA_NACIMIENTO = 'fecha_nacimiento';
-    const LOCALIDAD_ID = 'localidad_id';
-    const TIPO_DOCUMENTO_ID = 'localidad_id';
-    const ORGANIZACION_ID = 'localidad_id';
+    const CORREO_LENGTH = 100;
+    const PAGINA_WEB = 'pagina_web';
+    const PAGINA_WEB_LENGTH = 100;
 
     static public function getNameTable() {
 
 
-        return 'dato_usuario';
+        return 'organizacion';
     }
 
     public static function getNameField($field, $html = false, $table = null) {

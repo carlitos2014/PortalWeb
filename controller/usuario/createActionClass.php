@@ -8,7 +8,6 @@ use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
-
 /**
  * Description of ejemploClass
  *
@@ -20,12 +19,12 @@ class createActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
-        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
+        $usuario = trim(request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true)));
+        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1');
+        $password2 = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2');
 
-        if (strlen($usuario) > usuarioTableClass::USER_LENGTH) {
-          throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => usuarioTableClass::USER_LENGTH)), 00001);
-        }
+        $this->validate($usuario, $password, $password2);
+
 
         $data = array(
             usuarioTableClass::USER => $usuario,
@@ -42,6 +41,73 @@ class createActionClass extends controllerClass implements controllerActionInter
       echo '<pre>';
       print_r($exc->getTrace());
       echo '</pre>';
+    }
+  }
+
+  private function validate($usuario, $password, $password2) {
+    $flag = false;
+
+
+    if (empty($usuario)) {
+
+      session::getInstance()->setError(i18n::__(00006, NULL, 'errors'));
+      $flag = true;
+      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+    }
+
+    if (strlen($usuario) > usuarioTableClass::USER_LENGTH) {
+      session::getInstance()->setError(i18n::__(00004, NULL, 'errors', array('%user%' => $usuario, '%caracteres%' => usuarioTableClass::USER_LENGTH)));
+
+      $flag = true;
+      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+    }
+
+    if ($password !== $password2) {
+
+      session::getInstance()->setError(i18n::__(00005, NULL, 'errors'));
+      $flag = true;
+      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
+    }
+
+
+
+    if (empty($password)) {
+
+      session::getInstance()->setError(i18n::__(00007, NULL, 'errors'));
+      $flag = true;
+
+      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+    }
+
+
+    if (empty($password2)) {
+
+      session::getInstance()->setError(i18n::__(00009, NULL, 'errors'));
+      $flag = true;
+      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
+      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+    }
+
+
+
+    $fields = array(
+        usuarioTableClass::USER
+    );
+    $objUsuario = usuarioTableClass::getAll($fields);
+
+    foreach ($objUsuario as $key) {
+      if ($key->user_name === $usuario) {
+        session::getInstance()->setError(i18n::__(00010, NULL, 'errors'));
+        $flag = true;
+        session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      }
+    }
+
+
+    if ($flag === true) {
+
+      request::getInstance()->setMethod('GET');
+      routing::getInstance()->forward('usuario', 'insert');
     }
   }
 
