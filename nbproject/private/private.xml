@@ -3,33 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/PortalWeb/model/base/categoriaBaseTableClass.php</file>
-            <file>file:/var/www/PortalWeb/view/usuario/updateFormUser.php</file>
-            <file>file:/var/www/PortalWeb/model/base/bitacoraBaseTableClass.php</file>
-            <file>file:/var/www/PortalWeb/model/base/eventoPatrocinadorBaseTableClass.php</file>
-            <file>file:/var/www/PortalWeb/model/base/usuarioCredencialBaseTableClass.php</file>
-            <file>file:/var/www/PortalWeb/model/base/localidadBaseTableClass.php</file>
-            <file>file:/var/www/PortalWeb/model/base/eventoBaseTableClass.php</file>
-            <file>file:/var/www/PortalWeb/model/base/patrocinadorBaseTableClass.php</file>
-            <file>file:/var/www/PortalWeb/libs/vendor/view/handlerMessage.php</file>
-            <file>file:/var/www/PortalWeb/model/base/credencialBaseTableClass.php</file>
-            <file>file:/var/www/PortalWeb/config/config.php</file>
-            <file>file:/var/www/PortalWeb/sql/portal.sql</file>
-            <file>file:/var/www/PortalWeb/model/base/recaudoEconomicoBaseTableClass.php</file>
-            <file>file:/var/www/PortalWeb/model/usuarioGustaCategoriaTableClass.php</file>
-            <file>file:/var/www/PortalWeb/model/base/usuarioBaseTableClass.php</file>
-            <file>file:/var/www/PortalWeb/model/base/tipoDocumentoBaseTableClass.php</file>
-            <file>file:/var/www/PortalWeb/model/base/organizacionBaseTableClass.php</file>
-            <file>file:/var/www/PortalWeb/model/base/usuarioGustaCategoriaBaseTableClass.php</file>
-            <file>file:/var/www/PortalWeb/model/base/datoUsuarioBaseTableClass.php</file>
-            <file>file:/var/www/PortalWeb/model/usuarioTableClass.php</file>
-            <file>file:/var/www/PortalWeb/model/base/rolBaseTableClass.php</file>
-            <file>file:/var/www/PortalWeb/model/base/recordarMeBaseTableClass.php</file>
-            <file>file:/var/www/PortalWeb/config/security.yml</file>
-            <file>file:/var/www/PortalWeb/view/shfSecurity/loginFormTemplate.html.php</file>
-            <file>file:/var/www/PortalWeb/config/view.yml</file>
-            <file>file:/var/www/PortalWeb/model/bitacoraTableClass.php</file>
-            <file>file:/var/www/PortalWeb/model/base/usuarioRolBaseClass.php</file>
+            <file>file:/var/www/PortalWeb/view/homePage/homeTemplate.html.php</file>
+            <file>file:/var/www/PortalWeb/controller/homePage/indexActionClass.php</file>
         </group>
     </open-files>
 </project-private>

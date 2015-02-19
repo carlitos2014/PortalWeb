@@ -1,4 +1,6 @@
-<?php //use mvc\routing\routingClass as routing   ?>
+<?php
+
+use mvc\session\sessionClass as session ?>
 <?php $titulo = 'MOdificacion de usuario' ?>
 <?php mvc\view\viewClass::genTitle($titulo) ?>
 <?php
@@ -6,39 +8,107 @@
 use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
-    <?php $idUsuario = usuarioTableClass::ID ?>
-    <?php $password = usuarioTableClass::PASSWORD ?>
+<?php $idUsuario = usuarioTableClass::ID ?>
+<?php $password = usuarioTableClass::PASSWORD ?>
 
-<form class="form-horizontal" method="post" action="<?php echo routing::getInstance()->getUrlWeb('usuario', ((isset($objUsuarios)) ? 'update' : 'create')) ?>">
-<?php if (isset($objUsuarios) == true): ?>
-        <div class="form-group has-success">
-            <label class="col-xs-2 control-label" for="inputSuccess"></label>
-            <div class="col-xs-10">
-                <input name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>"  id="inputSuccess" class="form-control" placeholder="Input with success" value="<?php echo $objUsuarios[0]->$idUsuario ?>" type="hidden" >
-<?php endif ?>            
-        </div>
+<div class="container container-fluid">
+
+
+  <form class="form-signin" role="form" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'create') ?>" method="POST">
+    <h2 class="form-signin-heading"></h2>
+    <div class="form-group" <?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
+      <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>" class="sr-only"><?php echo i18n::__('user') ?></label>
+      <input type="text" class="form-control" placeholder="Usuario"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>" value="<?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, TRUE)) === TRUE) ? request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, TRUE)) : '' ?>">
+      <?php if (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, TRUE)) === TRUE): ?>
+        <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
+      <?php endif ?>
+
+
+
     </div>
 
-    <div class="form-group has-error">
-        <label class="col-xs-2 control-label" for="inputError">Nombre de usuario</label>
-        <div class="col-xs-10">
-<?php echo i18n::__('user') ?>:<input value="<?php echo ((isset($objUsuarios) == true) ? $objUsuarios[0]->$usuario : '') ?>" type="text" id="inputError" class="form-control" placeholder="Ingrese un Nombre de usuario valido" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>">
-
-        </div>
-    </div>
-
-    <div class="form-group has-warning">
-        <label class="col-xs-2 control-label" for="inputWarning">Password</label>
-        <div class="col-xs-10">
-<?php echo i18n::__('pass') ?>: <input value="<?php echo ((isset($objUsuarios) == true) ? $objUsuarios[0]->$password : '') ?>" type="password" id="inputWarning" class="form-control" placeholder="Contraseña" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) ?>">
-
-        </div>
+    <div class="form-group" <?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
+      <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>" class="sr-only"><?php echo i18n::__('pass') ?></label>
+      <input type="password" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>" class="form-control" placeholder="Contraseña" >
     </div>
 
 
-    <div class="form-group">
-        <div class="col-xs-offset-2 col-xs-10">
-            <button type="submit" class="btn btn-primary" value="<?php echo i18n::__(((isset($objUsuarios)) ? 'update' : 'register')) ?>">Actualizar</button>
-        </div>
+    <div class="form-group" <?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
+      <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="sr-only">Verificar Contraseña</label>
+      <input type="password" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="form-control" placeholder="Verificar Contraseña" >
     </div>
-</form>
+
+
+    <div class="form-group" <?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
+      <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="sr-only">Nombre</label>
+      <input type="text" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="form-control" placeholder="Nombre" >
+    </div>
+
+    <div class="form-group" <?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
+      <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="sr-only">Apellido</label>
+      <input type="text" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="form-control" placeholder="apellido" >
+    </div>
+
+
+    <div class="form-group" <?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
+      <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="sr-only">Verificar Contraseña</label>
+      <input type="text" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="form-control" placeholder="correo" >
+    </div>
+
+
+
+
+
+    <select>
+      <option>m</option>
+    </select>
+
+
+
+    <div class="form-group" <?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
+      <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="sr-only">Verificar Contraseña</label>
+      <input type="date" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="form-control" placeholder="fecha de nacimiento" >
+    </div>
+
+    <div class="form-group" <?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
+      <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="sr-only">Verificar Contraseña</label>
+      <input type="text" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="form-control" placeholder="localidad" >
+    </div>
+
+   <select>
+      <option>cc</option>
+    </select>
+
+<div class="form-group" <?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
+      <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="sr-only">Verificar Contraseña</label>
+      <input type="text" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="form-control" placeholder="ID de organizacion" >
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit"><?php echo i18n::__('create') ?></button>
+    <?php if (session::getInstance()->hasError() or session::getInstance()->hasInformation() or session::getInstance()->hasSuccess() or session::getInstance()->hasWarning()): ?>
+      <?php view::includeHandlerMessage() ?>
+    <?php endif ?>
+  </form>
+
+</div>

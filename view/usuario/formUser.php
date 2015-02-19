@@ -14,7 +14,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <div class="container container-fluid">
 
 
-  <form class="form-horizontal" role="form" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'create') ?>" method="POST">
+  <form class="form-signin" role="form" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'create') ?>" method="POST">
     <h2 class="form-signin-heading"></h2>
     <div class="form-group" <?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, TRUE))===TRUE) ? 'has-error has-feedback' : '' ?>>
       <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>" class="sr-only"><?php echo i18n::__('user') ?></label>
@@ -35,7 +35,7 @@ use mvc\i18n\i18nClass as i18n ?>
 
     <div class="form-group" <?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, TRUE))===TRUE) ? 'has-error has-feedback' : '' ?>>
       <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="sr-only">Verificar Contraseña</label>
-      <input type="password" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true).'_2' ?>" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true).'_2' ?>" class="form-control" placeholder="Contraseña" >
+      <input type="password" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true).'_2' ?>" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true).'_2' ?>" class="form-control" placeholder="Verificar Contraseña" >
     </div>
 
 

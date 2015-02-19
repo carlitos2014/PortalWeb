@@ -5,10 +5,8 @@ use mvc\routing\routingClass as routing ?>
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
-<div class="jumbotron">
-  <h1><?php echo i18n::__('createUser') ?></h1>
-  <p>Por favor llenar los siguientes campos</p>
-
+<div class="page-header">
+  <h1><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-user"></i>Creacion de Usuario</h1>
 </div>
 <?php view::includeHandlerMessage() ?>
 <?php view::includePartial('usuario/formUser') ?>

@@ -8,7 +8,7 @@
         <?php echo \mvc\view\viewClass::genTitle() ?>  
 
     </head>
-
+<?php use mvc\routing\routingClass as routing ?>
     <body>
   <!--<div class="panel panel-success">Sesion Iniciada como : <?php //echo \mvc\session\sessionClass::getInstance()->getUserName()  ?> <a href="<?php // echo \mvc\routing\routingClass::getInstance()->getUrlWeb('shfSecurity', 'logout')   ?>" class="btn btn-danger">Log out</a></div>-->
         <nav class="navbar navbar-default">
@@ -29,7 +29,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="<?php echo routing::getInstance()->getUrlWeb('homePage', 'index') ?>">Inicio <span class="sr-only">(current)</span></a></li>
                         <li><a href="#">Link</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Dropdown <span class="caret"></span></a>

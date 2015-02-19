@@ -69,8 +69,6 @@ class createActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
     }
 
-
-
     if (empty($password)) {
 
       session::getInstance()->setError(i18n::__(00007, NULL, 'errors'));
@@ -87,8 +85,6 @@ class createActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
       session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
     }
-
-
 
     $fields = array(
         usuarioTableClass::USER
