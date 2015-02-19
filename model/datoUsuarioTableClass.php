@@ -6,12 +6,17 @@
  * and open the template in the editor.
  */
 
+use mvc\model\modelClass as model;
+use mvc\config\configClass as config;
+
+
+
 /**
  * Description of datoUsuarioTableClass
  *
  * @author leonardo
  */
-class datoUsuarioTableClass {
+class datoUsuarioTableClass extends datoUsuarioBaseTableClass{
     //put your code here
     //  public static function getCountPages() {
 //    try {
