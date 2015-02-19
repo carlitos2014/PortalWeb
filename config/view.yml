@@ -10,6 +10,7 @@ all:
   stylesheet:
     - bootstrap.css
     - main.css
+    - signin.css
   favicon: favicon.ico
   title:   
 

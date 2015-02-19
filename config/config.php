@@ -6,7 +6,7 @@ config::setRowGrid(10);
 
 config::setDbHost('127.0.0.1');
 config::setDbDriver('pgsql'); // pgsql
-config::setDbName('portalWeb');
+config::setDbName('portal');
 config::setDbPort(5432); // 5432
 config::setDbUser('postgres');
 config::setDbPassword('postgres');

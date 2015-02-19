@@ -1,11 +1,15 @@
 <?php
 
+
+
+use mvc\model\table\tableBaseClass;
+
 /**
  * Description of eventoBaseClass
  *
  * @author Leonardo
  */
-class eventoBaseTableClass {
+class eventoBaseTableClass extends tableBaseClass{
 
     //put your code here
 

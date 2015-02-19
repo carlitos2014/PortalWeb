@@ -5,13 +5,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+use mvc\model\table\tableBaseClass;
 /**
  * Description of eventoPatrocinadorBaseTableClass
  *
  * @author Leonardo
  */
-class eventoPatrocinadorBaseTableClass {
+class eventoPatrocinadorBaseTableClass extends tableBaseClass {
 
     //put your code here
 

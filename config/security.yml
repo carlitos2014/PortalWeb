@@ -8,7 +8,7 @@ shfSecurity:
 
 homePage:
   index:
-    security: false
+    security: true
     credentials:
       - [admin, cajero]
   insert:
