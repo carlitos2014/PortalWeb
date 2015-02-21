@@ -54,7 +54,7 @@ use mvc\i18n\i18nClass as i18n ?>
         <?php echo i18n::__('idCredencial') ?>:<select class="form-control"  value="" type="text" id="inputWarning" class="form-control" placeholder="Ingrese el numero de credencial" name="<?php echo usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::CREDENCIAL_ID, true) ?>">
                     <option value="">Seleccione el ID de la credencial</option>
                     <?php foreach ($objCredencial1 as $dato): ?> 
-                        <option value="<?php echo $dato->id ?>"><?php echo $dato->nombre ?></option>
+                        <option value="<?php echo $dato->id ?>"><?php echo $dato->id ?>-<?php echo $dato->nombre ?></option>
 
                     <?php endforeach ?>
                 </select>
