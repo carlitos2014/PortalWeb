@@ -24,3 +24,8 @@ default:
   index:
     javascript:
       - index.js
+      
+usuario:
+  insert:
+    stylesheet:
+      - form.css

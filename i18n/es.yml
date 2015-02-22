@@ -1,51 +1,61 @@
 
- 
-   #
+ #Diccionario
 
 culture:                  Español
 dictionary:
   default:
-    selectTables:         Seleccione una tabla
+    
+    homePage:             Inicio
+    name:                 Nombre
     user:                 Usuario
     pass:                 Contraseña
-    editUser:             Modificar al usuario
-    oldPass:              Contraseña Vieja
-    update:               Actualizar
+    createUser:           Crear usuario
+    editUser:             Editar usuario
     newPass:              Nueva contraseña
-    delete:               Borrar
-    userManagement:       Gestion de Usuario
-    newDataUser:          Registrar nuevos datos de usuario
-    name:                 Nombre
-    lastName:             Apellido
-    user_id:              Id del Usuario
-    lastLogin:            Ultima conexión
+    oldPass:              Contraseña Vieja
+    register:             Registrar
+    selectTables:         Seleccion de tabla
     actions:              Acciones
-    createUser:           Creacion de usuario
-    editUser:             Edicion de usuario
+    description:          Descripcion
+    
+    #usuario
+    userManagement:       Gestion de Usuario
+    id:                   ID
+    lastLogin:            Ultima conexión
+    modifyFields:         Modifique los siguientes campos
+    fillFields:           Llenar los siguientes Campos
+    insertNameUser:       Ingrese Nombre de usuario
+    insertPass:           Ingrese Contraseña
+    
+    #bitacora
+    logBook:              Bitacora
+    user_id:              ID del Usuario
+    action:               Acción
+    table:                Tabla
+    record:               Registro
+    observation:          Observación
+    date:                 Fecha
+    
+    #credencial
+    newCredencial:        Nueva credencial
+    credential:           Credencial
+    nameUser:             Nombre de usuario
+    creationDate:         Fecha de Creación
+    updateDate:           Fecha de Actualización
+    deleteDate:           Fecha de Borrado
+    lastName:             Apellido
+    credentialId:         ID de Credencial
+    
+
     #----------------------------acciones----------------------------
     
     edit:                 Editar
     delete:               Borrar
     create:               Crear
+    update:               Actualizar
     
-    
-    
-    #-----------------------------credencial------------------#
-    description:          Descripcion
-    newCredencial:        Registro de una nueva credencial
-    name:                 Nombre
-    description:          Descripcion
-    newCredencial:        Registro de una nueva credencial
-    user:                 Usuario
-    pass:                 Contraseña
-    register:             Registrar
-    
-    name:                 Nombre
-    new:                  Registrar un nuevo usuario-credencial
-    id:                   ID
-    idUser:               Id del usuario
-    idCredencial:         Id de la credencial
 
+  
   errors:
     00001:                El módulo y la acción solicitada, no existe.
     00002:                La dirección que solicita no está registrada.

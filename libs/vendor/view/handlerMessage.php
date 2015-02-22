@@ -1,3 +1,4 @@
+<div class="container container-fluid">
 <?php use mvc\session\sessionClass; ?>
 <?php if (sessionClass::getInstance()->hasError()): ?>
   <?php foreach (sessionClass::getInstance()->getError() as $key => $error): ?>

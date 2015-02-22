@@ -6,7 +6,9 @@
     <?php echo \mvc\view\viewClass::genStylesheet() ?>
     <?php echo \mvc\view\viewClass::genJavascript() ?>
     <?php echo \mvc\view\viewClass::genTitle() ?>  
-    <?php use mvc\routing\routingClass as routing ?>
+    <?php
+
+    use mvc\routing\routingClass as routing ?>
   </head>
 
   <body>

@@ -324,6 +324,834 @@ recordarMe_reporte:
   param:  { module: recordarMe, action: report, format: pdf }
     
     
+ 
+##---------------------------estadoPqrsf---------------------##
+  
+estadoPqrsf_index:
+  url:    /estadoPqrsf/index
+  param:  { module: estadoPqrsf, action: index, format: html }
+  load:
+    - model/base/estadoPqrsfBaseTableClass.php
+    - model/estadoPqrsfTableClass.php
+    
+estadoPqrsf_insert:
+  url:    /estadoPqrsf/insert
+  param:  { module: estadoPqrsf, action: insert, format: html }
+  load:
+    - model/base/estadoPqrsfBaseTableClass.php
+    - model/estadoPqrsfTableClass.php
+    
+estadoPqrsf_create:
+  url:    /estadoPqrsf/create
+  param:  { module: estadoPqrsf, action: create, format: html }
+  load:
+    - model/base/estadoPqrsfTableClass.php
+    - model/estadoPqrsfTableClass.php
+    
+estadoPqrsf_editar:
+  url:    /estadoPqrsf/edit
+  param:  { module: estadoPqrsf, action: edit, format: html }
+  load:
+    - model/base/estadoPqrsfBaseTableClass.php
+    - model/estadoPqrsfTableClass.php 
+    
+estadoPqrsf_update:
+  url:    /estadoPqrsf/update
+  param:  { module: estadoPqrsf, action: update, format: html }
+  load:
+    - model/base/estadoPqrsfBaseTableClass.php
+    - model/estadoPqrsfTableClass.php
+
+estadoPqrsf_delete:
+  url:    /estadoPqrsf/delete
+  param:  { module: estadoPqrsf, action: delete, format: html }
+  load:
+    - model/base/estadoPqrsfBaseTableClass.php
+    - model/estadoPqrsfTableClass.php
+
+estadoPqrsf_deleteSelect:
+  url:    /estadoPqrsf/deleteSelect
+  param:  { module: estadoPqrsf, action: deleteSelect, format: html }
+  load:
+    - model/base/estadoPqrsfBaseTableClass.php
+    - model/estadoPqrsfTableClass.php
+
+estadoPqrsf_reporte:
+  url:    /estadoPqrsf/reporte
+  param:  { module: estadoPqrsf, action: report, format: pdf }
+  
+  
+  ##---------------------------detallePQRSF---------------------##
+  
+  detallePqrsf_index:
+  url:    /detallePqrsf/index
+  param:  { module: detallePqrsf, action: index, format: html }
+  load:
+    - model/base/detallePqrsfBaseTableClass.php
+    - model/detallePqrsfTableClass.php
+    
+detallePqrsf_insert:
+  url:    /detallePqrsf/insert
+  param:  { module: detallePqrsf, action: insert, format: html }
+  load:
+    - model/base/detallePqrsfBaseTableClass.php
+    - model/detallePqrsfTableClass.php
+    
+detallePqrsf_create:
+  url:    /detallePqrsf/create
+  param:  { module: detallePqrsf, action: create, format: html }
+  load:
+    - model/base/detallePqrsfTableClass.php
+    - model/detallePqrsfTableClass.php
+    
+detallePqrsf_editar:
+  url:    /detallePqrsf/edit
+  param:  { module: detallePqrsf, action: edit, format: html }
+  load:
+    - model/base/detallePqrsfBaseTableClass.php
+    - model/detallePqrsfTableClass.php 
+    
+detallePqrsf_update:
+  url:    /detallePqrsf/update
+  param:  { module: detallePqrsf, action: update, format: html }
+  load:
+    - model/base/detallePqrsfBaseTableClass.php
+    - model/detallePqrsfTableClass.php
+
+detallePqrsf_delete:
+  url:    /detallePqrsf/delete
+  param:  { module: detallePqrsf, action: delete, format: html }
+  load:
+    - model/base/detallePqrsfBaseTableClass.php
+    - model/detallePqrsfTableClass.php
+
+detallePqrsf_deleteSelect:
+  url:    /detallePqrsf/deleteSelect
+  param:  { module: detallePqrsf, action: deleteSelect, format: html }
+  load:
+    - model/base/detallePqrsfBaseTableClass.php
+    - model/detallePqrsfTableClass.php
+
+detallePqrsf_reporte:
+  url:    /detallePqrsf/reporte
+  param:  { module: detallePqrsf, action: report, format: pdf }
+  
+  
+  
+  ##--------------------categoria--------------------------------##
+  
+  categoria_index:
+  url:    /categoria/index
+  param:  { module: categoria, action: index, format: html }
+  load:
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+
+categoria_insert:
+  url:    /categoria/insertar
+  param:  { module: categoria, action: insert, format: html }
+  load:
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+
+categoria_create:
+  url:    /categoria/crear
+  param:  { module: categoria, action: create, format: html }
+  load:
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+
+categoria_edit:
+  url:    /categoria/editar
+  param:  { module: categoria, action: edit, format: html }
+  load:
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+
+categoria_update:
+  url:    /categoria/actualizar
+  param:  { module: categoria, action: update, format: html }
+  load:
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+
+categoria_delete:
+  url:    /categoria/eliminar
+  param:  { module: categoria, action: delete, format: html }
+  load:
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+
+categoria_deleteSelect:
+  url:    /categoria/eliminarSeleccion
+  param:  { module: categoria, action: deleteSelect, format: html }
+  load:
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+
+categoria_reporte:
+  url:    /categoria/reporte
+  param:  { module: categoria, action: report, format: pdf }
+  
+  
+  #-------------------evento---------#
+    
+    
+     
+     
+evento_index:
+  url:    /evento/index
+  param:  { module: evento, action: index, format: html }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    
+evento_insert:
+  url:    /evento/insert
+  param:  { module: evento, action: insert, format: html }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    
+evento_create:
+  url:    /evento/create
+  param:  { module: evento, action: create, format: html }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    
+evento_editar:
+  url:    /evento/edit
+  param:  { module: evento , action: edit, format: html }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php 
+    
+evento_update:
+  url:    /evento/update
+  param:  { module: evento, action: update, format: html }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+
+evento_delete:
+  url:    /evento/delete
+  param:  { module: evento, action: delete, format: html }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+
+evento_deleteSelect:
+  url:    /evento/deleteSelect
+  param:  { module: evento, action: deleteSelect, format: html }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+
+evento_reporte:
+  url:    /evento/report
+  param:  { module: evento, action: report, format: pdf }
+    
+  #-------------------evento patrocinador---------#
+    
+    
+     
+     
+eventoPatrocinador_index:
+  url:    /eventoPatrocinador/index
+  param:  { module: eventoPatrocinador, action: index, format: html }
+  load:
+    - model/base/eventoPatrocinadorBaseTableClass.php
+    - model/eventoPatrocinadorTableClass.php
+    
+eventoPatrocinador_insert:
+  url:    /eventoPatrocinador/insert
+  param:  { module: eventoPatrocinador, action: insert, format: html }
+  load:
+    - model/base/eventoPatrocinadorBaseTableClass.php
+    - model/eventoPatrocinadorTableClass.php
+    
+eventoPatrocinador_create:
+  url:    /eventoPatrocinador/create
+  param:  { module: eventoPatrocinador, action: create, format: html }
+  load:
+    - model/base/eventoPatrocinadorBaseTableClass.php
+    - model/eventoPatrocinadorTableClass.php
+    
+eventoPatrocinador_editar:
+  url:    /eventoPatrocinador/edit
+  param:  { module: eventoPatrocinador , action: edit, format: html }
+  load:
+    - model/base/eventoPatrocinadorBaseTableClass.php
+    - model/eventoPatrocinadorTableClass.php 
+    
+eventoPatrocinador_update:
+  url:    /eventoPatrocinador/update
+  param:  { module: eventoPatrocinador, action: update, format: html }
+  load:
+    - model/base/eventoPatrocinadorBaseTableClass.php
+    - model/eventoPatrocinadorTableClass.php
+
+eventoPatrocinador_delete:
+  url:    /eventoPatrocinador/delete
+  param:  { module: eventoPatrocinador, action: delete, format: html }
+  load:
+    - model/base/eventoPatrocinadorBaseTableClass.php
+    - model/eventoPatrocinadorTableClass.php
+
+eventoPatrocinador_deleteSelect:
+  url:    /eventoPatrocinador/deleteSelect
+  param:  { module: eventoPatrocinador, action: deleteSelect, format: html }
+  load:
+    - model/base/eventoPatrocinadorBaseTableClass.php
+    - model/eventoPatrocinadorTableClass.php
+
+eventoPatrocinador_reporte:
+  url:    /eventoPatrocinador/report
+  param:  { module: eventoPatrocinador, action: report, format: pdf }  
+  
+   #-------------------localidad--------#
+    
+    
+     
+     
+localidad_index:
+  url:    /localidad/index
+  param:  { module: localidad, action: index, format: html }
+  load:
+    - model/base/localidadTableClass.php
+    - model/localidadTableClass.php
+    
+localidad_insert:
+  url:    /localidad/insert
+  param:  { module: localidad, action: insert, format: html }
+  load:
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    
+localidad_create:
+  url:    /localidad/create
+  param:  { module: localidad, action: create, format: html }
+  load:
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    
+localidad_editar:
+  url:    /localidad/edit
+  param:  { module: localidad , action: edit, format: html }
+  load:
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php 
+    
+localidad_update:
+  url:    /localidad/update
+  param:  { module: localidad, action: update, format: html }
+  load:
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+
+localidad_delete:
+  url:    /localidad/delete
+  param:  { module: localidad, action: delete, format: html }
+  load:
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+
+localidad_deleteSelect:
+  url:    /localidad/deleteSelect
+  param:  { module: localidad, action: deleteSelect, format: html }
+  load:
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+
+localidad_reporte:
+  url:    /localidad/report
+  param:  { module: localidad, action: report, format: pdf }  
+  
+  
+  
+  
+          #-------------------organizacion--------#
+    
+    
+     
+     
+organizacion_index:
+  url:    /organizacion/index
+  param:  { module: organizacion, action: index, format: html }
+  load:
+    - model/base/organizacionTableClass.php
+    - model/organizacionTableClass.php
+    
+organizacion_insert:
+  url:    /organizacion/insert
+  param:  { module: organizacion, action: insert, format: html }
+  load:
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+    
+organizacion_create:
+  url:    /organizacion/create
+  param:  { module: organizacion, action: create, format: html }
+  load:
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+    
+organizacion_editar:
+  url:    /organizacion/edit
+  param:  { module: organizacion , action: edit, format: html }
+  load:
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php 
+    
+organizacion_update:
+  url:    /organizacion/update
+  param:  { module: organizacion, action: update, format: html }
+  load:
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+
+organizacion_delete:
+  url:    /organizacion/delete
+  param:  { module: organizacion, action: delete, format: html }
+  load:
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+
+organizacion_deleteSelect:
+  url:    /organizacion/deleteSelect
+  param:  { module: organizacion, action: deleteSelect, format: html }
+  load:
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+
+organizacion_reporte:
+  url:    /organizacion/report
+  param:  { module: organizacion, action: report, format: pdf }    
+  
+  
+  
+  #-------------------patrocinador-------------------------#
+    
+    
+     
+     
+patrocinador_index:
+  url:    /patrocinador/index
+  param:  { module: patrocinador, action: index, format: html }
+  load:
+    - model/base/patrocinadorTableClass.php
+    - model/patrocinadorTableClass.php
+    
+patrocinador_insert:
+  url:    /patrocinador/insert
+  param:  { module: patrocinador, action: insert, format: html }
+  load:
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+    
+patrocinador_create:
+  url:    /patrocinador/create
+  param:  { module: patrocinador, action: create, format: html }
+  load:
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+    
+patrocinador_editar:
+  url:    /patrocinador/edit
+  param:  { module: patrocinador , action: edit, format: html }
+  load:
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php 
+    
+patrocinador_update:
+  url:    /patrocinador/update
+  param:  { module: patrocinador, action: update, format: html }
+  load:
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+
+patrocinador_delete:
+  url:    /patrocinador/delete
+  param:  { module: patrocinador, action: delete, format: html }
+  load:
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+
+patrocinador_deleteSelect:
+  url:    /patrocinador/deleteSelect
+  param:  { module: patrocinador, action: deleteSelect, format: html }
+  load:
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+
+patrocinador_reporte:
+  url:    /patrocinador/report
+  param:  { module: patrocinador, action: report, format: pdf }    
+  
+  
+  
+   #-------------------pqrsf-------------------------#
+    
+    
+     
+     
+pqrsf_index:
+  url:    /pqrsf/index
+  param:  { module: pqrsf, action: index, format: html }
+  load:
+    - model/base/pqrsfTableClass.php
+    - model/pqrsfTableClass.php
+    
+pqrsf_insert:
+  url:    /pqrsf/insert
+  param:  { module: pqrsf, action: insert, format: html }
+  load:
+    - model/base/pqrsfBaseTableClass.php
+    - model/pqrsfTableClass.php
+    
+pqrsf_create:
+  url:    /pqrsf/create
+  param:  { module: pqrsf, action: create, format: html }
+  load:
+    - model/base/pqrsfBaseTableClass.php
+    - model/pqrsfTableClass.php
+    
+pqrsf_editar:
+  url:    /pqrsf/edit
+  param:  { module: pqrsf , action: edit, format: html }
+  load:
+    - model/base/pqrsfBaseTableClass.php
+    - model/pqrsfTableClass.php 
+    
+pqrsf_update:
+  url:    /pqrsf/update
+  param:  { module: pqrsf, action: update, format: html }
+  load:
+    - model/base/pqrsfBaseTableClass.php
+    - model/pqrsfTableClass.php
+
+pqrsf_delete:
+  url:    /pqrsf/delete
+  param:  { module: pqrsf, action: delete, format: html }
+  load:
+    - model/base/pqrsfBaseTableClass.php
+    - model/pqrsfTableClass.php
+
+pqrsf_deleteSelect:
+  url:    /pqrsf/deleteSelect
+  param:  { module: pqrsf, action: deleteSelect, format: html }
+  load:
+    - model/base/pqrsfBaseTableClass.php
+    - model/pqrsfTableClass.php
+
+pqrsf_reporte:
+  url:    /pqrsf/report
+  param:  { module: pqrsf, action: report, format: pdf }    
+  
+  
+  
+     #-------------------recaudoEconomico-------------------------#
+    
+    
+     
+     
+recaudoEconomico_index:
+  url:    /recaudoEconomico/index
+  param:  { module: recaudoEconomico, action: index, format: html }
+  load:
+    - model/base/recaudoEconomicoTableClass.php
+    - model/recaudoEconomicoTableClass.php
+    
+recaudoEconomico_insert:
+  url:    /recaudoEconomico/insert
+  param:  { module: recaudoEconomico, action: insert, format: html }
+  load:
+    - model/base/recaudoEconomicoBaseTableClass.php
+    - model/recaudoEconomicoTableClass.php
+    
+recaudoEconomico_create:
+  url:    /recaudoEconomico/create
+  param:  { module: recaudoEconomico, action: create, format: html }
+  load:
+    - model/base/recaudoEconomicoBaseTableClass.php
+    - model/recaudoEconomicoTableClass.php
+    
+recaudoEconomico_editar:
+  url:    /recaudoEconomico/edit
+  param:  { module: recaudoEconomico , action: edit, format: html }
+  load:
+    - model/base/recaudoEconomicoBaseTableClass.php
+    - model/recaudoEconomicoTableClass.php 
+    
+recaudoEconomico_update:
+  url:    /recaudoEconomico/update
+  param:  { module: recaudoEconomico, action: update, format: html }
+  load:
+    - model/base/recaudoEconomicoBaseTableClass.php
+    - model/recaudoEconomicoTableClass.php
+
+recaudoEconomico_delete:
+  url:    /recaudoEconomico/delete
+  param:  { module: recaudoEconomico, action: delete, format: html }
+  load:
+    - model/base/recaudoEconomicoBaseTableClass.php
+    - model/recaudoEconomicoTableClass.php
+
+recaudoEconomico_deleteSelect:
+  url:    /recaudoEconomico/deleteSelect
+  param:  { module: recaudoEconomico, action: deleteSelect, format: html }
+  load:
+    - model/base/recaudoEconomicoBaseTableClass.php
+    - model/recaudoEconomicoTableClass.php
+
+recaudoEconomico_reporte:
+  url:    /recaudoEconomico/report
+  param:  { module: recaudoEconomico, action: report, format: pdf } 
+  
+       #-------------------tarifa-------------------------#
+    
+    
+     
+     
+tarifa_index:
+  url:    /tarifa/index
+  param:  { module: tarifa, action: index, format: html }
+  load:
+    - model/base/tarifaTableClass.php
+    - model/tarifaTableClass.php
+    
+tarifa_insert:
+  url:    /tarifa/insert
+  param:  { module: tarifa, action: insert, format: html }
+  load:
+    - model/base/tarifaBaseTableClass.php
+    - model/tarifaTableClass.php
+    
+tarifa_create:
+  url:    /tarifa/create
+  param:  { module: tarifa, action: create, format: html }
+  load:
+    - model/base/tarifaBaseTableClass.php
+    - model/tarifaTableClass.php
+    
+tarifa_editar:
+  url:    /tarifa/edit
+  param:  { module: tarifa , action: edit, format: html }
+  load:
+    - model/base/tarifaBaseTableClass.php
+    - model/tarifaTableClass.php 
+    
+tarifa_update:
+  url:    /tarifa/update
+  param:  { module: tarifa, action: update, format: html }
+  load:
+    - model/base/tarifaBaseTableClass.php
+    - model/tarifaTableClass.php
+
+tarifa_delete:
+  url:    /tarifa/delete
+  param:  { module: tarifa, action: delete, format: html }
+  load:
+    - model/base/tarifaBaseTableClass.php
+    - model/tarifaTableClass.php
+
+tarifa_deleteSelect:
+  url:    /tarifa/deleteSelect
+  param:  { module: tarifa, action: deleteSelect, format: html }
+  load:
+    - model/base/tarifaBaseTableClass.php
+    - model/tarifaTableClass.php
+
+tarifa_reporte:
+  url:    /tarifa/report
+  param:  { module: tarifa, action: report, format: pdf } 
+  
+         #-------------------tipoDocumento-------------------------#
+    
+    
+     
+     
+tipoDocumento_index:
+  url:    /tipoDocumento/index
+  param:  { module: tipoDocumento, action: index, format: html }
+  load:
+    - model/base/tipoDocumentoTableClass.php
+    - model/tipoDocumentoTableClass.php
+    
+tipoDocumento_insert:
+  url:    /tipoDocumento/insert
+  param:  { module: tipoDocumento, action: insert, format: html }
+  load:
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    
+tipoDocumento_create:
+  url:    /tipoDocumento/create
+  param:  { module: tipoDocumento, action: create, format: html }
+  load:
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    
+tipoDocumento_editar:
+  url:    /tipoDocumento/edit
+  param:  { module: tipoDocumento , action: edit, format: html }
+  load:
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php 
+    
+tipoDocumento_update:
+  url:    /tipoDocumento/update
+  param:  { module: tipoDocumento, action: update, format: html }
+  load:
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+
+tipoDocumento_delete:
+  url:    /tipoDocumento/delete
+  param:  { module: tipoDocumento, action: delete, format: html }
+  load:
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+
+tipoDocumento_deleteSelect:
+  url:    /tipoDocumento/deleteSelect
+  param:  { module: tipoDocumento, action: deleteSelect, format: html }
+  load:
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+
+tipoDocumento_reporte:
+  url:    /tipoDocumento/report
+  param:  { module: tipoDocumento, action: report, format: pdf }
+  
+           #-------------------tipoPqrsf-------------------------#
+    
+    
+     
+     
+tipoPqrsf_index:
+  url:    /tipoPqrsf/index
+  param:  { module: tipoPqrsf, action: index, format: html }
+  load:
+    - model/base/tipoPqrsfTableClass.php
+    - model/tipoPqrsfTableClass.php
+    
+tipoPqrsf_insert:
+  url:    /tipoPqrsf/insert
+  param:  { module: tipoPqrsf, action: insert, format: html }
+  load:
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    
+tipoPqrsf_create:
+  url:    /tipoPqrsf/create
+  param:  { module: tipoPqrsf, action: create, format: html }
+  load:
+    - model/base/tipoPqrsfBaseTableClass.php
+    - model/tipoPqrsfTableClass.php
+    
+tipoPqrsf_editar:
+  url:    /tipoPqrsf/edit
+  param:  { module: tipoPqrsf , action: edit, format: html }
+  load:
+    - model/base/tipoPqrsfBaseTableClass.php
+    - model/tipoPqrsfTableClass.php 
+    
+tipoPqrsf_update:
+  url:    /tipoPqrsf/update
+  param:  { module: tipoPqrsf, action: update, format: html }
+  load:
+    - model/base/tipoPqrsfBaseTableClass.php
+    - model/tipoPqrsfTableClass.php
+
+tipoPqrsf_delete:
+  url:    /tipoPqrsf/delete
+  param:  { module: tipoPqrsf, action: delete, format: html }
+  load:
+    - model/base/tipoPqrsfBaseTableClass.php
+    - model/tipoPqrsfTableClass.php
+
+tipoPqrsf_deleteSelect:
+  url:    /tipoPqrsf/deleteSelect
+  param:  { module: tipoPqrsf, action: deleteSelect, format: html }
+  load:
+    - model/base/tipoPqrsfBaseTableClass.php
+    - model/tipoPqrsfTableClass.php
+
+tipoPqrsf_reporte:
+  url:    /tipoPqrsf/report
+  param:  { module: tipoPqrsf, action: report, format: pdf }
+  
+  
+     #-------------------usuarioGustaCategoria-------------------------#
+    
+    
+     
+     
+usuarioGustaCategoria_index:
+  url:    /usuarioGustaCategoria/index
+  param:  { module: usuarioGustaCategoria, action: index, format: html }
+  load:
+    - model/base/usuarioGustaCategoriaTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+    
+usuarioGustaCategoria_insert:
+  url:    /usuarioGustaCategoria/insert
+  param:  { module: usuarioGustaCategoria, action: insert, format: html }
+  load:
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+    
+usuarioGustaCategoria_create:
+  url:    /usuarioGustaCategoria/create
+  param:  { module: usuarioGustaCategoria, action: create, format: html }
+  load:
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+    
+usuarioGustaCategoria_editar:
+  url:    /usuarioGustaCategoria/edit
+  param:  { module: usuarioGustaCategoria , action: edit, format: html }
+  load:
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php 
+    
+usuarioGustaCategoria_update:
+  url:    /usuarioGustaCategoria/update
+  param:  { module: usuarioGustaCategoria, action: update, format: html }
+  load:
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+
+usuarioGustaCategoria_delete:
+  url:    /usuarioGustaCategoria/delete
+  param:  { module: usuarioGustaCategoria, action: delete, format: html }
+  load:
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+
+usuarioGustaCategoria_deleteSelect:
+  url:    /usuarioGustaCategoria/deleteSelect
+  param:  { module: usuarioGustaCategoria, action: deleteSelect, format: html }
+  load:
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+
+usuarioGustaCategoria_reporte:
+  url:    /usuarioGustaCategoria/report
+  param:  { module: usuarioGustaCategoria, action: report, format: pdf }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    ##-------------------------- EJEMPLO --------------------------##
 default_index:
   url:    /usuarios/index

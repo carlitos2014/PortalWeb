@@ -4,15 +4,15 @@
 use mvc\routing\routingClass as routing ?>
 
 
+<div class="container container-fluid"
 
-
- <div class="page-header">
+     <div class="page-header">
     <h1><i class="glyphicon glyphicon-screenshot"></i><i class="glyphicon glyphicon-user"></i>Administracion</h1>
   </div>
 
 
 
-<div class="list-group">
+  <div class="container container-fluid">
     <a  class="list-group-item active">
 
     </a>
@@ -21,9 +21,9 @@ use mvc\routing\routingClass as routing ?>
     <a href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'index') ?>" class="list-group-item list-group-item-danger">Credencial de Usuario</a>
     <a href="<?php echo routing::getInstance()->getUrlWeb('bitacora', 'index') ?>" class="list-group-item list-group-item-warning">Bitacora</a>
     <a href="<?php echo routing::getInstance()->getUrlWeb('recordarMe', 'index') ?>" class="list-group-item list-group-item-info">Recordar Me</a>
-            <a href="<?php echo routing::getInstance()->getUrlWeb('datosUsuario', 'index')       ?>" class="list-group-item list-group-item-success">Datos de Usuario</a>
+    <a href="<?php echo routing::getInstance()->getUrlWeb('datosUsuario', 'index') ?>" class="list-group-item list-group-item-success">Datos de Usuario</a>
+  </div>
+
 </div>
-
-
 
 
