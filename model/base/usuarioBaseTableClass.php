@@ -21,7 +21,7 @@ class usuarioBaseTableClass extends tableBaseClass {
 
   const ID = 'id';
   const USER = 'user_name';
-  const USER_LENGTH = 2;
+  const USER_LENGTH = 70;
   const PASSWORD = 'password';
   const PASSWORD_LENGTH = 32;
   const ACTIVED = 'actived';
