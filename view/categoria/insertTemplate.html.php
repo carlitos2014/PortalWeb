@@ -9,4 +9,4 @@ use mvc\view\viewClass as view ?>
   <h1><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-user"></i>Creacion de Usuario</h1>
 </div>
 <?php view::includeHandlerMessage() ?>
-<?php view::includePartial('usuario/formUser') ?>
+<?php view::includePartial('categoria/formUser') ?>

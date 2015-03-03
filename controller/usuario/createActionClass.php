@@ -86,6 +86,10 @@ class createActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
     }
 
+
+
+    //validador de existencia de usuario
+
     $fields = array(
         usuarioTableClass::USER
     );
@@ -99,8 +103,22 @@ class createActionClass extends controllerClass implements controllerActionInter
       }
     }
 
+    //condicion de caracteres invalidos
+    
+    $caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 
-    if ($flag === true) {
+    for ($i = 0; $i < strlen($usuario); $i++) {
+      if (strpos($caracteres, substr($usuario, $i, 1)) === false) {
+
+        session::getInstance()->setError(i18n::__(00011, NULL, 'errors'),array('%char%' => $usuario));
+        $flag = true;
+        session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      }
+    }
+
+
+
+if ($flag === true) {
 
       request::getInstance()->setMethod('GET');
       routing::getInstance()->forward('usuario', 'insert');

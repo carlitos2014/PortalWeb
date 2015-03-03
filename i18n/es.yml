@@ -17,6 +17,27 @@ dictionary:
     selectTables:         Seleccion de tabla
     actions:              Acciones
     description:          Descripcion
+    portalCultural:       Portal Cultural
+    welcome:              Bienvenidos
+    latestNews:           Ultimas Noticias
+    music:                Musica
+    theater:              Teatro
+    sport:                Deporte
+    events:               Eventos
+    contact:              Contactenos
+    seeMore:              Ver mas
+    welcome:              Bienvenidos
+    culture:              Cultura
+    literature:           Literatura
+    dining:               Gastronomia
+    libraries:            Librerias
+    museums:              Museos
+    conventionCenter:     Centro de Convenciones
+    cultureCenter:        Centro Cultural
+    login:                Iniciar Sesion
+    email:                Correo    
+    image:                Imagen
+    description:          descripcion
     
     #usuario
     userManagement:       Gestion de Usuario
@@ -28,6 +49,8 @@ dictionary:
     insertPass:           Ingrese Contraseña
     
     #bitacora
+   
+    showLogBook:          Mostrar Bitacora
     logBook:              Bitacora
     user_id:              ID del Usuario
     action:               Acción
@@ -37,6 +60,7 @@ dictionary:
     date:                 Fecha
     
     #credencial
+    credentialManagement: Gestion de credencial
     newCredencial:        Nueva credencial
     credential:           Credencial
     nameUser:             Nombre de usuario
@@ -46,14 +70,88 @@ dictionary:
     lastName:             Apellido
     credentialId:         ID de Credencial
     
-
+    #categoria
+    categoryManagement:   Gestion de Categorias de evento 
+    eventCategory:        Categoria de eventos
+    category:             Categoria
+    categoryID:           ID de Categoria
+    
+    #----------------Evento-------------------------------
+    eventManagement:       Gestion de eventos 
+    eventCreate:           Creacion de evento
+    events:                Eventos
+    eventName:             Nombre del evento
+    start_Date:            Fecha de inicio
+    finish_Date:           Fecha de finalizacion
+    cost:                  Costo
+    categoryID:            Id de categoria
+    eventId:               Id de evento
+    longitude:             Longitud
+    latitude:              Latitud
+    adress:                Direccion
+    publicationStartDate:  Inicio  de publicacion
+    publicationFinishDate: Fecha fin publicacion
+    
+   #------------------Organizaciones-------------------------
+    organizationManagement: Gestion de Organizaciones 
+    organizations:         Organización
+    phone:                 Telefono
+    adress:                Direccion
+    e-mail:                Correo
+    webPage:               Pagina Web
+    
+     
+   #------------------Patrocinador-------------------------
+    partner:               Patrocinador
+    partnerManagement:     Gestion de patrocinadores
+    
+      #------------------pqrsf-------------------------
+    feedbackType:          Tipo de Pqrsf
+    feedbackManagement:    Gestion de  tipos de pqrsf
+    
+      
+      
+      
+      
+      
+      
+      #------------------tarifas-------------------------
+    
+    ratesManagement:       Gestion de tarifas
+    rates:                 Tarifas por tiempo
+    rateId:                Id de tarifa
+    partialPayment:        Pago parcial
+    totalPayment:          pago total
+     
+     #------------------Tipo de documento-------------------------
+    IdType:                Tipo de Identificacion
+    IdTypeManagement:      Gestion de Tipo de Identificacion
+     
+     #------------------Recaudo Economico-------------------------
+    EconomicManagement:    Recaudo economico
+    
+     
+    #----------------recordarMe-------------------------------
+    
+    rememberMeManagement:  Manejo de Cookies
+    rememberMe:            RecordarMe
+    
+    
+      #----------------localidad-------------------------------
+    eventPlaceManagement:   Gestion de localidades
+    eventPlace:             Lugar del evento
+    eventPlaceID:           Id de lugar del evento
+    place:                  localidad
+    
+    
+    
     #----------------------------acciones----------------------------
     
     edit:                 Editar
     delete:               Borrar
     create:               Crear
     update:               Actualizar
-    
+    registers:            registros
 
   
   errors:
@@ -67,4 +165,4 @@ dictionary:
     
     00009:                diligencie el campo de verificacion de contraseña
     00010:                el usuario ya existe
-
+    00011:                caracteres %char% no permitidos  

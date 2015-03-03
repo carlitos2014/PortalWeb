@@ -3,9 +3,12 @@
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\routing\routingClass as routing ?>
-<?php $usu = usuarioTableClass::USER ?>
-<?php $id = usuarioTableClass::ID ?>
-<?php $last = usuarioTableClass::LAST_LOGIN_AT ?>
+<?php $name = patrocinadorTableClass::NOMBRE ?>
+<?php $id = patrocinadorTableClass::ID ?>
+<?php $mail = patrocinadorTableClass::CORREO ?>
+
+<?php $dir = patrocinadorTableClass::DIRECCION ?>
+<?php $tel = patrocinadorTableClass::TELEFONO ?>
 
 
 
@@ -14,45 +17,51 @@ use mvc\routing\routingClass as routing ?>
 
 
   <div class="page-header">
-    <h1><i class="glyphicon glyphicon-user"></i><?php echo i18n::__('userManagement') ?></h1>
+    <h1><i class="glyphicon glyphicon-euro"></i>&nbsp;<?php echo i18n::__('partner') ?></h1>
   </div>
 
 
 
 
-  <form id="" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'deleteSelect') ?>" method="POST">
+  <form id="" action="<?php echo routing::getInstance()->getUrlWeb('patrocinador', 'deleteSelect') ?>" method="POST">
 
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
           <th><input type="checkbox" id="chkAll"></th>
           <th><?php echo i18n::__('id') ?></th>
-          <th><?php echo i18n::__('user') ?></th>
-          <th><?php echo i18n::__('lastLogin') ?></th>
+          <th><?php echo i18n::__('name') ?></th>
+          <th><?php echo i18n::__('adress') ?></th>
+          <th><?php echo i18n::__('e-mail') ?></th>
+          <th><?php echo i18n::__('phone') ?></th>
+
           <th><?php echo i18n::__('actions') ?></th>
         </tr>
       </thead>
       <tbody >
-<?php foreach ($objUsuarios as $usuario): ?>
+        <?php foreach ($objPatrocinador as $patrocinador): ?>
           <tr>
-            <td><input type="checkbox" name="chk[]" value="<?php echo $usuario->$id ?>" class="chk"></td>
-            <td><?php echo $usuario->$id ?></td>
-            <td><?php echo $usuario->$usu ?></td>
-            <td><?php echo $usuario->$last ?></td>
+            <td><input type="checkbox" name="chk[]" value="<?php echo $patrocinador->$id ?>" class="chk"></td>
+            <td><?php echo $patrocinador->$id ?></td>
+            <td><?php echo $patrocinador->$name ?></td>
+            <td><?php echo $patrocinador->$dir ?></td>
+            <td><?php echo $patrocinador->$mail ?></td>
+            <td><?php echo $patrocinador->$tel ?></td>
+            
 
             <td>
               <!--              <a href="#" class="btn btn-warning btn-xs">Ver</a>-->
               <a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open" data-toggle="popover" title="Ver" data-content="datos de usuario"></i></a>
-              <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'edit', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="Editar" data-content="edicion de usuario"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="#" onclick="confirmarEliminar(<?php echo $usuario->$id ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar usuario"></i></a>
+              <a href="<?php echo routing::getInstance()->getUrlWeb('patrocinador', 'edit', array(patrocinadorTableClass::ID => $patrocinador->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="Editar" data-content="edicion de usuario"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="#" onclick="confirmarEliminar(<?php echo $patrocinador->$id ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar usuario"></i></a>
             </td>
           </tr>
-<?php endforeach ?>
+        <?php endforeach ?>
       </tbody>
     </table>
   </form>
-  <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'delete') ?>" method="POST">
-    <input type="hidden" id="idDelete" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>">
+  <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('patrocinador', 'delete') ?>" method="POST">
+    <input type="hidden" id="idDelete" name="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::ID, true) ?>">
   </form>
   <div style="margin-bottom: 10px; margin-top: 30px" align="center">
 

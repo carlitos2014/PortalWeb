@@ -25,9 +25,9 @@ class recaudoEconomicoBaseTableClass extends tableBaseClass{
     const USUARIO_ID = 'usuario_id';
     const OBSERVACION = 'observacion';
     const OBSERVACION_LENGTH = 1024;
-    const TARIFA='tarifa_id'; 
-    const VALOR_TOTAL=valor_total;
-    const VALOR_PARCIAL=valor_parcial;
+    const TARIFA_ID='tarifa_id'; 
+    const VALOR_TOTAL='valor_total';
+    const VALOR_PARCIAL='valor_parcial';
     
      /**
    * Método para obtener el nombre del campo más la tabla ya sea en formato

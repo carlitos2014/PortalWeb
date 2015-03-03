@@ -19,7 +19,7 @@ class pqrsfTableBaseClass extends tableBaseClass{
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
     const DELETED_AT = 'deleted_at';
-    const TIPO_PQRS = 'tipo_pqrs_id';
+    const TIPO_PQRS_ID = 'tipo_pqrs_id';
     const ESTADO_PQRS_ID = 'estado_pqrs_id ';
     const TITULO ='titulo'; 
     const TITULO_LENGTH =50;

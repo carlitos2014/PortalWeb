@@ -29,3 +29,27 @@ usuario:
   insert:
     stylesheet:
       - form.css
+      
+evento:
+  insert:
+    stylesheet:
+      - form.css      
+      
+      
+homePage:
+  index:
+    stylesheet:
+      - admin.css
+      - bootstrap.css
+      #- main.css
+      - font-awesome.min.css
+      - ionicons.css
+    javascript:
+      - jquery-1.11.1.js 
+      - index.js
+      
+      
+      
+      
+      
+      

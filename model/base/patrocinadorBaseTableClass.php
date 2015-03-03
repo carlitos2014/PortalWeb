@@ -26,7 +26,7 @@ class patrocinadorBaseTableClass extends tableBaseClass{
     const TELEFONO_LENGTH = 10;
     const CORREO = 'correo';
     const CORREO_LENGTH = 150;
-    const DIRECCION = 'DIRECCION';
+    const DIRECCION = 'direccion';
     const DIRECCION_LENGTH = 150;
 
     /**

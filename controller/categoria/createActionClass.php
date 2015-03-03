@@ -19,11 +19,11 @@ class createActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $usuario = trim(request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true)));
-        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1');
-        $password2 = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2');
-
-        $this->validate($usuario, $password, $password2);
+        $nombre = trim(request::getInstance()->getPost(categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true)));
+        
+        
+        
+        $this->validate($nombre);
 
 
         $data = array(

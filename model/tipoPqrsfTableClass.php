@@ -12,6 +12,6 @@ use mvc\config\configClass as config;
  *
  * @author leonardo
  */
-class tipoPqrsfTableClass extends tipoDocumentoBaseTableClass{
+class tipoPqrsfTableClass extends tipoPqrsfBaseTableClass{
   //put your code here
 }

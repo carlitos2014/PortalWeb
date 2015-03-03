@@ -1,7 +1,46 @@
 homepage:
   url:    /
   param:  { module: homePage, action: index, format: html }
- 
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    
+    - model/base/tipoPqrsfBaseTableClass.php
+    - model/tipoPqrsfTableClass.php
+    
+    - model/base/recaudoEconomicoBaseTableClass.php
+    - model/recaudoEconomicoTableClass.php
+    
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+    
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    
+    
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+    
+    - model/base/tarifaBaseTableClass.php
+    - model/tarifaTableClass.php
+    
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
 
 #tabla usuario, por defecto el  sistema entra a la visualizacion de esta tabla
 
@@ -440,7 +479,7 @@ detallePqrsf_reporte:
   
   ##--------------------categoria--------------------------------##
   
-  categoria_index:
+categoria_index:
   url:    /categoria/index
   param:  { module: categoria, action: index, format: html }
   load:
@@ -448,35 +487,35 @@ detallePqrsf_reporte:
     - model/categoriaTableClass.php
 
 categoria_insert:
-  url:    /categoria/insertar
+  url:    /categoria/insert
   param:  { module: categoria, action: insert, format: html }
   load:
     - model/base/categoriaBaseTableClass.php
     - model/categoriaTableClass.php
 
 categoria_create:
-  url:    /categoria/crear
+  url:    /categoria/create
   param:  { module: categoria, action: create, format: html }
   load:
     - model/base/categoriaBaseTableClass.php
     - model/categoriaTableClass.php
 
 categoria_edit:
-  url:    /categoria/editar
+  url:    /categoria/edit
   param:  { module: categoria, action: edit, format: html }
   load:
     - model/base/categoriaBaseTableClass.php
     - model/categoriaTableClass.php
 
 categoria_update:
-  url:    /categoria/actualizar
+  url:    /categoria/update
   param:  { module: categoria, action: update, format: html }
   load:
     - model/base/categoriaBaseTableClass.php
     - model/categoriaTableClass.php
 
 categoria_delete:
-  url:    /categoria/eliminar
+  url:    /categoria/delete
   param:  { module: categoria, action: delete, format: html }
   load:
     - model/base/categoriaBaseTableClass.php
@@ -619,7 +658,7 @@ localidad_index:
   url:    /localidad/index
   param:  { module: localidad, action: index, format: html }
   load:
-    - model/base/localidadTableClass.php
+    - model/base/localidadBaseTableClass.php
     - model/localidadTableClass.php
     
 localidad_insert:
@@ -680,7 +719,7 @@ organizacion_index:
   url:    /organizacion/index
   param:  { module: organizacion, action: index, format: html }
   load:
-    - model/base/organizacionTableClass.php
+    - model/base/organizacionBaseTableClass.php
     - model/organizacionTableClass.php
     
 organizacion_insert:
@@ -740,7 +779,7 @@ patrocinador_index:
   url:    /patrocinador/index
   param:  { module: patrocinador, action: index, format: html }
   load:
-    - model/base/patrocinadorTableClass.php
+    - model/base/patrocinadorBaseTableClass.php
     - model/patrocinadorTableClass.php
     
 patrocinador_insert:
@@ -860,7 +899,7 @@ recaudoEconomico_index:
   url:    /recaudoEconomico/index
   param:  { module: recaudoEconomico, action: index, format: html }
   load:
-    - model/base/recaudoEconomicoTableClass.php
+    - model/base/recaudoEconomicoBaseTableClass.php
     - model/recaudoEconomicoTableClass.php
     
 recaudoEconomico_insert:
@@ -918,7 +957,7 @@ tarifa_index:
   url:    /tarifa/index
   param:  { module: tarifa, action: index, format: html }
   load:
-    - model/base/tarifaTableClass.php
+    - model/base/tarifaBaseTableClass.php
     - model/tarifaTableClass.php
     
 tarifa_insert:
@@ -976,7 +1015,7 @@ tipoDocumento_index:
   url:    /tipoDocumento/index
   param:  { module: tipoDocumento, action: index, format: html }
   load:
-    - model/base/tipoDocumentoTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
     - model/tipoDocumentoTableClass.php
     
 tipoDocumento_insert:
@@ -1034,15 +1073,15 @@ tipoPqrsf_index:
   url:    /tipoPqrsf/index
   param:  { module: tipoPqrsf, action: index, format: html }
   load:
-    - model/base/tipoPqrsfTableClass.php
+    - model/base/tipoPqrsfBaseTableClass.php
     - model/tipoPqrsfTableClass.php
     
 tipoPqrsf_insert:
   url:    /tipoPqrsf/insert
   param:  { module: tipoPqrsf, action: insert, format: html }
   load:
-    - model/base/tipoDocumentoBaseTableClass.php
-    - model/tipoDocumentoTableClass.php
+    - model/base/tipoPqrsfBaseTableClass.php
+    - model/tipoPqrsfTableClass.php
     
 tipoPqrsf_create:
   url:    /tipoPqrsf/create

@@ -55,25 +55,25 @@ class usuarioTableClass extends usuarioBaseTableClass {
 
 
   
-  public static function verifyUserName($usuario) {
-    try {
-      $sql = 'SELECT '  . usuarioTableClass::getNameField(usuarioTableClass::USER) . ' as usuario
-	
-    FROM ' . usuarioTableClass::getNameTable() . '
-    WHERE ' . usuarioTableClass::getNameField(usuarioTableClass::USER) . ' = :user'
-    ;
-      $params = array(
-          ':user' => $usuario
-          
-      );
-      $answer = model::getInstance()->prepare($sql);
-      $answer->execute($params);
-      $answer = $answer->fetchAll(PDO::FETCH_OBJ);
-      return $answer;
-    } catch (PDOException $exc) {
-      throw $exc;
-   }
-  }
+//  public static function verifyUserName($usuario) {
+//    try {
+//      $sql = 'SELECT '  . usuarioTableClass::getNameField(usuarioTableClass::USER) . ' as usuario
+//	
+//    FROM ' . usuarioTableClass::getNameTable() . '
+//    WHERE ' . usuarioTableClass::getNameField(usuarioTableClass::USER) . ' = :user'
+//    ;
+//      $params = array(
+//          ':user' => $usuario
+//          
+//      );
+//      $answer = model::getInstance()->prepare($sql);
+//      $answer->execute($params);
+//      $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+//      return $answer;
+//    } catch (PDOException $exc) {
+//      throw $exc;
+//   }
+//  }
   
   
   

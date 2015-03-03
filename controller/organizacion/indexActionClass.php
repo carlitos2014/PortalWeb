@@ -19,16 +19,18 @@ class indexActionClass extends controllerClass implements controllerActionInterf
     try {
 
       $fields = array(
-          usuarioTableClass::ID,
-          usuarioTableClass::USER,
-          usuarioTableClass::LAST_LOGIN_AT,
-          usuarioTableClass::ACTIVED    
-          );
-      $orderBy = array(
-          usuarioTableClass::USER
+          organizacionTableClass::ID,
+          organizacionTableClass::NOMBRE,
+          organizacionTableClass::PAGINA_WEB,
+          organizacionTableClass::DIRECCION,
+          organizacionTableClass::CORREO,
+          organizacionTableClass::TELEFONO
       );
-      $this->objUsuarios = usuarioTableClass::getAll($fields, true, $orderBy, 'ASC');
-      $this->defineView('index', 'usuario', session::getInstance()->getFormatOutput());
+      $orderBy = array(
+          organizacionTableClass::NOMBRE
+      );
+      $this->objOrganizacion = organizacionTableClass::getAll($fields, true, $orderBy, 'ASC');
+      $this->defineView('index', 'organizacion', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';
