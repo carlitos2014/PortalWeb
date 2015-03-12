@@ -20,20 +20,16 @@ class createActionClass extends controllerClass implements controllerActionInter
       if (request::getInstance()->isMethod('POST')) {
 
         $nombre = trim(request::getInstance()->getPost(categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true)));
-        
-        
-        
+       
         $this->validate($nombre);
-
-
+        
         $data = array(
-            usuarioTableClass::USER => $usuario,
-            usuarioTableClass::PASSWORD => md5($password)
+            categoriaTableClass::NOMBRE => $nombre,
         );
-        usuarioTableClass::insert($data);
-        routing::getInstance()->redirect('usuario', 'index');
+        categoriaTableClass::insert($data);
+        routing::getInstance()->redirect('nombre', 'index');
       } else {
-        routing::getInstance()->redirect('usuario', 'index');
+        routing::getInstance()->redirect('categoria', 'index');
       }
     } catch (PDOException $exc) {
       echo $exc->getMessage();
@@ -44,66 +40,41 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
   }
 
-  private function validate($usuario, $password, $password2) {
+  private function validate($nombre) {
     $flag = false;
 
 
-    if (empty($usuario)) {
+    if (empty($nombre)) {
 
-      session::getInstance()->setError(i18n::__(00006, NULL, 'errors'));
+      session::getInstance()->setError(i18n::__(00014, NULL, 'errors'));
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(categoriaTableClass::getNameField(categoriaTableClass::USER, true), true);
     }
 
-    if (strlen($usuario) > usuarioTableClass::USER_LENGTH) {
-      session::getInstance()->setError(i18n::__(00004, NULL, 'errors', array('%user%' => $usuario, '%caracteres%' => usuarioTableClass::USER_LENGTH)));
+    if (strlen($nombre) > categoriaTableClass::NOMBRE_LENGTH) {
+      session::getInstance()->setError(i18n::__(00013, NULL, 'errors', array('%cat%' => $nombre, '%caracteres%' => categoriaTableClass::NOMBRE_LENGTH)));
 
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true), true);
     }
 
-    if ($password !== $password2) {
-
-      session::getInstance()->setError(i18n::__(00005, NULL, 'errors'));
-      $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
-    }
-
-    if (empty($password)) {
-
-      session::getInstance()->setError(i18n::__(00007, NULL, 'errors'));
-      $flag = true;
-
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
-    }
-
-
-    if (empty($password2)) {
-
-      session::getInstance()->setError(i18n::__(00009, NULL, 'errors'));
-      $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
-    }
-
-    $fields = array(
-        usuarioTableClass::USER
+   $fields = array(
+        categoriaTableClass::NOMBRE
     );
-    $objUsuario = usuarioTableClass::getAll($fields);
+    $objCategoria = categoriaTableClass::getAll($fields);
 
-    foreach ($objUsuario as $key) {
-      if ($key->user_name === $usuario) {
-        session::getInstance()->setError(i18n::__(00010, NULL, 'errors'));
+    foreach ($objCategoria as $key) {
+      if ($key->nombre === $nombre) {
+        session::getInstance()->setError(i18n::__(00012, NULL, 'errors'));
         $flag = true;
-        session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+        session::getInstance()->setFlash(categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true), true);
       }
     }
 
-
-    if ($flag === true) {
+if ($flag === true) {
 
       request::getInstance()->setMethod('GET');
-      routing::getInstance()->forward('usuario', 'insert');
+      routing::getInstance()->forward('categoria', 'insert');
     }
   }
 

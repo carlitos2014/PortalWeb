@@ -19,21 +19,28 @@ class createActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $usuario = trim(request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true)));
-        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1');
-        $password2 = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2');
+        $nombre = request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::NOMBRE, true));
+        $direccion = request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::DIRECCION, true));
+        $telefono = request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::TELEFONO, true));
+        $correo = request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::CORREO, true));
+        $fax = request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::FAX, true));
+        $webpage = request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::PAGINA_WEB, true));
 
-        $this->validate($usuario, $password, $password2);
+        $this->validate($webpage, $fax, $correo, $telefono, $direccion, $nombre);
 
 
         $data = array(
-            usuarioTableClass::USER => $usuario,
-            usuarioTableClass::PASSWORD => md5($password)
+            organizacionTableClass::NOMBRE => $nombre,
+            organizacionTableClass::DIRECCION => $direccion,
+            organizacionTableClass::TELEFONO => $telefono,
+            organizacionTableClass::CORREO => $correo,
+            organizacionTableClass::FAX => $fax,
+            organizacionTableClass::PAGINA_WEB => $webpage
         );
-        usuarioTableClass::insert($data);
-        routing::getInstance()->redirect('usuario', 'index');
+        organizacionTableClass::insert($data);
+        routing::getInstance()->redirect('organizacion', 'index');
       } else {
-        routing::getInstance()->redirect('usuario', 'index');
+        routing::getInstance()->redirect('organizacion', 'index');
       }
     } catch (PDOException $exc) {
       echo $exc->getMessage();
@@ -44,58 +51,96 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
   }
 
-  private function validate($usuario, $password, $password2) {
+  private function validate($webpage, $fax, $correo, $telefono, $direccion, $nombre) {
     $flag = false;
 
 
-    if (empty($usuario)) {
+    if (empty($nombre)) {
 
-      session::getInstance()->setError(i18n::__(00006, NULL, 'errors'));
+      session::getInstance()->setError(i18n::__(00027, NULL, 'errors'));
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(organizacionTableClass::getNameField(organizacionTableClass::NOMBRE, true), true);
     }
 
-    if (strlen($usuario) > usuarioTableClass::USER_LENGTH) {
-      session::getInstance()->setError(i18n::__(00004, NULL, 'errors', array('%user%' => $usuario, '%caracteres%' => usuarioTableClass::USER_LENGTH)));
+    
+    if (empty($telefono)) {
 
+      session::getInstance()->setError(i18n::__(00027, NULL, 'errors'));
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(organizacionTableClass::getNameField(organizacionTableClass::TELEFONO, true), true);
     }
+    
+    if (empty($direccion)) {
 
-    if ($password !== $password2) {
-
-      session::getInstance()->setError(i18n::__(00005, NULL, 'errors'));
+      session::getInstance()->setError(i18n::__(00027, NULL, 'errors'));
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
+      session::getInstance()->setFlash(organizacionTableClass::getNameField(organizacionTableClass::DIRECCION, true), true);
     }
+    
+    if (empty($correo)) {
 
-    if (empty($password)) {
-
-      session::getInstance()->setError(i18n::__(00007, NULL, 'errors'));
+      session::getInstance()->setError(i18n::__(00027, NULL, 'errors'));
       $flag = true;
-
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(organizacionTableClass::getNameField(organizacionTableClass::CORREO, true), true);
     }
+    
+    if (empty($webpage)) {
 
-
-    if (empty($password2)) {
-
-      session::getInstance()->setError(i18n::__(00009, NULL, 'errors'));
+      session::getInstance()->setError(i18n::__(00027, NULL, 'errors'));
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(organizacionTableClass::getNameField(organizacionTableClass::PAGINA_WEB, true), true);
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    if (strlen($usuario) > organizacionTableClass::USER_LENGTH) {
+//      session::getInstance()->setError(i18n::__(00004, NULL, 'errors', array('%user%' => $usuario, '%caracteres%' => organizacionTableClass::USER_LENGTH)));
+//
+//      $flag = true;
+//      session::getInstance()->setFlash(organizacionTableClass::getNameField(organizacionTableClass::USER, true), true);
+//    }
+//
+//    if ($password !== $password2) {
+//
+//      session::getInstance()->setError(i18n::__(00005, NULL, 'errors'));
+//      $flag = true;
+//      session::getInstance()->setFlash(organizacionTableClass::getNameField(organizacionTableClass::PASSWORD, true), true);
+//    }
+//
+//    if (empty($password)) {
+//
+//      session::getInstance()->setError(i18n::__(00007, NULL, 'errors'));
+//      $flag = true;
+//
+//      session::getInstance()->setFlash(organizacionTableClass::getNameField(organizacionTableClass::USER, true), true);
+//    }
+//
+//
+//    if (empty($password2)) {
+//
+//      session::getInstance()->setError(i18n::__(00009, NULL, 'errors'));
+//      $flag = true;
+//      session::getInstance()->setFlash(organizacionTableClass::getNameField(organizacionTableClass::PASSWORD, true), true);
+//      session::getInstance()->setFlash(organizacionTableClass::getNameField(organizacionTableClass::USER, true), true);
+//    }
 
     $fields = array(
-        usuarioTableClass::USER
+        organizacionTableClass::NOMBRE
     );
-    $objUsuario = usuarioTableClass::getAll($fields);
+    $objOrganizacion = organizacionTableClass::getAll($fields);
 
-    foreach ($objUsuario as $key) {
-      if ($key->user_name === $usuario) {
-        session::getInstance()->setError(i18n::__(00010, NULL, 'errors'));
+    foreach ($objOrganizacion as $key) {
+      if ($key->nombre === $nombre) {
+        session::getInstance()->setError(i18n::__(00028, NULL, 'errors'));
         $flag = true;
-        session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+        session::getInstance()->setFlash(organizacionTableClass::getNameField(organizacionTableClass::NOMBRE, true), true);
       }
     }
 
@@ -103,7 +148,7 @@ class createActionClass extends controllerClass implements controllerActionInter
     if ($flag === true) {
 
       request::getInstance()->setMethod('GET');
-      routing::getInstance()->forward('usuario', 'insert');
+      routing::getInstance()->forward('organizacion', 'insert');
     }
   }
 

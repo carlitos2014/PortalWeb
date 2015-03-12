@@ -19,6 +19,7 @@ shfSecurity:
   index:
     stylesheet:
       - signin.css
+      - form.css
 
 default:
   index:
@@ -33,7 +34,12 @@ usuario:
 evento:
   insert:
     stylesheet:
-      - form.css      
+      - form.css
+
+categoria:
+  insert:
+    stylesheet:
+      - form.css  
       
       
 homePage:
@@ -49,7 +55,20 @@ homePage:
       - index.js
       
       
+organizacion:
+  insert:
+    stylesheet:
+      - form.css
       
       
-      
-      
+admin:
+  index:
+    stylesheet:
+      - admin.css
+      - bootstrap.css
+      #- main.css
+      - font-awesome.min.css
+      - ionicons.css
+    javascript:
+      - jquery-1.11.1.js 
+      - index.js

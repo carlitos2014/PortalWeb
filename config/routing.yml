@@ -1,6 +1,13 @@
 homepage:
   url:    /
   param:  { module: homePage, action: index, format: html }
+  
+#tabla usuario, por defecto el  sistema entra a la visualizacion de esta tabla
+
+
+admin:
+  url:    /admin/index
+  param:  { module: admin, action: index, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
@@ -41,8 +48,6 @@ homepage:
     
     - model/base/localidadBaseTableClass.php
     - model/localidadTableClass.php
-
-#tabla usuario, por defecto el  sistema entra a la visualizacion de esta tabla
 
 
 usuario_index:

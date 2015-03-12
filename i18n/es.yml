@@ -38,6 +38,10 @@ dictionary:
     email:                Correo    
     image:                Imagen
     description:          descripcion
+    logout:               Cerrar Session  
+    
+    
+    
     
     #usuario
     userManagement:       Gestion de Usuario
@@ -75,7 +79,7 @@ dictionary:
     eventCategory:        Categoria de eventos
     category:             Categoria
     categoryID:           ID de Categoria
-    
+    createCategory:       Crear categoria
     #----------------Evento-------------------------------
     eventManagement:       Gestion de eventos 
     eventCreate:           Creacion de evento
@@ -99,7 +103,7 @@ dictionary:
     adress:                Direccion
     e-mail:                Correo
     webPage:               Pagina Web
-    
+    facsimil:              Fax
      
    #------------------Patrocinador-------------------------
     partner:               Patrocinador
@@ -109,13 +113,7 @@ dictionary:
     feedbackType:          Tipo de Pqrsf
     feedbackManagement:    Gestion de  tipos de pqrsf
     
-      
-      
-      
-      
-      
-      
-      #------------------tarifas-------------------------
+ #------------------tarifas-------------------------
     
     ratesManagement:       Gestion de tarifas
     rates:                 Tarifas por tiempo
@@ -166,3 +164,23 @@ dictionary:
     00009:                diligencie el campo de verificacion de contraseña
     00010:                el usuario ya existe
     00011:                caracteres %char% no permitidos  
+    00012:                la categoria ya existe
+    00013:                La categoria %cat% excede los %caracteres% caracteres permitidos
+    00014:                el campo categoria esta vacio. 
+    
+    #-----------errores de evento-------------------------------------
+    
+    00015:                digite una url de el hosting de la imagen
+    00016:                longitud del la url no permitida
+    00017:                campo "nombre de evento" vacio
+    00018:                nombre de evento suspera el limite de caracteres
+    00019:                nombre de evento ya existe
+    00020:                indique una fecha de inicio
+    00021:                indique una fecha de fin
+    00022:                indique coordenada de latitud del evento
+    00023:                indique coordenada de longitud del evento
+    00024:                indique la direccion del evento
+    00025:                indique el id del usuario
+    00026:                indique el id de la categoria
+    00027:                campos vacios,por favor diligenciar.
+    00028:                la organizacion ya esta registrada

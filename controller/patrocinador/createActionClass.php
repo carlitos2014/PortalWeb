@@ -19,21 +19,26 @@ class createActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $usuario = trim(request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true)));
-        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1');
-        $password2 = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2');
 
-        $this->validate($usuario, $password, $password2);
+        $nombre = request::getInstance()->getPost(patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true));
+        $correo = request::getInstance()->getPost(patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true));
+        $telefono = request::getInstance()->getPost(patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true));
+        $direccion = request::getInstance()->getPost(patrocinadorTableClass::getNameField(patrocinadorTableClass::DIRECCION, true));
+
+        $this->validate($nombre,$correo, $telefono, $direccion);
 
 
         $data = array(
-            usuarioTableClass::USER => $usuario,
-            usuarioTableClass::PASSWORD => md5($password)
+            patrocinadorTableClass::NOMBRE => $nombre,
+            patrocinadorTableClass::CORREO => $correo,
+            patrocinadorTableClass::TELEFONO => $telefono,
+            
+            patrocinadorTableClass::DIRECCION => $direccion
         );
-        usuarioTableClass::insert($data);
-        routing::getInstance()->redirect('usuario', 'index');
+        patrocinadorTableClass::insert($data);
+        routing::getInstance()->redirect('patrocinador', 'index');
       } else {
-        routing::getInstance()->redirect('usuario', 'index');
+        routing::getInstance()->redirect('patrocinador', 'index');
       }
     } catch (PDOException $exc) {
       echo $exc->getMessage();
@@ -44,58 +49,75 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
   }
 
-  private function validate($usuario, $password, $password2) {
+  private function validate($nombre, $telefono, $correo, $direccion) {
     $flag = false;
 
 
-    if (empty($usuario)) {
+
+
+    if (empty($nombre)) {
 
       session::getInstance()->setError(i18n::__(00006, NULL, 'errors'));
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true), true);
     }
 
-    if (strlen($usuario) > usuarioTableClass::USER_LENGTH) {
-      session::getInstance()->setError(i18n::__(00004, NULL, 'errors', array('%user%' => $usuario, '%caracteres%' => usuarioTableClass::USER_LENGTH)));
+    if (strlen($nombre) > patrocinadorTableClass::NOMBRE_LENGTH) {
+      session::getInstance()->setError(i18n::__(00004, NULL, 'errors', array('%user%' => $nombre, '%caracteres%' => patrocinadorTableClass::NOMBRE_LENGTH)));
 
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true), true);
     }
 
-    if ($password !== $password2) {
+    if (empty($telefono)) {
 
-      session::getInstance()->setError(i18n::__(00005, NULL, 'errors'));
+      session::getInstance()->setError(i18n::__(00006, NULL, 'errors'));
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
+      session::getInstance()->setFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true), true);
     }
 
-    if (empty($password)) {
+    if (strlen($telefono) > patrocinadorTableClass::TELEFONO_LENGTH) {
+      session::getInstance()->setError(i18n::__(00004, NULL, 'errors', array('%user%' => $telefono, '%caracteres%' => patrocinadorTableClass::TELEFONO_LENGTH)));
 
-      session::getInstance()->setError(i18n::__(00007, NULL, 'errors'));
       $flag = true;
-
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true), true);
     }
 
+    if (empty($correo)) {
 
-    if (empty($password2)) {
-
-      session::getInstance()->setError(i18n::__(00009, NULL, 'errors'));
+      session::getInstance()->setError(i18n::__(00006, NULL, 'errors'));
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true), true);
     }
+
+    if (strlen($correo) > patrocinadorTableClass::CORREO_LENGTH) {
+      session::getInstance()->setError(i18n::__(00004, NULL, 'errors', array('%user%' => $correo, '%caracteres%' => patrocinadorTableClass::CORREO_LENGTH)));
+
+      $flag = true;
+      session::getInstance()->setFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true), true);
+    }
+
+    if (empty($direccion)) {
+
+      session::getInstance()->setError(i18n::__(00006, NULL, 'errors'));
+      $flag = true;
+      session::getInstance()->setFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::DIRECCION, true), true);
+    }
+
+
+
+
 
     $fields = array(
-        usuarioTableClass::USER
+        patrocinadorTableClass::NOMBRE
     );
-    $objUsuario = usuarioTableClass::getAll($fields);
+    $objPatrocinador = patrocinadorTableClass::getAll($fields);
 
-    foreach ($objUsuario as $key) {
-      if ($key->user_name === $usuario) {
+    foreach ($objPatrocinador as $key) {
+      if ($key->nombre === $nombre) {
         session::getInstance()->setError(i18n::__(00010, NULL, 'errors'));
         $flag = true;
-        session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+        session::getInstance()->setFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true), true);
       }
     }
 
@@ -103,7 +125,7 @@ class createActionClass extends controllerClass implements controllerActionInter
     if ($flag === true) {
 
       request::getInstance()->setMethod('GET');
-      routing::getInstance()->forward('usuario', 'insert');
+      routing::getInstance()->forward('patrocinador', 'insert');
     }
   }
 

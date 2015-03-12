@@ -20,7 +20,7 @@ class createActionClass extends controllerClass implements controllerActionInter
       if (request::getInstance()->isMethod('POST')) {
         $img = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::IMAGEN, true));
         $nombre = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::NOMBRE, true));
-        $descripcion = request::getInstance()->getPost(categoriaTableClass::getNameField(eventoTableClass::DESCRIPCION, true));
+        $descripcion = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::DESCRIPCION, true));
         $fecha_ini = trim(request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true)));
         $fecha_final = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true));
         $latitud = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::LUGAR_LATITUD, true));
@@ -32,7 +32,7 @@ class createActionClass extends controllerClass implements controllerActionInter
         $fechainipub = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true));
         $fechafinpub = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true));
 
-        $this->validate($img, $nombre, $descripcion, $fecha_ini, $fecha_final, $latitud, $longitud, $direccion, $costo, $usuid, $categoria, $fechainipub, $fechafinpub);
+        $this->validate($img, $nombre, $descripcion, $fecha_ini, $fecha_final, $latitud, $longitud, $direccion, $usuid, $categoria, $fechainipub, $fechafinpub);
 
 
         $data = array(
@@ -48,7 +48,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             eventoTableClass::USUARIO_ID => $usuid,
             eventoTableClass::CATEGORIA_ID => $categoria,
             eventoTableClass::FECHA_INICIAL_PUBLICACION => $fechainipub,
-            eventoTableClass::FECHA_INICIAL_PUBLICACION => $fechafinpub,
+            eventoTableClass::FECHA_FINAL_PUBLICACION => $fechafinpub,
         );
          eventoTableClass::insert($data);
         routing::getInstance()->redirect('evento', 'index');
@@ -64,66 +64,156 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
   }
 
-  private function validate($img, $nombre, $descripcion, $fecha_ini, $fecha_final, $latitud, $longitud, $direccion, $costo, $usuid, $categoria, $fechainipub, $fechafinpub) {
+  private function validate($img, $nombre,$fecha_ini, $fecha_final, $latitud, $longitud, $direccion, $usuid, $categoria, $fechainipub, $fechafinpub) {
     $flag = false;
 
 
-    if (empty($usuario)) {
+    if (empty($img)) {
 
-      session::getInstance()->setError(i18n::__(00006, NULL, 'errors'));
+      session::getInstance()->setError(i18n::__(00015, NULL, 'errors'));
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::IMAGEN, true), true);
     }
 
-    if (strlen($usuario) > usuarioTableClass::USER_LENGTH) {
-      session::getInstance()->setError(i18n::__(00004, NULL, 'errors', array('%user%' => $usuario, '%caracteres%' => usuarioTableClass::USER_LENGTH)));
+    if (strlen($img) > eventoTableClass::IMAGEN_LENGTH) {
+      session::getInstance()->setError(i18n::__(00016, NULL, 'errors', array('%user%' => $usuario, '%caracteres%' => eventoTableClass::USER_LENGTH)));
 
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::USER, true), true);
     }
 
-    if ($password !== $password2) {
+    
+///-----------------------validaciones de nombre---------------------------------
+    if (empty($nombre)) {
 
-      session::getInstance()->setError(i18n::__(00005, NULL, 'errors'));
-      $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
-    }
-
-    if (empty($password)) {
-
-      session::getInstance()->setError(i18n::__(00007, NULL, 'errors'));
+      session::getInstance()->setError(i18n::__(00017, NULL, 'errors'));
       $flag = true;
 
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::NOMBRE, true), true);
     }
 
 
-    if (empty($password2)) {
+    if (strlen($nombre) > eventoTableClass::NOMBRE_LENGTH) {
+      session::getInstance()->setError(i18n::__(00018, NULL, 'errors'));
 
-      session::getInstance()->setError(i18n::__(00009, NULL, 'errors'));
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::USER, true), true);
     }
-
+    
+    
     $fields = array(
-        usuarioTableClass::USER
+        eventoTableClass::NOMBRE
     );
-    $objUsuario = usuarioTableClass::getAll($fields);
+    $objEvento = eventoTableClass::getAll($fields);
 
-    foreach ($objUsuario as $key) {
-      if ($key->user_name === $usuario) {
-        session::getInstance()->setError(i18n::__(00010, NULL, 'errors'));
+    foreach ($objEvento as $key) {
+      if ($key->nombre === $nombre) {
+        session::getInstance()->setError(i18n::__(00019, NULL, 'errors'));
         $flag = true;
-        session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+        session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::USER, true), true);
       }
     }
+    
+    
+    
+    //--------------------------validaciones de fecha inicial-----------------------
+    
+     if (empty($fecha_ini)) {
+
+      session::getInstance()->setError(i18n::__(00020, NULL, 'errors'));
+      $flag = true;
+
+      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true), true);
+    }
+    
+    //--------------------------validaciones de fecha final del evento-----------------------
+    
+    if (empty($fecha_final)) {
+
+      session::getInstance()->setError(i18n::__(00021, NULL, 'errors'));
+      $flag = true;
+
+      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true), true);
+    }
+    
+
+    //--------------------------validaciones de latitud-----------------------
+    
+    if (empty($latitud)) {
+
+      session::getInstance()->setError(i18n::__(00022, NULL, 'errors'));
+      $flag = true;
+
+      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::LUGAR_LATITUD, true), true);
+    }
+    
+    //--------------------------validaciones de longitud-----------------------
+    
+    if (empty($longitud)) {
+
+      session::getInstance()->setError(i18n::__(00023, NULL, 'errors'));
+      $flag = true;
+
+      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::LUGAR_LONGITUD, true), true);
+    }
+    
+     //--------------------------validaciones de direccion-----------------------
+    
+    if (empty($direccion)) {
+
+      session::getInstance()->setError(i18n::__(00024, NULL, 'errors'));
+      $flag = true;
+
+      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::DIRECCION, true), true);
+    }
+    
+     //--------------------------validaciones de usuario id-----------------------
+    
+    if (empty($usuid)) {
+
+      session::getInstance()->setError(i18n::__(00025, NULL, 'errors'));
+      $flag = true;
+
+      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::USUARIO_ID, true), true);
+    }
+    
+    //--------------------------validaciones de usuario id-----------------------
+    
+    if (empty($categoria)) {
+
+      session::getInstance()->setError(i18n::__(00026, NULL, 'errors'));
+      $flag = true;
+
+      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::USUARIO_ID, true), true);
+    }
+    
+    //--------------------------validaciones de fecha inicial-----------------------
+    
+     if (empty($fechainipub)) {
+
+      session::getInstance()->setError(i18n::__(00020, NULL, 'errors'));
+      $flag = true;
+
+      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true), true);
+    }
+    
+    //--------------------------validaciones de fecha final del evento-----------------------
+    
+    if (empty($fechafinpub)) {
+
+      session::getInstance()->setError(i18n::__(00021, NULL, 'errors'));
+      $flag = true;
+
+      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true), true);
+    }
+    
+    
 
 
     if ($flag === true) {
 
       request::getInstance()->setMethod('GET');
-      routing::getInstance()->forward('usuario', 'insert');
+      routing::getInstance()->forward('evento', 'insert');
     }
   }
 

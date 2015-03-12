@@ -8,7 +8,7 @@ use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
 
-<?php $imagen = eventoTableClass::IMAGEN ?>
+<?php $img = eventoTableClass::IMAGEN ?>
 <?php $nombre = eventoTableClass::NOMBRE ?>
 <?php $descripcion = eventoTableClass::DESCRIPCION ?>
 <?php $fecha_ini = eventoTableClass::FECHA_INICIAL_EVENTO ?>
@@ -16,7 +16,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php $latitud = eventoTableClass::LUGAR_LATITUD ?>
 <?php $longitud = eventoTableClass::LUGAR_LONGITUD ?>
 <?php $direccion = eventoTableClass::DIRECCION ?>
-<?php $costo = eventoTableClass::COSTO ?>
+<?php //$costo = eventoTableClass::COSTO ?>
 <?php $usuid = eventoTableClass::USUARIO_ID ?>
 <?php $categoria = eventoTableClass::CATEGORIA_ID ?>
 <?php $fechainipub = eventoTableClass::FECHA_INICIAL_PUBLICACION ?>
@@ -24,9 +24,7 @@ use mvc\i18n\i18nClass as i18n ?>
 
 
 <div class="container container-fluid">
-
-
-  <form class="form-create" role="form" action="<?php echo routing::getInstance()->getUrlWeb('evento', 'create') ?>" method="POST">
+<form class="form-create" role="form" action="<?php echo routing::getInstance()->getUrlWeb('evento', 'create') ?>" method="POST">
     <!--    <h2 class="form-signin-heading"></h2>-->
 
     <div class="form-group" <?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::IMAGEN, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
@@ -42,7 +40,7 @@ use mvc\i18n\i18nClass as i18n ?>
     <div class="form-group" <?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::NOMBRE, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
       <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::NOMBRE, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('name') ?></label>
       <div class="col-sm-10">
-        <input type="text" id="<?php echo eventoTableClass::getNameField(eventoTableClass::NOMBRE, true) ?>" name="<?php echo eventoTableClass::getNameField(eventoTableClass::NOMBRE, true) . '_1' ?>" class="form-control" placeholder="<?php echo i18n::__('name') ?>" >
+        <input type="text" id="<?php echo eventoTableClass::getNameField(eventoTableClass::NOMBRE, true) ?>" name="<?php echo eventoTableClass::getNameField(eventoTableClass::NOMBRE, true)?>" class="form-control" placeholder="<?php echo i18n::__('name') ?>" >
         <?php if (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::NOMBRE, TRUE)) === TRUE): ?>
           <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
         <?php endif ?>
@@ -106,6 +104,17 @@ use mvc\i18n\i18nClass as i18n ?>
       <div class="col-sm-10">
         <input type="text" class="form-control" placeholder="<?php echo i18n::__('adress') ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::DIRECCION, true) ?>" id="<?php echo eventoTableClass::getNameField(eventoTableClass::DIRECCION, true) ?>" value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::DIRECCION, TRUE)) === TRUE) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::DIRECCION, TRUE)) : '' ?>">
         <?php if (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::DIRECCION, TRUE)) === TRUE): ?>
+          <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
+        <?php endif ?>
+      </div>
+    </div>
+    
+    
+    <div class="form-group" <?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::COSTO, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
+      <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::COSTO, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('cost') ?></label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" placeholder="<?php echo i18n::__('cost') ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::COSTO, true) ?>" id="<?php echo eventoTableClass::getNameField(eventoTableClass::COSTO, true) ?>" value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::COSTO, TRUE)) === TRUE) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::COSTO, TRUE)) : '' ?>">
+        <?php if (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::COSTO, TRUE)) === TRUE): ?>
           <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
         <?php endif ?>
       </div>
