@@ -36,7 +36,7 @@ admin:
     
     - model/base/tipoDocumentoBaseTableClass.php
     - model/tipoDocumentoTableClass.php
-
+#hola
     - model/base/patrocinadorBaseTableClass.php
     - model/patrocinadorTableClass.php
 
