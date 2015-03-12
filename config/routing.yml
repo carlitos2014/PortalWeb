@@ -35,7 +35,7 @@ admin:
     - model/tarifaTableClass.php
     - model/base/localidadBaseTableClass.php
     - model/localidadTableClass.php
-
+#Prueba commit
 
 usuario_index:
   url:    /usuario/index
