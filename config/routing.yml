@@ -35,7 +35,7 @@ admin:
     - model/tarifaTableClass.php
     - model/base/localidadBaseTableClass.php
     - model/localidadTableClass.php
-#Prueba commit Carlos Gutierrez
+#Prueba commit Carlos GutierreZ
 
 usuario_index:
   url:    /usuario/index
