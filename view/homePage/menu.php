@@ -27,8 +27,6 @@
               <p>
                 Leonardo Betancourt
                 <small>Analista y desarrollador web</small>
-                <small>Peligro de los Antivirus</small>
-                <small>SOy una Amenaza</small>
               </p>
             </li>
             <!--Menu Body--> 
