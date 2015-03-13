@@ -38,6 +38,7 @@ admin:
 
 
 #---------------------------------usuario--------------------------------------#
+
 usuario_index:
   url:    /usuario/index
   param:  { module: usuario, action: index, format: html }
