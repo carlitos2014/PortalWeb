@@ -27,8 +27,6 @@ admin:
     - model/eventoTableClass.php
     - model/base/tipoDocumentoBaseTableClass.php
     - model/tipoDocumentoTableClass.php
-#hola mundo
-
     - model/base/patrocinadorBaseTableClass.php
     - model/patrocinadorTableClass.php
     - model/base/organizacionBaseTableClass.php
@@ -37,11 +35,7 @@ admin:
     - model/tarifaTableClass.php
     - model/base/localidadBaseTableClass.php
     - model/localidadTableClass.php
-#Prueba commit Carlos GutierreZ
-#modificado
-#prueba
 
-#hola mundo
 usuario_index:
   url:    /usuario/index
   param:  { module: usuario, action: index, format: html }
