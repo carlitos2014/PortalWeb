@@ -380,6 +380,7 @@ use mvc\i18n\i18nClass as i18n ?>
           <div class="inner">
             <h3>
               0 <?php //echo $cont12 ?>
+            
             </h3>
             <p>
 <?php echo i18n::__('feedbackState') ?>
