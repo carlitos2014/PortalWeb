@@ -27,10 +27,8 @@ admin:
     - model/eventoTableClass.php
     - model/base/tipoDocumentoBaseTableClass.php
     - model/tipoDocumentoTableClass.php
-<<<<<<< HEAD
-#hola
-=======
->>>>>>> master/master
+#hola mundo
+
     - model/base/patrocinadorBaseTableClass.php
     - model/patrocinadorTableClass.php
     - model/base/organizacionBaseTableClass.php
