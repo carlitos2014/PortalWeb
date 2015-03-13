@@ -40,6 +40,8 @@ admin:
 #Prueba commit Carlos GutierreZ
 #modificado
 #prueba
+
+#hola mundo
 usuario_index:
   url:    /usuario/index
   param:  { module: usuario, action: index, format: html }
