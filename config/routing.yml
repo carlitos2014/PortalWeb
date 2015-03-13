@@ -36,7 +36,7 @@ admin:
     - model/base/localidadBaseTableClass.php
     - model/localidadTableClass.php
 #Prueba commit Carlos GutierreZ
-
+#modificado
 usuario_index:
   url:    /usuario/index
   param:  { module: usuario, action: index, format: html }
