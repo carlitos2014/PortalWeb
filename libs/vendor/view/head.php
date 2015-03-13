@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="<?php echo \mvc\config\configClass::getDefaultCulture() ?>">
+<html lang="<?php echo \mvc\config\configClass::getDefaultCulture() ?>" class="no-js">
   <?php
 
   use mvc\i18n\i18nClass as i18n ?>

@@ -28,7 +28,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
           usuarioTableClass::USER
       );
       $this->objUsuarios = usuarioTableClass::getAll($fields, true, $orderBy, 'ASC');
-      $this->defineView('index', 'usuario', session::getInstance()->getFormatOutput());
+      $this->defineView('index', 'pqrs', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';

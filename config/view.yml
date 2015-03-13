@@ -20,6 +20,16 @@ shfSecurity:
     stylesheet:
       - signin.css
       - form.css
+#      - reset.css
+#      - supersized.css
+#      - style.css
+#    javascript:
+#      - supersized.3.2.7.min.js
+#      - supersized-init.js
+#      - scripts.js
+#      - jquery-1.11.1.js
+
+
 
 default:
   index:

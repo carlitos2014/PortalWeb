@@ -112,7 +112,8 @@ dictionary:
       #------------------pqrsf-------------------------
     feedbackType:          Tipo de Pqrsf
     feedbackManagement:    Gestion de  tipos de pqrsf
-    
+    feedbackSpecs:         Detalle de pqrsf
+    feedbackState:         Estado de pqrsf
  #------------------tarifas-------------------------
     
     ratesManagement:       Gestion de tarifas

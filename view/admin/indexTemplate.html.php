@@ -1,4 +1,19 @@
-<?php use mvc\routing\routingClass as routing ?>
+<?php $cont = count($objUs) ?>
+<?php $cont1 = count($objCre) ?>
+<?php $cont2 = count($objBit) ?>
+<?php $cont3 = count($objRec) ?>
+<?php $cont4 = count($objCat) ?>
+<?php $cont5 = count($objEve) ?>
+<?php $cont6 = count($objOrg) ?>
+<?php $cont7 = count($objPat) ?>
+<?php $cont8 = count($objPq) ?>
+<?php $cont9 = count($objTar) ?>
+<?php $cont10 = count($objTip) ?>
+<?php $cont11 = count($objEc) ?>
+<?php $cont12 = count($objlo) ?>
+<?php
+
+use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -34,7 +49,7 @@ use mvc\i18n\i18nClass as i18n ?>
           <ul class="dropdown-menu">
             <!--User image--> 
             <li class="user-header bg-light-blue">
-              <img src="<?php echo routing::getInstance()->getUrlImg('admin.jpg')  ?>" class="img-circle" alt="User Image" />
+              <img src="<?php echo routing::getInstance()->getUrlImg('admin.jpg') ?>" class="img-circle" alt="User Image" />
               <p>
                 Leonardo Betancourt
                 <small>Analista y desarrollador web</small>
@@ -63,19 +78,6 @@ use mvc\i18n\i18nClass as i18n ?>
 </nav>
 
 
-<?php $cont = count($objUs) ?>
-<?php $cont1 = count($objCre) ?>
-<?php $cont2 = count($objBit) ?>
-<?php $cont3 = count($objRec) ?>
-<?php $cont4 = count($objCat) ?>
-<?php $cont5 = count($objEve) ?>
-<?php $cont6 = count($objOrg) ?>
-<?php $cont7 = count($objPat) ?>
-<?php $cont8 = count($objPq) ?>
-<?php $cont9 = count($objTar) ?>
-<?php $cont10 = count($objTip) ?>
-<?php $cont11 = count($objEc) ?>
-<?php $cont12 = count($objlo) ?>
 <div class="container container-fluid"
 
      <div class="page-header">
@@ -95,14 +97,14 @@ use mvc\i18n\i18nClass as i18n ?>
               <?php echo $cont ?>
             </h3>
             <p>
-              <?php echo i18n::__('user') ?>
+<?php echo i18n::__('user') ?>
             </p>
           </div>
           <div class="icon">
             <i class="ion ion-person"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'index') ?>" class="small-box-footer">
-            <?php echo i18n::__('userManagement') ?> <i class="fa fa-arrow-circle-right"></i>
+<?php echo i18n::__('userManagement') ?> <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
       </div><!-- ./col -->
@@ -114,14 +116,14 @@ use mvc\i18n\i18nClass as i18n ?>
               <?php echo $cont1 ?>
             </h3>
             <p>
-              <?php echo i18n::__('credential') ?>
+<?php echo i18n::__('credential') ?>
             </p>
           </div>
           <div class="icon">
             <i class="ion ion-android-star"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('credencial', 'index') ?>" class="small-box-footer">
-            <?php echo i18n::__('credentialManagement') ?><i class="fa fa-arrow-circle-right"></i>
+<?php echo i18n::__('credentialManagement') ?><i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
       </div><!-- ./col -->
@@ -133,14 +135,14 @@ use mvc\i18n\i18nClass as i18n ?>
               <?php echo $cont2 ?>
             </h3>
             <p>
-              <?php echo i18n::__('logBook') ?>
+<?php echo i18n::__('logBook') ?>
             </p>
           </div>
           <div class="icon">
             <i class="ion ion-document-text"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('bitacora', 'index') ?>" class="small-box-footer">
-            <?php echo i18n::__('showLogBook') ?> <i class="fa fa-arrow-circle-right"></i>
+<?php echo i18n::__('showLogBook') ?> <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
       </div><!-- ./col -->
@@ -152,14 +154,14 @@ use mvc\i18n\i18nClass as i18n ?>
               <?php echo $cont3 ?>
             </h3>
             <p>
-              <?php echo i18n::__('rememberMe') ?>
+<?php echo i18n::__('rememberMe') ?>
             </p>
           </div>
           <div class="icon">
             <i class="ion ion-bookmark"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('recordarMe', 'index') ?>" class="small-box-footer">
-            <?php echo i18n::__('rememberMeManagement') ?> <i class="fa fa-arrow-circle-right"></i>
+<?php echo i18n::__('rememberMeManagement') ?> <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
       </div><!-- ./col -->
@@ -175,14 +177,14 @@ use mvc\i18n\i18nClass as i18n ?>
               <?php echo $cont4 . ' ' ?><i class="ion ion-clipboard"></i>
             </h3>
             <p>
-              <?php echo i18n::__('category') ?>
+<?php echo i18n::__('category') ?>
             </p>
           </div>
           <div class="icon">
             <i class="ion ion-grid"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('categoria', 'index') ?>" class="small-box-footer">
-            <?php echo i18n::__('categoryManagement') ?> <i class="fa fa-arrow-circle-right"></i>
+<?php echo i18n::__('categoryManagement') ?> <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
       </div><!-- ./col -->
@@ -194,14 +196,14 @@ use mvc\i18n\i18nClass as i18n ?>
               <?php echo $cont5 ?>
             </h3>
             <p>
-              <?php echo i18n::__('events') ?>
+<?php echo i18n::__('events') ?>
             </p>
           </div>
           <div class="icon">
             <i class="ion ion-film-marker"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('evento', 'index') ?>" class="small-box-footer">
-            <?php echo i18n::__('eventManagement') ?> <i class="fa fa-arrow-circle-right"></i>
+<?php echo i18n::__('eventManagement') ?> <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
       </div><!-- ./col -->
@@ -213,14 +215,14 @@ use mvc\i18n\i18nClass as i18n ?>
               <?php echo $cont6 ?>
             </h3>
             <p>
-              <?php echo i18n::__('organizations') ?>
+<?php echo i18n::__('organizations') ?>
             </p>
           </div>
           <div class="icon">
             <i class="ion ion-person-stalker"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('organizacion', 'index') ?>" class="small-box-footer">
-            <?php echo i18n::__('organizationManagement') ?><i class="fa fa-arrow-circle-right"></i>
+<?php echo i18n::__('organizationManagement') ?><i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
       </div><!-- ./col -->
@@ -232,14 +234,14 @@ use mvc\i18n\i18nClass as i18n ?>
               <?php echo $cont7 ?>
             </h3>
             <p>
-              <?php echo i18n::__('partner') ?>
+<?php echo i18n::__('partner') ?>
             </p>
           </div>
           <div class="icon">
             <i class="ion ion-social-bitcoin-outline"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('patrocinador', 'index') ?>" class="small-box-footer">
-            <?php echo i18n::__('partnerManagement') ?><i class="fa fa-arrow-circle-right"></i>
+<?php echo i18n::__('partnerManagement') ?><i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
       </div><!-- ./col -->
@@ -255,14 +257,14 @@ use mvc\i18n\i18nClass as i18n ?>
               <?php echo $cont8 ?>
             </h3>
             <p>
-              <?php echo i18n::__('feedbackType') ?>
+<?php echo i18n::__('feedbackType') ?>
             </p>
           </div>
           <div class="icon">
             <i class="ion ion-speakerphone"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('tipoPqrsf', 'index') ?>" class="small-box-footer">
-            <?php echo i18n::__('feedbackManagement') ?> <i class="fa fa-arrow-circle-right"></i>
+<?php echo i18n::__('feedbackManagement') ?> <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
       </div><!-- ./col -->
@@ -274,14 +276,14 @@ use mvc\i18n\i18nClass as i18n ?>
               <?php echo $cont9 ?>
             </h3>
             <p>
-              <?php echo i18n::__('rates') ?>
+<?php echo i18n::__('rates') ?>
             </p>
           </div>
           <div class="icon">
             <i class="ion ion-connection-bars"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('tarifa', 'index') ?>" class="small-box-footer">
-            <?php echo i18n::__('ratesManagement') ?> <i class="fa fa-arrow-circle-right"></i>
+<?php echo i18n::__('ratesManagement') ?> <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
       </div><!-- ./col -->
@@ -293,14 +295,14 @@ use mvc\i18n\i18nClass as i18n ?>
               <?php echo $cont10 ?>
             </h3>
             <p>
-              <?php echo i18n::__('IdType') ?>
+<?php echo i18n::__('IdType') ?>
             </p>
           </div>
           <div class="icon">
             <i class="ion ion-card"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDocumento', 'index') ?>" class="small-box-footer">
-            <?php echo i18n::__('IdTypeManagement') ?><i class="fa fa-arrow-circle-right"></i>
+<?php echo i18n::__('IdTypeManagement') ?><i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
       </div><!-- ./col -->
@@ -312,14 +314,14 @@ use mvc\i18n\i18nClass as i18n ?>
               <?php echo $cont11 ?>
             </h3>
             <p>
-              <?php echo i18n::__('EconomicManagement') ?>
+<?php echo i18n::__('EconomicManagement') ?>
             </p>
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('recaudoEconomico', 'index') ?>" class="small-box-footer">
-            <?php echo i18n::__('EconomicManagement') ?> <i class="fa fa-arrow-circle-right"></i>
+<?php echo i18n::__('EconomicManagement') ?> <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
       </div><!-- ./col -->
@@ -337,19 +339,81 @@ use mvc\i18n\i18nClass as i18n ?>
               <?php echo $cont12 ?>
             </h3>
             <p>
-              <?php echo i18n::__('place') ?>
+<?php echo i18n::__('place') ?>
             </p>
           </div>
           <div class="icon">
             <i class="ion ion-earth"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('localidad', 'index') ?>" class="small-box-footer">
-            <?php echo i18n::__('eventPlaceManagement') ?> <i class="fa fa-arrow-circle-right"></i>
+<?php echo i18n::__('eventPlaceManagement') ?> <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
       </div><!-- ./col -->
 
 
 
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-green">
+          <div class="inner">
+            <h3>
+              0<?php //echo $cont12 ?>
+            </h3>
+            <p>
+<?php echo i18n::__('feedbackSpecs') ?>
+            </p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-earth"></i>
+          </div>
+          <a href="<?php echo routing::getInstance()->getUrlWeb('detallePqrsf', 'index') ?>" class="small-box-footer">
+<?php echo i18n::__('feedbackSpecs') ?> <i class="fa fa-arrow-circle-right"></i>
+          </a>
+        </div>
+      </div><!-- ./col -->
+
+
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-red">
+          <div class="inner">
+            <h3>
+              0<?php //echo $cont12 ?>
+            </h3>
+            <p>
+<?php echo i18n::__('feedbackState') ?>
+            </p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-earth"></i>
+          </div>
+          <a href="<?php echo routing::getInstance()->getUrlWeb('estadoPqrsf', 'index') ?>" class="small-box-footer">
+<?php echo i18n::__('feedbackState') ?> <i class="fa fa-arrow-circle-right"></i>
+          </a>
+        </div>
+      </div><!-- ./col -->
+      
+      
+      
+      
+      
+      
+      
+      
+      
     </div>
+
+
+
+
+
+
+
+
   </div>
+
+
+
+
+
