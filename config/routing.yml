@@ -2,8 +2,8 @@ homepage:
   url:    /
   param:  { module: homePage, action: index, format: html }
   
-#tabla usuario, por defecto el  sistema entra a la visualizacion de esta tabla
 
+#-tabla usuario, por defecto el  sistema entra a la visualizacion de esta tabla-
 
 admin:
   url:    /admin/index
@@ -36,6 +36,8 @@ admin:
     - model/base/localidadBaseTableClass.php
     - model/localidadTableClass.php
 
+
+#---------------------------------usuario--------------------------------------#
 usuario_index:
   url:    /usuario/index
   param:  { module: usuario, action: index, format: html }
@@ -90,9 +92,7 @@ usuario_reporte:
   param:  { module: usuario, action: report, format: pdf }
     
     
-    
-    
-#tabla bitacora
+#------------------------------tabla bitacora----------------------------------#
     
 bitacora_index:
   url:    /bitacora/index
@@ -115,15 +115,12 @@ bitacora_create:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
     
-    
-    
 bitacora_editar:
   url:    /bitacora/edit
   param:  { module: bitacora, action: edit, format: html }
   load:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php 
-    
     
 bitacora_update:
   url:    /bitacora/update
@@ -151,13 +148,8 @@ bitacora_reporte:
   param:  { module: bitacora, action: report, format: pdf }  
  
  
- 
- 
- #tabla credencial
+#-------------------------------tabla credencial-------------------------------#
     
-    
-     
-     
 credencial_index:
   url:    /credencial/index
   param:  { module: credencial, action: index, format: html }
@@ -211,34 +203,64 @@ credencial_reporte:
   url:    /credencial/report
   param:  { module: credencial, action: report, format: pdf }
     
-#tabla datoUsuario
-    
+
+#---------------------------------dato usuario---------------------------------#
     
 datoUsuario_index:
   url:    /datoUsuario/index
-  param:  { module: default, action: index, format: html }
+  param:  { module: datoUsuario, action: index, format: html }
   load:
-    - model/base/datoUsuarioBaseTableClass.php
+    - model/base/datoUsuariolBaseTableClass.php
     - model/datoUsuarioTableClass.php
     
 datoUsuario_insert:
-  url:    /datoUsuario/insertar
-  param:  { module: default, action: insert, format: html }
+  url:    /datoUsuario/insert
+  param:  { module: datoUsuario, action: insert, format: html }
   load:
     - model/base/datoUsuarioBaseTableClass.php
     - model/datoUsuarioTableClass.php
     
-default_create:
-  url:    /datoUsuario/crear
-  param:  { module: default, action: create, format: html }
+datoUsuario_create:
+  url:    /datoUsuario/create
+  param:  { module: datoUdsuario, action: create, format: html }
   load:
     - model/base/datoUsuarioBaseTableClass.php
     - model/datoUsuarioTableClass.php
     
+datoUsuario_editar:
+  url:    /datoUsuario/edit
+  param:  { module: datoUsuario , action: edit, format: html }
+  load:
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php 
     
-    
-#tabla usuarioCredencial
-    
+datoUsuario_update:
+  url:    /datoUsuario/update
+  param:  { module: datoUsuario, action: update, format: html }
+  load:
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+
+datoUsuario_delete:
+  url:    /datoUsuario/delete
+  param:  { module: datoUsuario, action: delete, format: html }
+  load:
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+
+datoUsuario_deleteSelect:
+  url:    /datoUsuario/deleteSelect
+  param:  { module: datoUsuario, action: deleteSelect, format: html }
+  load:
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+
+datoUsuario_reporte:
+  url:    /datoUsuario/report
+  param:  { module: datoUsuario, action: report, format: pdf }    
+
+  
+#------------------------------usuarioCredencial-------------------------------#
     
 usuarioCredencial_index:
   url:    /usuarioCredencial/index
@@ -294,11 +316,7 @@ usuarioCredencial_reporte:
   param:  { module: usuarioCredencial, action: report, format: pdf }    
     
     
-    
-    #diccionario para el modulo de recordarme
-    
-    
-    
+#--------------------------------recordarMe------------------------------------#    
     
 recordarMe_index:
   url:    /recordarMe/index
@@ -354,8 +372,7 @@ recordarMe_reporte:
   param:  { module: recordarMe, action: report, format: pdf }
     
     
- 
-##---------------------------estadoPqrsf---------------------##
+#--------------------------------estadoPqrsf-----------------------------------#
   
 estadoPqrsf_index:
   url:    /estadoPqrsf/index
@@ -375,7 +392,7 @@ estadoPqrsf_create:
   url:    /estadoPqrsf/create
   param:  { module: estadoPqrsf, action: create, format: html }
   load:
-    - model/base/estadoPqrsfTableClass.php
+    - model/base/estadoPqrsfBaseTableClass.php
     - model/estadoPqrsfTableClass.php
     
 estadoPqrsf_editar:
@@ -411,9 +428,9 @@ estadoPqrsf_reporte:
   param:  { module: estadoPqrsf, action: report, format: pdf }
   
   
-  ##---------------------------detallePQRSF---------------------##
+#-------------------------------detallePqsrf-----------------------------------#
   
-  detallePqrsf_index:
+detallePqrsf_index:
   url:    /detallePqrsf/index
   param:  { module: detallePqrsf, action: index, format: html }
   load:
@@ -431,7 +448,7 @@ detallePqrsf_create:
   url:    /detallePqrsf/create
   param:  { module: detallePqrsf, action: create, format: html }
   load:
-    - model/base/detallePqrsfTableClass.php
+    - model/base/detallePqrsfBaseTableClass.php
     - model/detallePqrsfTableClass.php
     
 detallePqrsf_editar:
@@ -467,8 +484,7 @@ detallePqrsf_reporte:
   param:  { module: detallePqrsf, action: report, format: pdf }
   
   
-  
-  ##--------------------categoria--------------------------------##
+#--------------------------------categoria-------------------------------------#
   
 categoria_index:
   url:    /categoria/index
@@ -524,11 +540,8 @@ categoria_reporte:
   param:  { module: categoria, action: report, format: pdf }
   
   
-  #-------------------evento---------#
+#-------------------------------evento-----------------------------------------#
     
-    
-     
-     
 evento_index:
   url:    /evento/index
   param:  { module: evento, action: index, format: html }
@@ -582,11 +595,9 @@ evento_reporte:
   url:    /evento/report
   param:  { module: evento, action: report, format: pdf }
     
-  #-------------------evento patrocinador---------#
+
+#-------------------------------eventoPatrocinador-----------------------------#
     
-    
-     
-     
 eventoPatrocinador_index:
   url:    /eventoPatrocinador/index
   param:  { module: eventoPatrocinador, action: index, format: html }
@@ -640,11 +651,9 @@ eventoPatrocinador_reporte:
   url:    /eventoPatrocinador/report
   param:  { module: eventoPatrocinador, action: report, format: pdf }  
   
-   #-------------------localidad--------#
+
+#------------------------------------localidad---------------------------------#
     
-    
-     
-     
 localidad_index:
   url:    /localidad/index
   param:  { module: localidad, action: index, format: html }
@@ -698,14 +707,9 @@ localidad_reporte:
   url:    /localidad/report
   param:  { module: localidad, action: report, format: pdf }  
   
-  
-  
-  
-          #-------------------organizacion--------#
+
+#----------------------------------organizacion--------------------------------#
     
-    
-     
-     
 organizacion_index:
   url:    /organizacion/index
   param:  { module: organizacion, action: index, format: html }
@@ -760,12 +764,8 @@ organizacion_reporte:
   param:  { module: organizacion, action: report, format: pdf }    
   
   
-  
-  #-------------------patrocinador-------------------------#
+#-------------------------------patrocinador-----------------------------------#
     
-    
-     
-     
 patrocinador_index:
   url:    /patrocinador/index
   param:  { module: patrocinador, action: index, format: html }
@@ -820,17 +820,13 @@ patrocinador_reporte:
   param:  { module: patrocinador, action: report, format: pdf }    
   
   
-  
-   #-------------------pqrsf-------------------------#
+#-------------------------------------pqrsf------------------------------------#
     
-    
-     
-     
 pqrsf_index:
   url:    /pqrsf/index
   param:  { module: pqrsf, action: index, format: html }
   load:
-    - model/base/pqrsfTableClass.php
+    - model/base/pqrsfBaseTableClass.php
     - model/pqrsfTableClass.php
     
 pqrsf_insert:
@@ -880,12 +876,8 @@ pqrsf_reporte:
   param:  { module: pqrsf, action: report, format: pdf }    
   
   
-  
-     #-------------------recaudoEconomico-------------------------#
+#-----------------------------recaudoEconomico---------------------------------#
     
-    
-     
-     
 recaudoEconomico_index:
   url:    /recaudoEconomico/index
   param:  { module: recaudoEconomico, action: index, format: html }
@@ -939,11 +931,9 @@ recaudoEconomico_reporte:
   url:    /recaudoEconomico/report
   param:  { module: recaudoEconomico, action: report, format: pdf } 
   
-       #-------------------tarifa-------------------------#
+       
+#-----------------------------------tarifa-------------------------------------#
     
-    
-     
-     
 tarifa_index:
   url:    /tarifa/index
   param:  { module: tarifa, action: index, format: html }
@@ -997,11 +987,9 @@ tarifa_reporte:
   url:    /tarifa/report
   param:  { module: tarifa, action: report, format: pdf } 
   
-         #-------------------tipoDocumento-------------------------#
+         
+#-------------------------------tipoDocumento----------------------------------#
     
-    
-     
-     
 tipoDocumento_index:
   url:    /tipoDocumento/index
   param:  { module: tipoDocumento, action: index, format: html }
@@ -1055,11 +1043,9 @@ tipoDocumento_reporte:
   url:    /tipoDocumento/report
   param:  { module: tipoDocumento, action: report, format: pdf }
   
-           #-------------------tipoPqrsf-------------------------#
+           
+#----------------------------------tipoPqrsf-----------------------------------#
     
-    
-     
-     
 tipoPqrsf_index:
   url:    /tipoPqrsf/index
   param:  { module: tipoPqrsf, action: index, format: html }
@@ -1114,16 +1100,13 @@ tipoPqrsf_reporte:
   param:  { module: tipoPqrsf, action: report, format: pdf }
   
   
-     #-------------------usuarioGustaCategoria-------------------------#
+#---------------------------usuarioGustaCategoria------------------------------#
     
-    
-     
-     
 usuarioGustaCategoria_index:
   url:    /usuarioGustaCategoria/index
   param:  { module: usuarioGustaCategoria, action: index, format: html }
   load:
-    - model/base/usuarioGustaCategoriaTableClass.php
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
     - model/usuarioGustaCategoriaTableClass.php
     
 usuarioGustaCategoria_insert:
@@ -1173,16 +1156,7 @@ usuarioGustaCategoria_reporte:
   param:  { module: usuarioGustaCategoria, action: report, format: pdf }
    
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   ##-------------------------- EJEMPLO --------------------------##
+#------------------------------------ EJEMPLO ---------------------------------#
 default_index:
   url:    /usuarios/index
   param:  { module: default, action: index, format: html }
@@ -1234,7 +1208,9 @@ default_deleteSelect:
 
 default_reporte:
   url:    /usuario/reporte
-  param:  { module: default, action: report, format: pdf } 
+  param:  { module: default, action: report, format: pdf }
+  
+#------------------------------------------------------------------------------#
     
 shfSecurity_index:
  url: /signin
