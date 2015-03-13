@@ -35,7 +35,7 @@ admin:
     - model/tarifaTableClass.php
     - model/base/localidadBaseTableClass.php
     - model/localidadTableClass.php
-#Prueba 1
+
 usuario_index:
   url:    /usuario/index
   param:  { module: usuario, action: index, format: html }
