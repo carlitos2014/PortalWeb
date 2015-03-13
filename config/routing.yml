@@ -11,44 +11,35 @@ admin:
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
-    
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
-    
     - model/base/categoriaBaseTableClass.php
     - model/categoriaTableClass.php
-    
     - model/base/tipoPqrsfBaseTableClass.php
     - model/tipoPqrsfTableClass.php
-    
     - model/base/recaudoEconomicoBaseTableClass.php
     - model/recaudoEconomicoTableClass.php
-    
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
-    
     - model/base/recordarMeBaseTableClass.php
     - model/recordarMeTableClass.php
-    
     - model/base/eventoBaseTableClass.php
     - model/eventoTableClass.php
-    
-    
     - model/base/tipoDocumentoBaseTableClass.php
     - model/tipoDocumentoTableClass.php
+<<<<<<< HEAD
 #hola
+=======
+>>>>>>> master/master
     - model/base/patrocinadorBaseTableClass.php
     - model/patrocinadorTableClass.php
-
     - model/base/organizacionBaseTableClass.php
     - model/organizacionTableClass.php
-    
     - model/base/tarifaBaseTableClass.php
     - model/tarifaTableClass.php
-    
     - model/base/localidadBaseTableClass.php
     - model/localidadTableClass.php
-
+#Prueba commit Carlos GutierreZ
 
 usuario_index:
   url:    /usuario/index
