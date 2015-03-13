@@ -39,6 +39,7 @@ admin:
     - model/localidadTableClass.php
 #Prueba commit Carlos GutierreZ
 
+#hola mundo
 usuario_index:
   url:    /usuario/index
   param:  { module: usuario, action: index, format: html }
