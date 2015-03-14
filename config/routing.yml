@@ -36,6 +36,7 @@ admin:
     - model/base/localidadBaseTableClass.php
     - model/localidadTableClass.php
 
+
 #---------------------------------usuario--------------------------------------#
 
 usuario_index:
