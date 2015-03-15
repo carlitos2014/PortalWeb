@@ -26,7 +26,7 @@
               <img src="<?php echo routing::getInstance()->getUrlImg('admin.jpg')  ?>" class="img-circle" alt="User Image" />
               <p>
                 Leonardo Betancourt
-                <small>Analista y desarrollador web</small>
+                <small>Analista y desarrollador web </small>
                 
               </p>
             </li>
