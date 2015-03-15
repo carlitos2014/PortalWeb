@@ -1,9 +1,9 @@
 <?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
-<?php $usuario = usuarioTableClass::ID ?>
+<?php $usuario = tarifaTableClass::ID ?>
     <div class="jumbotron">
-            <h1>Eliminacion de Usuario : <?php echo $objUsuarios[0]->$usuario ?></h1>
-            <p>¿Desea eliminar el usuario?</p>
-<?php view::includePartial('usuario/alertUser') ?>
+            <h1>Eliminacion de Tarifa : <?php echo $objTarifa[0]->$descripcion ?></h1>
+            <p>¿Desea eliminar el Tarifa?</p>
+<?php view::includePartial('tarifa/alertUser') ?>
         </div>
