@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
 
 # Folder config file
 Desktop.ini
-config.php
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
@@ -43,11 +41,10 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-=======
 .DS_Store
 Thumbs.db
 /nbproject/private/
 /nbproject/*
 /web/upload/*
 /web/download/*
->>>>>>> c3a909c6d4ce4ccf630c4927984f85e5be0a48b9
+/config/config.php
