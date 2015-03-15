@@ -24,7 +24,7 @@ class detallePqrsfBaseTableClass extends tableBaseClass {
   const PQRS_ID = 'pqrs_id';
   const RESPUESTA = 'respuesta';
   const RESPUESTA__LENGTH = 2048;
-  const USUARIO_ID = 'organizacion_id';
+  const USUARIO_ID = 'usuario_id';
 
   /**
    * Método para obtener el nombre del campo más la tabla ya sea en formato

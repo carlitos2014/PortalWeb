@@ -20,12 +20,13 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
       $fields = array(
           detallePqrsTableClass::ID,
-          detallePqrsTableClass::USER,
-          detallePqrsTableClass::LAST_LOGIN_AT,
-          detallePqrsTableClass::ACTIVED    
+          
+          detallePqrsTableClass::PQRS_ID,
+          detallePqrsTableClass::RESPUESTA,
+          detallePqrsTableClass::USUARIO_ID   
           );
       $orderBy = array(
-          detallePqrsTableClass::USER
+          detallePqrsTableClass::ID
       );
       $this->objDetallePqrsf = detallePqrsTableClass::getAll($fields, true, $orderBy, 'ASC');
       $this->defineView('index', 'detallePqrsf', session::getInstance()->getFormatOutput());

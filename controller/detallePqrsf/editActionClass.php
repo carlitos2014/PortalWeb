@@ -21,15 +21,15 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         $fields = array(
             usuarioTableClass::ID,
             usuarioTableClass::USER,
-            usuarioTableClass::PASSWORD
+            
         );
         $where = array(
             usuarioTableClass::ID => request::getInstance()->getRequest(usuarioTableClass::ID)
         );
         $this->objUsuarios = usuarioTableClass::getAll($fields, true, null, null, null, null, $where);
-        $this->defineView('edit', 'usuario', session::getInstance()->getFormatOutput());
+        $this->defineView('edit', 'detallePqrsf', session::getInstance()->getFormatOutput());
       } else {
-        routing::getInstance()->redirect('usuario', 'index');
+        routing::getInstance()->redirect('detallePqrsf', 'index');
       }
 //      if (request::getInstance()->isMethod('POST')) {
 //

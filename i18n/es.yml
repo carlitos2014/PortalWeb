@@ -39,8 +39,11 @@ dictionary:
     image:                Imagen
     description:          descripcion
     logout:               Cerrar Session  
-    
-    
+    about:                A cerca de
+    services:             Servicios
+    Contact:              Contacto
+    answer:               Respuesta
+    feedbackTypeID:       ID de PQRSF
     
     
     #usuario
@@ -110,6 +113,7 @@ dictionary:
     partnerManagement:     Gestion de patrocinadores
     
       #------------------pqrsf-------------------------
+    feedback:              PQRSF
     feedbackType:          Tipo de Pqrsf
     feedbackManagement:    Gestion de  tipos de pqrsf
     feedbackSpecs:         Detalle de pqrsf

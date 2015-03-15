@@ -26,9 +26,17 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         $where = array(
             usuarioTableClass::ID => request::getInstance()->getRequest(usuarioTableClass::ID)
         );
+        
+        
+        
+        
+        
         $this->objUsuarios = usuarioTableClass::getAll($fields, true, null, null, null, null, $where);
         $this->defineView('edit', 'usuario', session::getInstance()->getFormatOutput());
-      } else {
+      
+        
+        
+    } else {
         routing::getInstance()->redirect('usuario', 'index');
       }
 //      if (request::getInstance()->isMethod('POST')) {

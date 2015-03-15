@@ -435,49 +435,49 @@ detallePqrsf_index:
   param:  { module: detallePqrsf, action: index, format: html }
   load:
     - model/base/detallePqrsfBaseTableClass.php
-    - model/detallePqrsfTableClass.php
+    - model/detallePqrsTableClass.php
     
 detallePqrsf_insert:
   url:    /detallePqrsf/insert
   param:  { module: detallePqrsf, action: insert, format: html }
   load:
     - model/base/detallePqrsfBaseTableClass.php
-    - model/detallePqrsfTableClass.php
+    - model/detallePqrsTableClass.php
     
 detallePqrsf_create:
   url:    /detallePqrsf/create
   param:  { module: detallePqrsf, action: create, format: html }
   load:
     - model/base/detallePqrsfBaseTableClass.php
-    - model/detallePqrsfTableClass.php
+    - model/detallePqrsTableClass.php
     
 detallePqrsf_editar:
   url:    /detallePqrsf/edit
   param:  { module: detallePqrsf, action: edit, format: html }
   load:
     - model/base/detallePqrsfBaseTableClass.php
-    - model/detallePqrsfTableClass.php 
+    - model/detallePqrsTableClass.php 
     
 detallePqrsf_update:
   url:    /detallePqrsf/update
   param:  { module: detallePqrsf, action: update, format: html }
   load:
     - model/base/detallePqrsfBaseTableClass.php
-    - model/detallePqrsfTableClass.php
+    - model/detallePqrsTableClass.php
 
 detallePqrsf_delete:
   url:    /detallePqrsf/delete
   param:  { module: detallePqrsf, action: delete, format: html }
   load:
     - model/base/detallePqrsfBaseTableClass.php
-    - model/detallePqrsfTableClass.php
+    - model/detallePqrsTableClass.php
 
 detallePqrsf_deleteSelect:
   url:    /detallePqrsf/deleteSelect
   param:  { module: detallePqrsf, action: deleteSelect, format: html }
   load:
     - model/base/detallePqrsfBaseTableClass.php
-    - model/detallePqrsfTableClass.php
+    - model/detallePqrsTableClass.php
 
 detallePqrsf_reporte:
   url:    /detallePqrsf/reporte
