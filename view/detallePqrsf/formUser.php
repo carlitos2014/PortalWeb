@@ -11,6 +11,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php //$password = usuarioTableClass::PASSWORD     ?>
 
 
+
 <div class="container container-fluid">
     <form class="form-create" role="form" action="<?php echo routing::getInstance()->getUrlWeb('detallePqrsf', 'create') ?>" method="POST">
         <!--    <h2 class="form-signin-heading"></h2>-->
