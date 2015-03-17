@@ -44,9 +44,6 @@ dictionary:
     Contact:              Contacto
     answer:               Respuesta
     feedbackTypeID:       ID de PQRSF
-    register:             registro
-    
-    #usuario
     
     #---------------------------Usuario----------------------------------------#
     userManagement:       Gestion de Usuario
@@ -56,8 +53,7 @@ dictionary:
     fillFields:           Llenar los siguientes Campos
     insertNameUser:       Ingrese Nombre de usuario
     insertPass:           Ingrese Contraseña
-    last_name:            Apellido
-    gender:               Genero
+    
     #----------------------------Bitacora--------------------------------------#
     showLogBook:          Mostrar Bitacora
     logBook:              Bitacora
@@ -198,5 +194,13 @@ dictionary:
     00033:                el campo "valor" se encuentra vacio
     00034:                la tarifa ya esta registrada
     00035:                ingrese un numero
-    00036:                la fecha final no puede ser menor que la inicial
-    00037:                la fecha final del evento no puede ser inferior a la inicial
+    
+    #--------------------------Errores RecaudoEconomico------------------------#
+    
+    00037:                el campo "Id de evento" se encuentra vacio
+    00038:                el campo "Id de usuario" se encuentra vacio
+    00039:                el campo "observacion" se encuentra vacio
+    00040:                la observacion %obs% excede los %caracteres% caracteres permitidos
+    00041:                el campo "tarifa" se encuentra vacio
+    00042:                el campo "pago parcial" se encuentra vacio
+    00043:                el campo "pago total" se encuentra vacio

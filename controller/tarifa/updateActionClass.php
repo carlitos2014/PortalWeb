@@ -19,16 +19,16 @@ class updateActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $descripcion = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true));
-        $valor = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::VALOR, true));
+        $des = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true));
+        $value = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::VALOR, true));
 
         $ids = array(
             tarifaTableClass::ID => $ids
         );
 
         $data = array(
-            tarifaTableClass::DESCRIPCION => $descripcion,
-            tarifaTableClass::VALOR => $valor
+            tarifaTableClass::DESCRIPCION => $des,
+            tarifaTableClass::VALOR => $value
         );
 
         tarifaTableClass::update($ids, $data);

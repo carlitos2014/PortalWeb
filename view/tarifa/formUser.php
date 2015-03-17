@@ -6,8 +6,8 @@ use mvc\session\sessionClass as session ?>
 use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
-<?php $descripcion = tarifaTableClass::DESCRIPCION ?>
-<?php $valor = tarifaTableClass::VALOR ?>
+<?php $des = tarifaTableClass::DESCRIPCION ?>
+<?php $value = tarifaTableClass::VALOR ?>
 
 
 
