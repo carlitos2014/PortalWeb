@@ -3,8 +3,8 @@
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\routing\routingClass as routing ?>
-<?php $name = tipoDocumentoTableClass::NOMBRE ?>
 <?php $id = tipoDocumentoTableClass::ID ?>
+<?php $name = tipoDocumentoTableClass::NOMBRE ?>
 
 <div class="container container-fluid">
 
@@ -36,9 +36,9 @@ use mvc\routing\routingClass as routing ?>
 
             <td>
               <!--              <a href="#" class="btn btn-warning btn-xs">Ver</a>-->
-              <a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open" data-toggle="popover" title="Ver" data-content="datos de usuario"></i></a>
-              <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDocumento', 'edit', array(tipoDocumentoTableClass::ID => $tipoDocumento->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="Editar" data-content="edicion de usuario"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="#" onclick="confirmarEliminar(<?php echo $tipoDocumento->$id ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar usuario"></i></a>
+              <a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open" data-toggle="popover" title="Ver" data-content="Datos de Documento"></i></a>
+              <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDocumento', 'edit', array(tipoDocumentoTableClass::ID => $tipoDocumento->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="Editar" data-content="Edicion de Ocumento"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="#" onclick="confirmarEliminar(<?php echo $tipoDocumento->$id ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar Documento"></i></a>
             </td>
           </tr>
         <?php endforeach ?>
@@ -54,7 +54,7 @@ use mvc\routing\routingClass as routing ?>
   <div style="margin-bottom: 10px; margin-top: 30px" align="center">
 
     <a href="<?php echo routing::getInstance()->getUrlWeb('homePage', 'index') ?>"  class="btn btn-info" data-toggle="popover" title="Pagina de inicio" data-content="Index" ><i class="glyphicon glyphicon-home"></i></a> 
-    <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDocumento', 'insert') ?>" class="btn btn-success" data-toggle="popover" title="Crear Nuevo Usuario" data-content="creacion de usuario"><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-user"></i></a>
+    <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDocumento', 'insert') ?>" class="btn btn-success" data-toggle="popover" title="Crear Nuevo Documento" data-content="Creacion Documento"><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-credit-card"></i></a>
     <a href="#" class="btn btn-danger " onclick="borrarSeleccion()" data-toggle="popover" title="Borrar seleccion" data-content="borrar seleccion"><i class="glyphicon glyphicon-check"></i><i class="glyphicon glyphicon-trash"></i></a>
     <!--        <a href="#" id="example" class="btn btn-primary" rel="popover" data-content="cuerpo-del-popover" data-original-title="ejemplo">Popover</a>-->
     <!--        <a href="#" class="btn btn-lg btn-danger" data-toggle="popover" title="A Title" data-content="And here's some amazing content. It's very engaging. right?">Hover to toggle popover</a>-->

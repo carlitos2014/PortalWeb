@@ -1,5 +1,5 @@
 
- #Diccionario
+ #------------------------------Diccionario------------------------------------#
 
 culture:                  Español
 dictionary:
@@ -47,6 +47,8 @@ dictionary:
     register:             registro
     
     #usuario
+    
+    #---------------------------Usuario----------------------------------------#
     userManagement:       Gestion de Usuario
     id:                   ID
     lastLogin:            Ultima conexión
@@ -55,8 +57,7 @@ dictionary:
     insertNameUser:       Ingrese Nombre de usuario
     insertPass:           Ingrese Contraseña
     
-    #bitacora
-   
+    #----------------------------Bitacora--------------------------------------#
     showLogBook:          Mostrar Bitacora
     logBook:              Bitacora
     user_id:              ID del Usuario
@@ -66,7 +67,7 @@ dictionary:
     observation:          Observación
     date:                 Fecha
     
-    #credencial
+    #----------------------------Credencial------------------------------------#
     credentialManagement: Gestion de credencial
     newCredencial:        Nueva credencial
     credential:           Credencial
@@ -77,13 +78,14 @@ dictionary:
     lastName:             Apellido
     credentialId:         ID de Credencial
     
-    #categoria
+    #-----------------------------Categoria------------------------------------#
     categoryManagement:   Gestion de Categorias de evento 
     eventCategory:        Categoria de eventos
     category:             Categoria
     categoryID:           ID de Categoria
     createCategory:       Crear categoria
-    #----------------Evento-------------------------------
+    
+    #------------------------------Evento--------------------------------------#
     eventManagement:       Gestion de eventos 
     eventCreate:           Creacion de evento
     events:                Eventos
@@ -99,7 +101,7 @@ dictionary:
     publicationStartDate:  Inicio  de publicacion
     publicationFinishDate: Fecha fin publicacion
     
-   #------------------Organizaciones-------------------------
+   #----------------------------Organizaciones---------------------------------#
     organizationManagement: Gestion de Organizaciones 
     organizations:         Organización
     phone:                 Telefono
@@ -108,55 +110,49 @@ dictionary:
     webPage:               Pagina Web
     facsimil:              Fax
      
-   #------------------Patrocinador-------------------------
+    #-----------------------------Patrocinador---------------------------------#
     partner:               Patrocinador
     partnerManagement:     Gestion de patrocinadores
     
-      #------------------pqrsf-------------------------
+    #-----------------------------Pqrsf----------------------------------------#
     feedback:              PQRSF
     feedbackType:          Tipo de Pqrsf
     feedbackManagement:    Gestion de  tipos de pqrsf
     feedbackSpecs:         Detalle de pqrsf
     feedbackState:         Estado de pqrsf
- #------------------tarifas-------------------------
     
+    #----------------------------Tarifas---------------------------------------#
     ratesManagement:       Gestion de tarifas
     rates:                 Tarifas por tiempo
     rateId:                Id de tarifa
     partialPayment:        Pago parcial
     totalPayment:          pago total
      
-     #------------------Tipo de documento-------------------------
+    #------------------------Tipo de documento---------------------------------#
     IdType:                Tipo de Identificacion
     IdTypeManagement:      Gestion de Tipo de Identificacion
      
-     #------------------Recaudo Economico-------------------------
+    #------------------------Recaudo Economico---------------------------------#
     EconomicManagement:    Recaudo economico
     
-     
-    #----------------recordarMe-------------------------------
-    
+    #---------------------------RecordarMe-------------------------------------#
     rememberMeManagement:  Manejo de Cookies
     rememberMe:            RecordarMe
     
-    
-      #----------------localidad-------------------------------
+    #---------------------------Localidad--------------------------------------#
     eventPlaceManagement:   Gestion de localidades
     eventPlace:             Lugar del evento
     eventPlaceID:           Id de lugar del evento
     place:                  localidad
     
-    
-    
-    #----------------------------acciones----------------------------
-    
+    #----------------------------Acciones--------------------------------------#
     edit:                 Editar
     delete:               Borrar
     create:               Crear
     update:               Actualizar
     registers:            registros
 
-  
+    #-----------------------------Errores--------------------------------------#
   errors:
     00001:                El módulo y la acción solicitada, no existe.
     00002:                La dirección que solicita no está registrada.
@@ -173,8 +169,7 @@ dictionary:
     00013:                La categoria %cat% excede los %caracteres% caracteres permitidos
     00014:                el campo categoria esta vacio. 
     
-    #-----------errores de evento-------------------------------------
-    
+    #---------------------------Errores de evento------------------------------#
     00015:                digite una url de el hosting de la imagen
     00016:                longitud del la url no permitida
     00017:                campo "nombre de evento" vacio
@@ -189,3 +184,15 @@ dictionary:
     00026:                indique el id de la categoria
     00027:                campos vacios,por favor diligenciar.
     00028:                la organizacion ya esta registrada
+    
+    #-------------------------Errores tipo documento---------------------------#
+    00029:                por favor ingrese un nombre para el documento
+    00030:                el documento %name% excede los %caracteres% caracteres permitidos
+    00036:                el documento ya existe
+    
+    #------------------------------Errores Tarifa------------------------------#
+    00031:                el campo "descripcion" se encuentra vacio
+    00032:                la tarifa %desc% excede los %caracteres% caracteres permitidos
+    00033:                el campo "valor" se encuentra vacio
+    00034:                la tarifa ya esta registrada
+    00035:                ingrese un numero

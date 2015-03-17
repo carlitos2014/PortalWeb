@@ -11,7 +11,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Gallego Daniel <gallego9351@gmail.com>
  */
 class createActionClass extends controllerClass implements controllerActionInterface {
 
@@ -19,21 +19,21 @@ class createActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $usuario = trim(request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true)));
-        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1');
-        $password2 = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2');
+        $descripcion = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true));
+        $valor = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::VALOR, true));
+       
 
-        $this->validate($usuario, $password, $password2);
+        $this->validate($descripcion, $valor);
 
 
         $data = array(
-            usuarioTableClass::USER => $usuario,
-            usuarioTableClass::PASSWORD => md5($password)
+            tarifaTableClass::DESCRIPCION => $descripcion,
+            tarifaTableClass::VALOR => ($valor)
         );
-        usuarioTableClass::insert($data);
-        routing::getInstance()->redirect('usuario', 'index');
+        tarifaTableClass::insert($data);
+        routing::getInstance()->redirect('tarifa', 'index');
       } else {
-        routing::getInstance()->redirect('usuario', 'index');
+        routing::getInstance()->redirect('tarifa', 'index');
       }
     } catch (PDOException $exc) {
       echo $exc->getMessage();
@@ -44,58 +44,66 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
   }
 
-  private function validate($usuario, $password, $password2) {
+  private function validate($descripcion, $valor) {
     $flag = false;
 
 
-    if (empty($usuario)) {
+    if (empty($descripcion)) {
 
-      session::getInstance()->setError(i18n::__(00006, NULL, 'errors'));
+      session::getInstance()->setError(i18n::__(00031, NULL, 'errors'));
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true), true);
     }
 
-    if (strlen($usuario) > usuarioTableClass::USER_LENGTH) {
-      session::getInstance()->setError(i18n::__(00004, NULL, 'errors', array('%user%' => $usuario, '%caracteres%' => usuarioTableClass::USER_LENGTH)));
+    if (strlen($descripcion) > tarifaTableClass::DESCRIPCION_LENGTH) {
+      session::getInstance()->setError(i18n::__(00032, NULL, 'errors', array('%desc%' => $descripcion, '%caracteres%' => tarifaTableClass::DESCRIPCION_LENGTH)));
 
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(usuarioTableClass::getNameField(tarifaTableClass::DESCRIPCION_LENGTH, true), true);
     }
 
-    if ($password !== $password2) {
+    
+    if (empty($valor)) {
 
-      session::getInstance()->setError(i18n::__(00005, NULL, 'errors'));
-      $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
-    }
-
-    if (empty($password)) {
-
-      session::getInstance()->setError(i18n::__(00007, NULL, 'errors'));
+      session::getInstance()->setError(i18n::__(00033, NULL, 'errors'));
       $flag = true;
 
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(tarifaTableClass::getNameField(tarifaTableClass::VALOR, true), true);
     }
 
-
-    if (empty($password2)) {
-
-      session::getInstance()->setError(i18n::__(00009, NULL, 'errors'));
-      $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
-    }
 
     $fields = array(
-        usuarioTableClass::USER
+        tarifaTableClass::DESCRIPCION
     );
-    $objUsuario = usuarioTableClass::getAll($fields);
+    $objTarifa = tarifaTableClass::getAll($fields);
+    
+    
+    //validador de existencia de tarifa
 
-    foreach ($objUsuario as $key) {
-      if ($key->user_name === $usuario) {
-        session::getInstance()->setError(i18n::__(00010, NULL, 'errors'));
+    $fields = array(
+        tarifaTableClass::DESCRIPCION
+    );
+    $objTarifa = tarifaTableClass::getAll($fields);
+
+    foreach ($objTarifa as $key) {
+      if ($key->descripcion === $descripcion) {
+        session::getInstance()->setError(i18n::__(00034, NULL, 'errors'));
         $flag = true;
-        session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+        session::getInstance()->setFlash(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true), true);
+      }
+    }
+    
+    
+    //condicion de caracteres invalidos
+    
+    $caracteres = "0123456789";
+
+    for ($i = 0; $i < strlen($valor); $i++) {
+      if (strpos($caracteres, substr($valor, $i, 1)) === false) {
+
+        session::getInstance()->setError(i18n::__(00035, NULL, 'errors'),array('%char%' => $valor));
+        $flag = true;
+        session::getInstance()->setFlash(tarifaTableClass::getNameField(tarifaTableClass::VALOR, true), true);
       }
     }
 
@@ -103,7 +111,7 @@ class createActionClass extends controllerClass implements controllerActionInter
     if ($flag === true) {
 
       request::getInstance()->setMethod('GET');
-      routing::getInstance()->forward('usuario', 'insert');
+      routing::getInstance()->forward('tarifa', 'insert');
     }
   }
 

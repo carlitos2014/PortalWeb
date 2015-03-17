@@ -17,19 +17,18 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
   public function execute() {
     try {
-      if (request::getInstance()->hasRequest(usuarioTableClass::ID)) {
+      if (request::getInstance()->hasRequest(tipoDocumentoTableClass::ID)) {
         $fields = array(
-            usuarioTableClass::ID,
-            usuarioTableClass::USER,
-            usuarioTableClass::PASSWORD
+            tipoDocumentoTableClass::NOMBRE,
+         
         );
         $where = array(
-            usuarioTableClass::ID => request::getInstance()->getRequest(usuarioTableClass::ID)
+            tipoDocumentoTableClass::ID => request::getInstance()->getRequest(tipoDocumentoTableClass::ID)
         );
-        $this->objUsuarios = usuarioTableClass::getAll($fields, true, null, null, null, null, $where);
-        $this->defineView('edit', 'usuario', session::getInstance()->getFormatOutput());
+        $this->objDocumento = tipoDocumentoTableClass::getAll($fields, true, null, null, null, null, $where);
+        $this->defineView('edit', 'tipoDocumento', session::getInstance()->getFormatOutput());
       } else {
-        routing::getInstance()->redirect('usuario', 'index');
+        routing::getInstance()->redirect('tipoDocumento', 'index');
       }
 //      if (request::getInstance()->isMethod('POST')) {
 //

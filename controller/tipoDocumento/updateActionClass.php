@@ -11,7 +11,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Gallego Daniel <gallego9351@gmail.com>
  */
 class updateActionClass extends controllerClass implements controllerActionInterface {
 
@@ -19,23 +19,21 @@ class updateActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $id = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::ID, true));
-        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
-        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
+        $name = request::getInstance()->getPost(tipoDocumentoTableClass::getNameField(tipoDocumentoTableClass::NOMBRE, true));
+       
 
         $ids = array(
-            usuarioTableClass::ID => $id
+            tipoDocumentoTableClass::NOMBRE => $ids
         );
 
         $data = array(
-            usuarioTableClass::USER => $usuario,
-            usuarioTableClass::PASSWORD => md5($password)
+            tipoDocumentoTableClass::NOMBRE => $name
         );
 
-        usuarioTableClass::update($ids, $data);
+        tipoDocumentoTableClass::update($ids, $data);
       }
 
-      routing::getInstance()->redirect('usuario', 'index');
+      routing::getInstance()->redirect('tipoDocumento', 'index');
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';

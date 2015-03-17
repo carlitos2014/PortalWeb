@@ -18,7 +18,7 @@ config::setDbDsn(
 );
 
 
-    // Esto solo es necesario en caso de necesitar un socket para la DB
+   // Esto solo es necesario en caso de necesitar un socket para la DB
 //config::setDbUnixSocket('/tmp/mysql.sock');
 //
 //if (config::getDbUnixSocket() !== null) {

@@ -19,21 +19,20 @@ class createActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $usuario = trim(request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true)));
-        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1');
-        $password2 = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2');
+        $name = trim(request::getInstance()->getPost(tipoDocumentoTableClass::getNameField(tipoDocumentoTableClass::NOMBRE, true)));
+        
 
-        $this->validate($usuario, $password, $password2);
+        $this->validate($name);
 
 
         $data = array(
-            usuarioTableClass::USER => $usuario,
-            usuarioTableClass::PASSWORD => md5($password)
+            tipoDocumentoTableClass::NOMBRE => $name,
+            
         );
-        usuarioTableClass::insert($data);
-        routing::getInstance()->redirect('usuario', 'index');
+        tipoDocumentoTableClass::insert($data);
+        routing::getInstance()->redirect('tipoDocumento', 'index');
       } else {
-        routing::getInstance()->redirect('usuario', 'index');
+        routing::getInstance()->redirect('tipoDocumento', 'index');
       }
     } catch (PDOException $exc) {
       echo $exc->getMessage();
@@ -44,66 +43,50 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
   }
 
-  private function validate($usuario, $password, $password2) {
+  private function validate($name) {
     $flag = false;
 
 
-    if (empty($usuario)) {
+    if (empty($name)) {
 
-      session::getInstance()->setError(i18n::__(00006, NULL, 'errors'));
+      session::getInstance()->setError(i18n::__(00029, NULL, 'errors'));
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(tipoDocumentoTableClass::getNameField(tipoDocumentoTableClass::NOMBRE, true), true);
     }
 
-    if (strlen($usuario) > usuarioTableClass::USER_LENGTH) {
-      session::getInstance()->setError(i18n::__(00004, NULL, 'errors', array('%user%' => $usuario, '%caracteres%' => usuarioTableClass::USER_LENGTH)));
+    if (strlen($name) > tipoDocumentoTableClass::NOMBRE_LENGTH) {
+      session::getInstance()->setError(i18n::__(00030, NULL, 'errors', array('%name%' => $name, '%caracteres%' => tipoDocumentoTableClass::NOMBRE_LENGTH)));
 
       $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+      session::getInstance()->setFlash(tipoDocumentoTableClass::getNameField(tipoDocumentoTableClass::NOMBRE_LENGTH, true), true);
     }
 
-    if ($password !== $password2) {
+    
+    $fields = array(
+        tipoDocumentoTableClass::NOMBRE
+    );
+    $objDocumento = tipoDocumentoTableClass::getAll($fields);
 
-      session::getInstance()->setError(i18n::__(00005, NULL, 'errors'));
-      $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
-    }
-
-    if (empty($password)) {
-
-      session::getInstance()->setError(i18n::__(00007, NULL, 'errors'));
-      $flag = true;
-
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
-    }
-
-
-    if (empty($password2)) {
-
-      session::getInstance()->setError(i18n::__(00009, NULL, 'errors'));
-      $flag = true;
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
-      session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
-    }
+ //validador de existencia de documento
 
     $fields = array(
-        usuarioTableClass::USER
+        tipoDocumentoTableClass::NOMBRE
     );
-    $objUsuario = usuarioTableClass::getAll($fields);
+    $objDocumento = tipoDocumentoTableClass::getAll($fields);
 
-    foreach ($objUsuario as $key) {
-      if ($key->user_name === $usuario) {
-        session::getInstance()->setError(i18n::__(00010, NULL, 'errors'));
+    foreach ($objDocumento as $key) {
+      if ($key->nombre === $name) {
+        session::getInstance()->setError(i18n::__(00036, NULL, 'errors'));
         $flag = true;
-        session::getInstance()->setFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+        session::getInstance()->setFlash(tipoDocumentoTableClass::getNameField(tipoDocumentoTableClass::NOMBRE, true), true);
       }
     }
-
-
-    if ($flag === true) {
+    
+    
+     if ($flag === true) {
 
       request::getInstance()->setMethod('GET');
-      routing::getInstance()->forward('usuario', 'insert');
+      routing::getInstance()->forward('tipoDocumento', 'insert');
     }
   }
 
