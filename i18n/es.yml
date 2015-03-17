@@ -114,11 +114,14 @@ dictionary:
     
     #-----------------------------Pqrsf----------------------------------------#
     feedback:              PQRSF
-    feedbackType:          Tipo de Pqrsf
-    feedbackManagement:    Gestion de  tipos de pqrsf
-    feedbackSpecs:         Detalle de pqrsf
-    feedbackState:         Estado de pqrsf
-    
+    feedbackType:          Tipo de PQRSF
+    feedbackManagement:    Gestion de  tipos de PQRSF
+    feedbackSpecs:         Detalle de PQRSF
+    feedbackState:         Estado de PQRSF
+    pqrsf_details:         Gestion Detalle PQRSF
+    #-----------------------------DetallePqrsf---------------------------------#
+    user_select:           Seleccione un usuario
+    feedback_select:       Seleccione una Opcion
     #----------------------------Tarifas---------------------------------------#
     ratesManagement:       Gestion de tarifas
     rates:                 Tarifas por tiempo
@@ -142,7 +145,6 @@ dictionary:
     eventPlace:             Lugar del evento
     eventPlaceID:           Id de lugar del evento
     place:                  localidad
-    place_id:               id de localidad
     #----------------------------Acciones--------------------------------------#
     edit:                 Editar
     delete:               Borrar
@@ -204,3 +206,4 @@ dictionary:
     00041:                el campo "tarifa" se encuentra vacio
     00042:                el campo "pago parcial" se encuentra vacio
     00043:                el campo "pago total" se encuentra vacio
+    place_id:               id de localidad
