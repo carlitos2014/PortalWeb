@@ -9,4 +9,5 @@ use mvc\view\viewClass as view ?>
   <h1><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-user"></i>Gestion de detalle de Pqrsf</h1>
 </div>
 <?php view::includeHandlerMessage() ?>
-<?php view::includePartial('detallePqrsf/formUser',array('objIdUsuario' => $objIdUsuario)) ?>
+<?php view::includePartial('detallePqrsf/formUser',array('objIdUsuario' => $objIdUsuario,'objtipoPqrsf'=> $objtipoPqrsf)) ?>
+

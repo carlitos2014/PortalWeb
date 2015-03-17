@@ -19,10 +19,21 @@ class insertActionClass extends controllerClass implements controllerActionInter
     try {
       //$this->mensaje = 'HOLA MUNDO';
      
-       $fields = array(
-          usuarioTableClass::ID,
-          usuarioTableClass::USER);
-      $this->objIdUsuario = usuarioTableClass::getAll($fields);
+//       $fields = array(
+//       detallePqrsTableClass::ID,
+//           detallePqrsTableClass::PQRS_ID,
+//       detallePqrsTableClass::RESPUESTA,
+//       detallePqrsTableClass::USUARIO_ID);
+       $fields=array(usuarioTableClass::ID,
+       usuarioTableClass::USER);
+       $this->objIdUsuario = usuarioTableClass::getAll($fields);
+       
+       $fields1=array(tipoPqrsfTableClass::ID,
+       tipoPqrsfTableClass::NOMBRE);
+       
+      $this->objtipoPqrsf= tipoPqrsfTableClass::getAll($fields1);
+          
+      
       $this->defineView('insert', 'detallePqrsf', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();
