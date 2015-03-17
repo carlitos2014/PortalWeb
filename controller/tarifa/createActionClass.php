@@ -24,7 +24,7 @@ class createActionClass extends controllerClass implements controllerActionInter
        
 
         $this->validate($descripcion, $valor);
-
+// esto es un comentario
 
         $data = array(
             tarifaTableClass::DESCRIPCION => $descripcion,
