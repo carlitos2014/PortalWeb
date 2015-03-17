@@ -19,17 +19,16 @@ class createActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $des = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true));
-        $value = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::VALOR, true));
+        $descripcion = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true));
+        $valor = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::VALOR, true));
        
 
         $this->validate($descripcion, $valor);
-// esto mnmes un comentario
-        
+
 
         $data = array(
-            tarifaTableClass::DESCRIPCION => $des,
-            tarifaTableClass::VALOR => ($value)
+            tarifaTableClass::DESCRIPCION => $descripcion,
+            tarifaTableClass::VALOR => ($valor)
         );
         tarifaTableClass::insert($data);
         routing::getInstance()->redirect('tarifa', 'index');
@@ -43,29 +42,28 @@ class createActionClass extends controllerClass implements controllerActionInter
       print_r($exc->getTrace());
       echo '</pre>';
     }
-  } 
-  
-  
+  }
 
+  private function validate($descripcion, $valor) {
     $flag = false;
 
 
-  private function validate($des, $value) {
+    if (empty($descripcion)) {
 
       session::getInstance()->setError(i18n::__(00031, NULL, 'errors'));
       $flag = true;
       session::getInstance()->setFlash(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true), true);
     }
 
-    if (empty($des)) {
+    if (strlen($descripcion) > tarifaTableClass::DESCRIPCION_LENGTH) {
+      session::getInstance()->setError(i18n::__(00032, NULL, 'errors', array('%desc%' => $descripcion, '%caracteres%' => tarifaTableClass::DESCRIPCION_LENGTH)));
 
       $flag = true;
       session::getInstance()->setFlash(usuarioTableClass::getNameField(tarifaTableClass::DESCRIPCION_LENGTH, true), true);
     }
 
     
-    if (strlen($des) > tarifaTableClass::DESCRIPCION_LENGTH) {
-      session::getInstance()->setError(i18n::__(00032, NULL, 'errors', array('%desc%' => $des, '%caracteres%' => tarifaTableClass::DESCRIPCION_LENGTH)));
+    if (empty($valor)) {
 
       session::getInstance()->setError(i18n::__(00033, NULL, 'errors'));
       $flag = true;
@@ -88,41 +86,28 @@ class createActionClass extends controllerClass implements controllerActionInter
     $objTarifa = tarifaTableClass::getAll($fields);
 
     foreach ($objTarifa as $key) {
-    if (empty($value)) {
+      if ($key->descripcion === $descripcion) {
         session::getInstance()->setError(i18n::__(00034, NULL, 'errors'));
         $flag = true;
         session::getInstance()->setFlash(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true), true);
-      if ($key->descripcion === $des) {
       }
     }
     
- 
-     //condicion de caracteres invalidos $des
     
-    $caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-    for ($i = 0; $i < strlen($des); $i++) {
-      if (strpos($caracteres, substr($des, $i, 1)) === false) {
-
-        session::getInstance()->setError(i18n::__(00011, NULL, 'errors'),array('%char%' => $des));
-        $flag = true;
-        session::getInstance()->setFlash(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true), true);
-      }
-    }
+    //condicion de caracteres invalidos
     
-    //condicion de caracteres invalidos $value
-    
-    $caracteres1 = "0123456789";
+    $caracteres = "0123456789";
 
-    for ($i = 0; $i < strlen($value); $i++) {
-      if (strpos($caracteres1, substr($value, $i, 1)) === false) {
+    for ($i = 0; $i < strlen($valor); $i++) {
+      if (strpos($caracteres, substr($valor, $i, 1)) === false) {
 
-        session::getInstance()->setError(i18n::__(00011, NULL, 'errors'),array('%char%' => $value));
+        session::getInstance()->setError(i18n::__(00035, NULL, 'errors'),array('%char%' => $valor));
         $flag = true;
         session::getInstance()->setFlash(tarifaTableClass::getNameField(tarifaTableClass::VALOR, true), true);
       }
     }
-    
+
+
     if ($flag === true) {
 
       request::getInstance()->setMethod('GET');
@@ -131,4 +116,3 @@ class createActionClass extends controllerClass implements controllerActionInter
   }
 
 }
-
