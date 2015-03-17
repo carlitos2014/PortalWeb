@@ -93,27 +93,13 @@ class createActionClass extends controllerClass implements controllerActionInter
       }
     }
     
+ 
+     //condicion de caracteres invalidos $des
     
-    //condicion de caracteres invalidos
-    
-    $caracteres = "0123456789";
+    $caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    for ($i = 0; $i < strlen($value); $i++) {
-      if (strpos($caracteres, substr($value, $i, 1)) === false) {
-
-        session::getInstance()->setError(i18n::__(00035, NULL, 'errors'),array('%char%' => $value));
-        $flag = true;
-        session::getInstance()->setFlash(tarifaTableClass::getNameField(tarifaTableClass::VALOR, true), true);
-      }
-    }
-    
-    
-    //condicion de caracteres invalidos $des
-    
-    $caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
-
-    for ($i = 0; $i < strlen($$des); $i++) {
-      if (strpos($caracteres, substr($$des, $i, 1)) === false) {
+    for ($i = 0; $i < strlen($des); $i++) {
+      if (strpos($caracteres, substr($des, $i, 1)) === false) {
 
         session::getInstance()->setError(i18n::__(00011, NULL, 'errors'),array('%char%' => $des));
         $flag = true;
@@ -123,12 +109,12 @@ class createActionClass extends controllerClass implements controllerActionInter
     
     //condicion de caracteres invalidos $value
     
-    $caracteres1 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+    $caracteres1 = "0123456789";
 
-    for ($i = 0; $i < strlen($$value); $i++) {
-      if (strpos($caracteres1, substr($$value, $i, 1)) === false) {
+    for ($i = 0; $i < strlen($value); $i++) {
+      if (strpos($caracteres1, substr($value, $i, 1)) === false) {
 
-        session::getInstance()->setError(i18n::__(00011, NULL, 'errors'),array('%char%' => $eventId));
+        session::getInstance()->setError(i18n::__(00011, NULL, 'errors'),array('%char%' => $value));
         $flag = true;
         session::getInstance()->setFlash(tarifaTableClass::getNameField(tarifaTableClass::VALOR, true), true);
       }
