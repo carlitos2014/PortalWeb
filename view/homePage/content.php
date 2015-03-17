@@ -45,15 +45,15 @@ use mvc\routing\routingClass as routing ?>
     <p>Aqui Veremos informacion sobre las ultimas actualizaciones de eventos...</p><a href="#"><?php echo i18n::__('seeMore') ?></a>
     <h2>Quieres saber mas?</h2>
     <ul>
-      <li><a href="http://es.wikipedia.org/wiki/Cali#Literatura"><?php echo i18n::__('literature') ?></a></li>
-      <li><a href="http://es.wikipedia.org/wiki/Cali#Salsa_cale.C3.B1a"><?php echo i18n::__('music') ?></a></li>
-      <li><a href="http://es.wikipedia.org/wiki/Cali#Gastronom.C3.ADa"><?php echo i18n::__('dining') ?></a></li>
-      <li><a href="http://es.wikipedia.org/wiki/Cali#Bibliotecas"><?php echo i18n::__('libraries') ?></a></li>
-      <li><a href="http://es.wikipedia.org/wiki/Cali#Museos"><?php echo i18n::__('museums') ?></a></li>
-      <li><a href="http://es.wikipedia.org/wiki/Cali#Teatros"><?php echo i18n::__('theater') ?></a></li>
-      <li><a href="http://es.wikipedia.org/wiki/Cali#Centros_de_Convenciones"><?php echo i18n::__('conventionCenter') ?></a></li>
-      <li><a href="http://es.wikipedia.org/wiki/Cali#Eventos"><?php echo i18n::__('events') ?></a></li>
-      <li><a href="http://es.wikipedia.org/wiki/Cali#Centros_culturales"><?php echo i18n::__('cultureCenter') ?></a></li>
+      <li name="li1" id="li1"><a href="http://es.wikipedia.org/wiki/Cali#Literatura"><?php echo i18n::__('literature') ?></a></li>
+      <li name="li2" id="li2"><a href="http://es.wikipedia.org/wiki/Cali#Salsa_cale.C3.B1a"><?php echo i18n::__('music') ?></a></li>
+      <li name="li3" id="li3"><a href="http://es.wikipedia.org/wiki/Cali#Gastronom.C3.ADa"><?php echo i18n::__('dining') ?></a></li>
+      <li name="li4" id="li4"><a href="http://es.wikipedia.org/wiki/Cali#Bibliotecas"><?php echo i18n::__('libraries') ?></a></li>
+      <li name="li5" id="li5"><a href="http://es.wikipedia.org/wiki/Cali#Museos"><?php echo i18n::__('museums') ?></a></li>
+      <li name="li6" id="li6"><a href="http://es.wikipedia.org/wiki/Cali#Teatros"><?php echo i18n::__('theater') ?></a></li>
+      <li name="li7" id="li7"><a href="http://es.wikipedia.org/wiki/Cali#Centros_de_Convenciones"><?php echo i18n::__('conventionCenter') ?></a></li>
+      <li name="li8" id="li8"><a href="http://es.wikipedia.org/wiki/Cali#Eventos"><?php echo i18n::__('events') ?></a></li>
+      <li name="li9" id="li9"><a href="http://es.wikipedia.org/wiki/Cali#Centros_culturales"><?php echo i18n::__('cultureCenter') ?></a></li>
     </ul>
     <h2><?php echo i18n::__('contact') ?></h2>
     <a href="#" ><img alt="Facebook" src="https://lh6.googleusercontent.com/-CYt37hfDnQ8/T3nNydojf_I/AAAAAAAAAr0/P5OtlZxV4rk/s32/facebook32.png" /></a>

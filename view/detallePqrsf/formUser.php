@@ -55,11 +55,8 @@ use mvc\i18n\i18nClass as i18n ?>
 
 
 
-    <?php if (session::getInstance()->hasFlash(detallePqrsTableClass::getNameField(detallePqrsTableClass::USUARIO_ID, TRUE)) === TRUE): ?>
-      <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
-    <?php endif ?>
-</div>
-</div>
+    
+
 
 
 
