@@ -52,6 +52,8 @@ usuario_insert:
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
     
 usuario_create:
   url:    /usuario/create
@@ -59,6 +61,8 @@ usuario_create:
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
     
 usuario_editar:
   url:    /usuario/edit
@@ -66,6 +70,8 @@ usuario_editar:
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php 
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
     
 usuario_update:
   url:    /usuario/update
@@ -73,6 +79,8 @@ usuario_update:
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
 
 usuario_delete:
   url:    /usuario/delete
@@ -80,6 +88,8 @@ usuario_delete:
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
 
 usuario_deleteSelect:
   url:    /usuario/deleteSelect
@@ -87,6 +97,8 @@ usuario_deleteSelect:
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
 
 usuario_reporte:
   url:    /usuario/reporte

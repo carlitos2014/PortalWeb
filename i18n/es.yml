@@ -56,7 +56,8 @@ dictionary:
     fillFields:           Llenar los siguientes Campos
     insertNameUser:       Ingrese Nombre de usuario
     insertPass:           Ingrese Contraseña
-    
+    last_name:            Apellido
+    gender:               Genero
     #----------------------------Bitacora--------------------------------------#
     showLogBook:          Mostrar Bitacora
     logBook:              Bitacora
@@ -109,7 +110,8 @@ dictionary:
     e-mail:                Correo
     webPage:               Pagina Web
     facsimil:              Fax
-     
+    organization_id:       id de organizacion
+    birth_day:             fecha de nacimiento 
     #-----------------------------Patrocinador---------------------------------#
     partner:               Patrocinador
     partnerManagement:     Gestion de patrocinadores
@@ -144,7 +146,7 @@ dictionary:
     eventPlace:             Lugar del evento
     eventPlaceID:           Id de lugar del evento
     place:                  localidad
-    
+    place_id:               id de localidad
     #----------------------------Acciones--------------------------------------#
     edit:                 Editar
     delete:               Borrar
@@ -196,3 +198,5 @@ dictionary:
     00033:                el campo "valor" se encuentra vacio
     00034:                la tarifa ya esta registrada
     00035:                ingrese un numero
+    00036:                la fecha final no puede ser menor que la inicial
+    00037:                la fecha final del evento no puede ser inferior a la inicial

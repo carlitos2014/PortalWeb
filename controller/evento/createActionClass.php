@@ -136,6 +136,18 @@ class createActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true), true);
     }
     
+    if ($fecha_final<$fecha_ini) {
+
+      session::getInstance()->setError(i18n::__(00036, NULL, 'errors'));
+      $flag = true;
+
+      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true), true);
+    }
+    
+    
+    
+    
+    
 
     //--------------------------validaciones de latitud-----------------------
     
@@ -202,6 +214,13 @@ class createActionClass extends controllerClass implements controllerActionInter
     if (empty($fechafinpub)) {
 
       session::getInstance()->setError(i18n::__(00021, NULL, 'errors'));
+      $flag = true;
+
+      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true), true);
+    }
+    if (empty($fechafinpub<$fechainipub)) {
+
+      session::getInstance()->setError(i18n::__(00037, NULL, 'errors'));
       $flag = true;
 
       session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true), true);

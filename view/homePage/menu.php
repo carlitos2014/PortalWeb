@@ -37,7 +37,7 @@
             <!--Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                <a href="<?php echo routing::getInstance()->getUrlWeb('evento', 'insert') ?>" class="btn btn-default btn-flat">Crear Evento</a>
               </div>
               <div class="pull-right">
                 <a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>" class="btn btn-default btn-flat"><?php echo i18n::__('logout')?></a>
