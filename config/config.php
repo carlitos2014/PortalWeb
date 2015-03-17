@@ -9,7 +9,7 @@ config::setDbDriver('pgsql'); // pgsql
 config::setDbName('portal');
 config::setDbPort(5432); // 5432
 config::setDbUser('postgres');
-config::setDbPassword('9351');
+config::setDbPassword('postgres');
 config::setDbDsn(
         config::getDbDriver()
         . ':host=' . config::getDbHost()
@@ -36,7 +36,7 @@ config::setDbDsn(
 //  );
 //}
 
-config::setPathAbsolute('/Applications/MAMP/htdocs/PortalWeb/');
+config::setPathAbsolute('/var/www/PortalWeb/');
 config::setUrlBase('http://127.0.0.1/PortalWeb/web/');
 
 config::setScope('dev'); // prod

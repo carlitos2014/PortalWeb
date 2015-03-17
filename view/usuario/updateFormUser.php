@@ -58,10 +58,8 @@ use mvc\i18n\i18nClass as i18n ?>
 
 
     <div class="form-group">
-      <select class="form-control">
-        <option>m</option>
-      </select>
-      <div>
+      <input type="radio" value="TRUE"><input type="radio" value="FALSE">
+     <div>
 
 
         <div class="form-group" <?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>

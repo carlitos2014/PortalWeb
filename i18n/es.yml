@@ -44,7 +44,7 @@ dictionary:
     Contact:              Contacto
     answer:               Respuesta
     feedbackTypeID:       ID de PQRSF
-    
+    register:             registro
     
     #usuario
     userManagement:       Gestion de Usuario
