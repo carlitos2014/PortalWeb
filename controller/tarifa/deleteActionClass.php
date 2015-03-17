@@ -11,7 +11,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Gallego Daniel <gallego9351@gmail.com>
  */
 class deleteActionClass extends controllerClass implements controllerActionInterface {
 
@@ -19,15 +19,15 @@ class deleteActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $id = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::ID, true));
+        $id = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::ID, true));
         
         $ids = array(
-            usuarioTableClass::ID => $id
+            tarifaTableClass::ID => $id
         );
-        usuarioTableClass::delete($ids, true);
-        routing::getInstance()->redirect('usuario', 'index');
+        tarifaTableClass::delete($ids, true);
+        routing::getInstance()->redirect('tarifa', 'index');
       } else {
-        routing::getInstance()->redirect('usuario', 'index');
+        routing::getInstance()->redirect('tarifa', 'index');
       }
     } catch (PDOException $exc) {
       echo $exc->getMessage();
