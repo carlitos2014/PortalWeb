@@ -456,6 +456,8 @@ detallePqrsf_insert:
   load:
     - model/base/detallePqrsfBaseTableClass.php
     - model/detallePqrsTableClass.php
+    - model/base/tipoPqrsfBaseTableClass.php
+    - model/tipoPqrsfTableClass.php
     
 detallePqrsf_create:
   url:    /detallePqrsf/create
