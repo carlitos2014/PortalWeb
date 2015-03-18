@@ -120,6 +120,7 @@ class createActionClass extends controllerClass implements controllerActionInter
       }
     }
     
+    
     if ($flag === true) {
 
       request::getInstance()->setMethod('GET');
