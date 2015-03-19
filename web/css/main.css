@@ -2,7 +2,7 @@ body {
 
 
   background-color: #F5FFFF;
-
+ background-image: url('../img/fondo.jpg');
 }
 
 
@@ -93,12 +93,16 @@ div.contenedor:hover div.info{
   height:160px;
 }
 
-
+.navi{
+  
+  /*background-image:url('../img/p1.jpg');*/
+  
+}
 /*CONTENT*/
 
 div#content {
 background-color: #204d74;
-width: 80%;
+width: 84.5%;
 margin: auto;
 }
 
@@ -166,30 +170,35 @@ font-weight: bold;
   border-radius: 4px 4px 4px 4px;
   
 }
+
 #li2{
   
   background-color: #FFE066;
   border-radius: 4px 4px 4px 4px;
   
 }
+
 #li3{
   
   background-color: #FFC266;
   border-radius: 4px 4px 4px 4px;
   
 }
+
 #li4{
   
   background-color: #EBAD99;
   border-radius: 4px 4px 4px 4px;
   
 }
+
 #li5{
   
   background-color: #FFFF80;
   border-radius: 4px 4px 4px 4px;
   
 }
+
 #li6{
   
   background-color:#EB99C2;

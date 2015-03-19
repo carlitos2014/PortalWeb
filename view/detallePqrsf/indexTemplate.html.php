@@ -14,7 +14,7 @@ use mvc\routing\routingClass as routing ?>
 
 
   <div class="page-header">
-    <h1><i class="glyphicon glyphicon-user"></i><?php echo i18n::__('userManagement') ?></h1>
+    <h1><i class="glyphicon glyphicon-user"></i><?php echo i18n::__('pqrsf_details') ?></h1>
   </div>
 
 

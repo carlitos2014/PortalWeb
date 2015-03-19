@@ -26,7 +26,7 @@ use mvc\routing\routingClass as routing ?>
 
 
 
-  <form id="" action="<?php echo routing::getInstance()->getUrlWeb('evento', 'deleteSelect') ?>" method="POST">
+  <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('evento', 'deleteSelect') ?>" method="POST">
 
     <table class="table table-bordered table-striped">
       <thead>
@@ -64,8 +64,8 @@ use mvc\routing\routingClass as routing ?>
       </tbody>
     </table>
   </form>
-  <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'delete') ?>" method="POST">
-    <input type="hidden" id="idDelete" name="<?php echo eventoTableClass::getNameField(usuarioTableClass::ID, true) ?>">
+  <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('evento', 'delete') ?>" method="POST">
+    <input type="hidden" id="idDelete" name="<?php echo eventoTableClass::getNameField(eventoTableClass::ID, true) ?>">
   </form>
   <div style="margin-bottom: 10px; margin-top: 30px" align="center">
 

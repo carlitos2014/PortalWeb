@@ -3641,6 +3641,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  
+
 }
 .nav > li {
   position: relative;
@@ -3840,6 +3842,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar {
     border-radius: 4px;
+  background-image:url('../img/p3.jpg');
+  
   }
 }
 @media (min-width: 768px) {
@@ -3991,6 +3995,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-nav {
   margin: 7.5px -15px;
+
+
+
 }
 .navbar-nav > li > a {
   padding-top: 10px;

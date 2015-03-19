@@ -7,7 +7,7 @@ use mvc\routing\routingClass as routing ?>
 <br>
 
 <footer>
-  <div class="container">
+  <div class="container" >
     <div class="row">
       <div class="col-lg-12">
         <ul class="list-inline">
@@ -48,5 +48,3 @@ use mvc\routing\routingClass as routing ?>
   Memoria usada: <?php //echo number_format((memory_get_usage() / 1048576), '3', '.', '\'')   ?> megaBytes -
   Tiempo usado: <?php //echo number_format((microtime(true) - $GLOBALS['timeIni']), '4', '.', '\'')   ?> segundos
 </div>-->
-</body>
-</html>
