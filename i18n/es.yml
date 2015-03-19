@@ -44,7 +44,7 @@ dictionary:
     Contact:              Contacto
     answer:               Respuesta
     feedbackTypeID:       ID de PQRSF
-    
+    place_id:               id de localidad
     #---------------------------Usuario----------------------------------------#
     userManagement:       Gestion de Usuario
     id:                   ID
@@ -206,5 +206,5 @@ dictionary:
     00041:                el campo "tarifa" se encuentra vacio
     00042:                el campo "pago parcial" se encuentra vacio
     00043:                el campo "pago total" se encuentra vacio
-    place_id:               id de localidad
+    
     00044:                caracteres no permitidos
