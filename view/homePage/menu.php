@@ -2,7 +2,7 @@
 <?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\session\sessionClass as session?>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top" id="navi">
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="<?php echo routing::getInstance()->getUrlWeb('homePage', 'index') ?>"><i class="glyphicon glyphicon-globe"><?php echo i18n::__('portalCultural') ?></i></a>

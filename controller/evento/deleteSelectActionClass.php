@@ -23,14 +23,14 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
         
         foreach ($idsToDelete as $id) {
           $ids = array(
-            usuarioTableClass::ID => $id
+            eventoTableClass::ID => $id
           );
-          usuarioTableClass::delete($ids, true);
+          eventoTableClass::delete($ids, true);
         }
         
-        routing::getInstance()->redirect('usuario', 'index');
+        routing::getInstance()->redirect('evento', 'index');
       } else {
-        routing::getInstance()->redirect('usuario', 'index');
+        routing::getInstance()->redirect('evento', 'index');
       }
     } catch (PDOException $exc) {
       echo $exc->getMessage();

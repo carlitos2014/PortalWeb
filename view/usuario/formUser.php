@@ -61,9 +61,9 @@ use mvc\i18n\i18nClass as i18n ?>
 
 
     <div class="form-group" <?php echo (session::getInstance()->hasFlash(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::APELLIDO, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
-      <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::APELLIDO, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('last_name') ?></label>
+      <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::APELLIDO, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('lastName') ?></label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::APELLIDO, true) ?>" name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::APELLIDO, true) ?>" placeholder="<?php echo i18n::__('last_name') ?>">
+        <input type="text" class="form-control" id="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::APELLIDO, true) ?>" name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::APELLIDO, true) ?>" placeholder="<?php echo i18n::__('lastName') ?>">
         <?php if (session::getInstance()->hasFlash(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::APELLIDO, TRUE)) === TRUE): ?>
           <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
         <?php endif ?>
@@ -104,7 +104,7 @@ use mvc\i18n\i18nClass as i18n ?>
     </div>
 
     <div class="form-group" <?php echo (session::getInstance()->hasFlash(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::LOCALIDAD_ID, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
-      <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::LOCALIDAD_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('place_id') ?></label>
+      <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::LOCALIDAD_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('eventPlaceID') ?></label>
       <div class="col-sm-10">
         <select class="form-control" id="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::LOCALIDAD_ID, true) ?>" name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::LOCALIDAD_ID, true) ?>" >
           <option value="true">Masculino</option>
@@ -148,5 +148,5 @@ use mvc\i18n\i18nClass as i18n ?>
 
   </form>
 
-</div>
 
+</div>

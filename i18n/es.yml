@@ -53,7 +53,7 @@ dictionary:
     fillFields:           Llenar los siguientes Campos
     insertNameUser:       Ingrese Nombre de usuario
     insertPass:           Ingrese Contraseña
-    
+    gender:               Genero
     #----------------------------Bitacora--------------------------------------#
     showLogBook:          Mostrar Bitacora
     logBook:              Bitacora
