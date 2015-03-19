@@ -1,7 +1,5 @@
 mvcBasicPackage:
-  # - libs/FirePHPCore/FirePHP.class.php
-  # - libs/FirePHPCore/fb.php
-  # - libs/fpdf/fpdf.php
+  
   # - libs/FirePHPCore/FirePHP.class.php
   # - libs/FirePHPCore/fb.php
   # - libs/fpdf/fpdf.php

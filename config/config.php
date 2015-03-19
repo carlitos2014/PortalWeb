@@ -1,6 +1,7 @@
 <?php
 
 use mvc\config\configClass as config;
+use mvc\session\sessionClass as session;
 
 config::setRowGrid(10);
 
@@ -48,6 +49,10 @@ if (session::getInstance()->hasDefaultCulture() === false) {
 } else {
   config::setDefaultCulture(session::getInstance()->getDefaultCulture());
 }
+
+config::setIndexFile('index.php');
+
+
 
 config::setFormatTimestamp('Y-m-d H:i:s');
 
