@@ -570,7 +570,14 @@ evento_insert:
   load:
     - model/base/eventoBaseTableClass.php
     - model/eventoTableClass.php
-    
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/eventoPatrocinadorBaseTableClass.php
+    - model/eventoPatrocinadorTableClass.php
 evento_create:
   url:    /evento/create
   param:  { module: evento, action: create, format: html }

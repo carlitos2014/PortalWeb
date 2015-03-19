@@ -111,6 +111,7 @@ dictionary:
     #-----------------------------Patrocinador---------------------------------#
     partner:               Patrocinador
     partnerManagement:     Gestion de patrocinadores
+    partner_id:            Patrocinador
     
     #-----------------------------Pqrsf----------------------------------------#
     feedback:              PQRSF
@@ -208,3 +209,4 @@ dictionary:
     00043:                el campo "pago total" se encuentra vacio
     
     00044:                caracteres no permitidos
+    
