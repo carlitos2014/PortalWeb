@@ -47,4 +47,4 @@ Thumbs.db
 /nbproject/*
 /web/upload/*
 /web/download/*
-/config/config.php
+/config/config.php/*

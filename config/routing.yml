@@ -589,6 +589,12 @@ evento_insert:
     - model/usuarioTableClass.php
     - model/base/eventoPatrocinadorBaseTableClass.php
     - model/eventoPatrocinadorTableClass.php
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
 evento_create:
   url:    /evento/create
   param:  { module: evento, action: create, format: html }

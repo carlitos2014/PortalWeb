@@ -16,7 +16,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php $latitud = eventoTableClass::LUGAR_LATITUD ?>
 <?php $longitud = eventoTableClass::LUGAR_LONGITUD ?>
 <?php $direccion = eventoTableClass::DIRECCION ?>
-<?php //$costo = eventoTableClass::COSTO ?>
+<?php $costo = eventoTableClass::COSTO ?>
 <?php $usuid = eventoTableClass::USUARIO_ID ?>
 <?php $categoria = eventoTableClass::CATEGORIA_ID ?>
 <?php $fechainipub = eventoTableClass::FECHA_INICIAL_PUBLICACION ?>
