@@ -18,7 +18,7 @@ class insertActionClass extends controllerClass implements controllerActionInter
     public function execute() {
         try {
             //$this->mensaje = 'HOLA MUNDO';
-            //CREACCION DE OBJETOS .
+            //CREACCION DE OBJETOS
             $fields=array(patrocinadorTableClass::ID, patrocinadorTableClass::NOMBRE);
             $this->objPatrocinador = patrocinadorTableClass::getAll($fields);
             $fields1=array(categoriaTableClass::ID, categoriaTableClass::NOMBRE);
