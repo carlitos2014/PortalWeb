@@ -54,6 +54,17 @@ usuario_insert:
     - model/usuarioTableClass.php
     - model/base/datoUsuarioBaseTableClass.php
     - model/datoUsuarioTableClass.php
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+    
     
 usuario_create:
   url:    /usuario/create
@@ -1232,7 +1243,8 @@ default_deleteSelect:
 default_reporte:
   url:    /usuario/reporte
   param:  { module: default, action: report, format: pdf }
-  
+  load:
+    - libs/fpdf/fpdf.php
 #------------------------------------------------------------------------------#
     
 shfSecurity_index:
@@ -1268,7 +1280,13 @@ shfSecurity_logout:
    - model/base/bitacoraBaseTableClass.php
    - model/bitacoraTableClass.php    
     
-    
+shfSecurity_noPermission:
+  url:    /sin_permisos
+  param:  { module: shfSecurity, action: noPermission, format: html }
+
+shfSecurity_exception:
+  url:    /exception
+  param:  { module: shfSecurity, action: exception, format: html } 
     
     
     

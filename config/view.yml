@@ -11,6 +11,7 @@ all:
     - bootstrap.css
     - main.css
     - signin.css
+    - font-awesome.min.css
   favicon: favicon.ico
   title:   
 

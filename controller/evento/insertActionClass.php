@@ -20,11 +20,11 @@ class insertActionClass extends controllerClass implements controllerActionInter
             //$this->mensaje = 'HOLA MUNDO';
             //CREACCION DE OBJETOS .
             $fields=array(patrocinadorTableClass::ID, patrocinadorTableClass::NOMBRE);
-            $this->objPatrocinador = patrocinadorTableClass::getAll($fields);
-            $fields1=array(categoriaTableClass::ID, categoriaTableClass::NOMBRE);
-            $this->objCategoria=  categoriaTableClass::getAll($fields1);
-            $fields2=  array( usuarioTableClass::ID, usuarioTableClass::USER);
-            $this-> objUsuario=  usuarioTableClass::getAll($fields2);
+            $this->objLocalidad = localidadTableClass::getAll($fields);
+            $fields1=array(tipoDocumentoTableClass::ID, tipoDocumentoBaseTableClass::NOMBRE);
+            $this->objTipoDocumento=  tipoDocumentoTableClass::getAll($fields1);
+            $fields2=  array( organizacionTableClass::ID, organizacionTableClass::NOMBRE);
+            $this-> objOrganizacion=  organizacionTableClass::getAll($fields2);
             
             
             $this->defineView('insert', 'evento', session::getInstance()->getFormatOutput());

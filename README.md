@@ -1,4 +1,4 @@
-Portal Web
+Soho Framework v1.0.4
 =============
 
 proyecto formativo del Sena ,creado a partir de Sohoframework(derivacion de Symphony)

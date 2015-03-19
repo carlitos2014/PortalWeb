@@ -71,9 +71,9 @@ namespace mvc\routing {
      *
      * @param string $module
      * @param string|array $action [optional]
-     * @param array $variables [optional]
+     
      */
-    public function forward($module, $action = null, $variables = null) {
+    public function forward($module, $action = null) {
       if (preg_match('/^@/', $module) === 1) {
         $routing = $this->validateRouting($module);
         $module = $routing['param']['module'];

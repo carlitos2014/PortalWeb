@@ -7,7 +7,7 @@ config::setRowGrid(10);
 config::setDbHost('127.0.0.1');
 config::setDbDriver('pgsql'); // pgsql
 config::setDbName('portal');
-config::setDbPort(5433); // 5432
+config::setDbPort(5432); // 5432
 config::setDbUser('postgres');
 config::setDbPassword('postgres');
 config::setDbDsn(
@@ -36,12 +36,18 @@ config::setDbDsn(
 //  );
 //}
 
-config::setPathAbsolute('/var/www/html/Portal/PortalWeb/');
-config::setUrlBase('http://127.0.0.1/Portal/PortalWeb/web/');
+config::setPathAbsolute('/var/www/PortalWeb/');
+config::setUrlBase('http://127.0.0.1/PortalWeb/web/');
 
 config::setScope('dev'); // prod
-config::setDefaultCulture('es');
-config::setIndexFile('index.php');
+
+
+
+if (session::getInstance()->hasDefaultCulture() === false) {
+  config::setDefaultCulture('es');
+} else {
+  config::setDefaultCulture(session::getInstance()->getDefaultCulture());
+}
 
 config::setFormatTimestamp('Y-m-d H:i:s');
 
@@ -64,3 +70,6 @@ config::setDefaultAction('index');
 
 config::setDefaultModuleSecurity('shfSecurity');
 config::setDefaultActionSecurity('index');
+
+config::setDefaultModulePermission('shfSecurity');
+config::setDefaultActionPermission('noPermission');
