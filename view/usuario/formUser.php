@@ -7,8 +7,8 @@ use mvc\session\sessionClass as session ?>
 use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
-<?php //$idUsuario = usuarioTableClass::ID  ?>
-<?php //$password = usuarioTableClass::PASSWORD  ?>
+<?php //$idUsuario = usuarioTableClass::ID   ?>
+<?php //$password = usuarioTableClass::PASSWORD   ?>
 
 
 
@@ -39,7 +39,7 @@ use mvc\i18n\i18nClass as i18n ?>
     </div>
 
     <div class="form-group" <?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
-      <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="col-sm-2 control-label">Confirmacion de contraseña</label>
+      <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="col-sm-2 control-label"><?php echo i18n::__('pass_confirmation') ?></label>
       <div class="col-sm-10">
         <input type="password" class="form-control" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" placeholder="Password">
         <?php if (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, TRUE)) === TRUE): ?>
@@ -48,10 +48,8 @@ use mvc\i18n\i18nClass as i18n ?>
       </div>
     </div>
 
-    
-
     <div class="form-group" <?php echo (session::getInstance()->hasFlash(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::NOMBRE, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
-      <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::NOMBRE, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('name') ?></label>
+<!--      <label for="<?php// echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::NOMBRE, true) ?>" class="col-sm-2 control-label"><?php //echo i18n::__('user_name') ?></label>-->
       <div class="col-sm-10">
         <input type="text" class="form-control" id="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::NOMBRE, true) ?>" name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::NOMBRE, true) ?>"placeholder="Nombre de Usuario">
         <?php if (session::getInstance()->hasFlash(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::NOMBRE, TRUE)) === TRUE): ?>
@@ -108,21 +106,29 @@ use mvc\i18n\i18nClass as i18n ?>
       <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::LOCALIDAD_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('eventPlaceID') ?></label>
       <div class="col-sm-10">
         <select class="form-control" id="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::LOCALIDAD_ID, true) ?>" name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::LOCALIDAD_ID, true) ?>" >
-          <option value="true">Masculino</option>
+          
+        <?php foreach ($objLocalidad as $dato): ?> 
+            <option value="<?php echo $dato->id ?>"><?php echo $dato->nombre ?></option>
 
-        </select>
+          <?php endforeach ?>
+       </select>
         <?php if (session::getInstance()->hasFlash(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::LOCALIDAD_ID, TRUE)) === TRUE): ?>
           <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
         <?php endif ?>
       </div>
     </div>
 
+
     <div class="form-group" <?php echo (session::getInstance()->hasFlash(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
-      <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('IdType') ?></label>
+<!--      <label for="<?php //echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, true) ?>" class="col-sm-2 control-label"><?php// echo i18n::__('Document_type') ?></label>-->
       <div class="col-sm-10">
         <select class="form-control" id="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, true) ?>" name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, true) ?>" >
-          <option value="true">Masculino</option>
-        </select>
+          
+        <?php foreach ($objTipoDocumento as $dato): ?> 
+            <option value="<?php echo $dato->id ?>"><?php echo $dato->nombre ?></option>
+
+          <?php endforeach ?>
+       </select>
         <?php if (session::getInstance()->hasFlash(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, TRUE)) === TRUE): ?>
           <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
         <?php endif ?>
@@ -130,12 +136,17 @@ use mvc\i18n\i18nClass as i18n ?>
     </div>
 
 
+
     <div class="form-group" <?php echo (session::getInstance()->hasFlash(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
       <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('organization_id') ?></label>
       <div class="col-sm-10">
-        <select class="form-control" id="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, true) ?>" name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::GENERO, true) ?>" >
-          <option value="true">Masculino</option>
-        </select>
+        <select class="form-control" id="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, true) ?>" name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, true) ?>" >
+          
+        <?php foreach ($objOrganizacion as $dato): ?> 
+            <option value="<?php echo $dato->id ?>"><?php echo $dato->nombre ?></option>
+
+          <?php endforeach ?>
+       </select>
         <?php if (session::getInstance()->hasFlash(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, TRUE)) === TRUE): ?>
           <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
         <?php endif ?>
@@ -145,7 +156,7 @@ use mvc\i18n\i18nClass as i18n ?>
 
 
     <button class="btn btn-lg btn-primary btn-block" type="submit"><?php echo i18n::__('create') ?></button>
-    
+
 
   </form>
 

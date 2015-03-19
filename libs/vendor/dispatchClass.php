@@ -2,12 +2,12 @@
 
 namespace mvc\dispatch {
 
-    use mvc\config\configClass;
-    use mvc\routing\routingClass;
-    use mvc\autoload\autoLoadClass;
-    use mvc\session\sessionClass;
-    use mvc\i18n\i18nClass;
-    use mvc\hook\hookClass;
+  use mvc\config\configClass as config;
+  use mvc\routing\routingClass as routing;
+  use mvc\autoload\autoLoadClass as autoLoad;
+  use mvc\session\sessionClass as session;
+  use mvc\i18n\i18nClass as i18n;
+  use mvc\hook\hookClass as hook;
 
     /**
      * Description of dispatchClass
@@ -16,14 +16,21 @@ namespace mvc\dispatch {
      */
     class dispatchClass {
 
-        private static $instance;
-
-        public function __construct() {
-
-            if (!sessionClass::getInstance()->hasFirstCall()) {
-                sessionClass::getInstance()->setFirstCall(true);
-            }
-        }
+    /**
+     * Variable estatica para guardar la instancia de la clase dispatchClass
+     * @var dispatchClass 
+     */
+    private static $instance;
+    
+    /**
+     * Constructor del dispatch el cual mantiene controlado
+     * la entrada de la primera ves al sistema
+     */
+    public function __construct() {
+      if (!session::getInstance()->hasFirstCall()) {
+        session::getInstance()->setFirstCall(true);
+      }
+    }
 
         /**
          *
@@ -36,57 +43,62 @@ namespace mvc\dispatch {
             return self::$instance;
         }
 
-        public function main($module = null, $action = null) {
-            try {
-                i18nClass::setCulture(configClass::getDefaultCulture());
-                routingClass::getInstance()->registerModuleAndAction($module, $action);
-                autoLoadClass::getInstance()->loadIncludes();
-                hookClass::hooksIni();
-                $controller = $this->loadModuleAndAction();
-                hookClass::hooksEnd();
-                $controller->renderView();
-            } catch (\Exception $exc) {
-                echo $exc->getMessage();
-                echo '<br>';
-                echo '<pre>';
-                print_r($exc->getTrace());
-                echo '</pre>';
-            }
-        }
+    public function main($module = null, $action = null) {
+      try {
+        i18n::setCulture(config::getDefaultCulture());
+        routing::getInstance()->registerModuleAndAction($module, $action);
+        autoLoad::getInstance()->loadIncludes();
+        hook::hooksIni();
+        $controller = $this->loadModuleAndAction();
+        hook::hooksEnd();
+        $controller->renderView();
+      } catch (\Exception $exc) {
+        echo $exc->getMessage();
+        echo '<br>';
+        echo '<pre>';
+        print_r($exc->getTrace());
+        echo '</pre>';
+      }
+    }
 
-        private function checkFile($controllerFolder, $controllerFile) {
-            return is_file(configClass::getPathAbsolute() . 'controller/' . $controllerFolder . '/' . $controllerFile . '.php');
-        }
+    private function checkFile($controllerFolder, $controllerFile) {
+      return is_file(config::getPathAbsolute() . 'controller/' . $controllerFolder . '/' . $controllerFile . '.php');
+    }
 
-        private function includeFileAndInitialize($controllerFolder, $controllerFile) {
-            include_once configClass::getPathAbsolute() . 'controller/' . $controllerFolder . '/' . $controllerFile . '.php';
-            return new $controllerFile();
-        }
+    private function includeFileAndInitialize($controllerFolder, $controllerFile) {
+      include_once config::getPathAbsolute() . 'controller/' . $controllerFolder . '/' . $controllerFile . '.php';
+      return new $controllerFile();
+    }
 
-        private function loadModuleAndAction() {
-            $controllerFolder = sessionClass::getInstance()->getModule();
-            $controllerFile = $controllerFolder . 'Class';
-            $action = sessionClass::getInstance()->getAction() . 'Action';
-            $controllerFileAction = sessionClass::getInstance()->getAction() . 'ActionClass';
-            $controller = false;
-            if ($this->checkFile($controllerFolder, $controllerFile)) {
-                $controller = $this->includeFileAndInitialize($controllerFolder, $controllerFile);
-                if (method_exists($controller, $action) === true) {
-                    $this->executeAction($controller, $action);
-                } else if ($this->checkFile($controllerFolder, $controllerFileAction)) {
-                    $controller = $this->includeFileAndInitialize($controllerFolder, $controllerFileAction);
-                    $this->executeAction($controller, 'execute');
-                } else {
-                    throw new \Exception(i18nClass::__(00001, null, 'errors'), 00001);
-                }
-            } elseif ($this->checkFile($controllerFolder, $controllerFileAction)) {
-                $controller = $this->includeFileAndInitialize($controllerFolder, $controllerFileAction);
-                $this->executeAction($controller, 'execute');
-            } else {
-                throw new \Exception(i18nClass::__(00001, null, 'errors'), 00001);
-            }
-            return $controller;
+    /**
+     * 
+     * @return \mvc\controller\controllerClass
+     * @throws \Exception
+     */
+    private function loadModuleAndAction() {
+      $controllerFolder = session::getInstance()->getModule();
+      $controllerFile = $controllerFolder . 'Class';
+      $action = session::getInstance()->getAction() . 'Action';
+      $controllerFileAction = session::getInstance()->getAction() . 'ActionClass';
+      $controller = false;
+      if ($this->checkFile($controllerFolder, $controllerFile)) {
+        $controller = $this->includeFileAndInitialize($controllerFolder, $controllerFile);
+        if (method_exists($controller, $action) === true) {
+          $this->executeAction($controller, $action);
+        } else if ($this->checkFile($controllerFolder, $controllerFileAction)) {
+          $controller = $this->includeFileAndInitialize($controllerFolder, $controllerFileAction);
+          $this->executeAction($controller, 'execute');
+        } else {
+          throw new \Exception(i18n::__(00001, null, 'errors'), 00001);
         }
+      } elseif ($this->checkFile($controllerFolder, $controllerFileAction)) {
+        $controller = $this->includeFileAndInitialize($controllerFolder, $controllerFileAction);
+        $this->executeAction($controller, 'execute');
+      } else {
+        throw new \Exception(i18n::__(00001, null, 'errors'), 00001);
+      }
+      return $controller;
+    }
 
         private function executeAction($controller, $action) {
             $controller->$action();

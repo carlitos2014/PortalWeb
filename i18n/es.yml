@@ -13,6 +13,7 @@ dictionary:
     editUser:             Editar usuario
     newPass:              Nueva contraseña
     oldPass:              Contraseña Vieja
+    pass_confirmation:    Verificacion  de contraseña
     register:             Registrar
     selectTables:         Seleccion de tabla
     actions:              Acciones
@@ -44,7 +45,10 @@ dictionary:
     Contact:              Contacto
     answer:               Respuesta
     feedbackTypeID:       ID de PQRSF
-    place_id:               id de localidad
+    place_id:             id de localidad
+    user_name:            Nombre de usuario
+    
+    
     #---------------------------Usuario----------------------------------------#
     userManagement:       Gestion de Usuario
     id:                   ID
@@ -133,6 +137,7 @@ dictionary:
     #------------------------Tipo de documento---------------------------------#
     IdType:                Tipo de Identificacion
     IdTypeManagement:      Gestion de Tipo de Identificacion
+    Document_type:         Tipo doc
      
     #------------------------Recaudo Economico---------------------------------#
     EconomicManagement:    Recaudo economico
@@ -144,7 +149,7 @@ dictionary:
     #---------------------------Localidad--------------------------------------#
     eventPlaceManagement:   Gestion de localidades
     eventPlace:             Lugar del evento
-    eventPlaceID:           Id de lugar del evento
+    eventPlaceID:           Id de lugar
     place:                  localidad
     #----------------------------Acciones--------------------------------------#
     edit:                 Editar

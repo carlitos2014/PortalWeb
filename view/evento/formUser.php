@@ -124,28 +124,28 @@ use mvc\i18n\i18nClass as i18n ?>
     
     
     
-    
+
     <div class="form-group" <?php echo (session::getInstance()->hasFlash(eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::PATROCINADOR_ID, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
-        
-                <label for="<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::PATROCINADOR_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('partner_id') ?></label>
-                <div class="col-sm-10">
-          
 
-                    <select class="form-control" name="<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::PATROCINADOR_ID, true) ?>" id="<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::PATROCINADOR_ID, true) ?>">
-                        <option value=""><?php echo i18n::__('partner_id') ?></option>
-                        <?php foreach ($objPatrocinador as $dato): ?> 
-                            <option value="<?php echo $dato->id ?>"><?php echo $dato->nombre ?></option>
+      <label for="<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::PATROCINADOR_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('partner_id') ?></label>
+      <div class="col-sm-10">
 
-                        <?php endforeach ?> 
 
-                        <?php if (session::getInstance()->hasFlash(eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::PATROCINADOR_ID, TRUE)) === TRUE): ?>
-                            <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
-                        <?php endif ?>
-                </div>
-            </div>
+        <select class="form-control" name="<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::PATROCINADOR_ID, true) ?>" id="<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::PATROCINADOR_ID, true) ?>">
+          <option value=""><?php echo i18n::__('partner_id') ?></option>
+          <?php foreach ($objPatrocinador as $dato): ?> 
+            <option value="<?php echo $dato->id ?>"><?php echo $dato->nombre ?></option>
 
-    
-     </div>
+          <?php endforeach ?> 
+
+          <?php if (session::getInstance()->hasFlash(eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::PATROCINADOR_ID, TRUE)) === TRUE): ?>
+            <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
+          <?php endif ?>
+      </div>
+    </div>
+
+
+</div>
     
     
     

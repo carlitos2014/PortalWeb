@@ -1,10 +1,14 @@
 shfSecurity:
   index:
     security: false
-  logoin:
+  login:
     security: false
   logout:
     security: true
+  noPermission:
+    security: false
+  exception:
+    security: false
 
 homePage:
   index:

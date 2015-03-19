@@ -11,4 +11,4 @@ use mvc\view\viewClass as view ?>
   </div>
 </div>
 <?php view::includeHandlerMessage() ?>
-<?php view::includePartial('usuario/formUser') ?>
+<?php view::includePartial('usuario/formUser',array('objLocalidad'=>$objLocalidad,'objTipoDocumento'=>$objTipoDocumento,'objOrganizacion'=>$objOrganizacion) )?>
