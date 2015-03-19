@@ -441,7 +441,7 @@ estadoPqrsf_reporte:
   param:  { module: estadoPqrsf, action: report, format: pdf }
   
   
-#-------------------------------detallePqsrf-----------------------------------#
+#---------------------------------detallePqsrf-----------------------------------#
   
 detallePqrsf_index:
   url:    /detallePqrsf/index
