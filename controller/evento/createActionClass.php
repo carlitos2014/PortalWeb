@@ -127,7 +127,7 @@ class createActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true), true);
     }
     
-    //--------------------------validaciones de fecha final del evento-----------------------
+    //-----------------------------validaciones de fecha final del evento-----------------------
     
     if (empty($fecha_final)) {
 
