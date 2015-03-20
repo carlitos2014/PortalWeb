@@ -150,18 +150,18 @@ use mvc\i18n\i18nClass as i18n ?>
             <label for="<?php echo eventoTableClass:: getNameField(eventoTableClass::ID, TRUE) ?>" class="col-sm-2 control-label"> <?php echo i18n::__('user_id') ?></label>
             <div class="col-sm-10">
 
-                <select class="form-control" name="<?php echo eventoTableClass::getNameField(eventoTableClass::ID, TRUE) ?>" id="<?php echo eventoTableClass::getNameField(eventoTableClass::USER, TRUE) ?>">
+                <select class="form-control" name="<?php echo eventoTableClass::getNameField(eventoTableClass::USUARIO_ID, TRUE) ?>" id="<?php echo eventoTableClass::getNameField(eventoTableClass::USUARIO_ID, TRUE) ?>">
 <!--                    <option value=""><?php //"Seleccione" ?></option>-->
                     <?php foreach ($objUsuario as $dato1): ?>
                         <option value="<?php echo $dato1->id ?>"><?php echo $dato1->user_name ?></option>
                     <?php endforeach ?>
                 </select>
-                    <?php if (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::ID, TRUE)) === TRUE): ?>
+                    <?php if (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::USUARIO_ID, TRUE)) === TRUE): ?>
                         <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
                     <?php endif ?>
 
             </div>
-        </div></br>
+        </div>
 
 
         
@@ -187,13 +187,13 @@ use mvc\i18n\i18nClass as i18n ?>
         
         
 <!--
-        <div class="form-group" <?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
-            <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('categoryID') ?></label>
+        <div class="form-group" <?php //echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
+            <label for="<?php //echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>" class="col-sm-2 control-label"><?php //echo i18n::__('categoryID') ?></label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="<?php echo i18n::__('categoryID') ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>" id="<?php echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>" value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, TRUE)) === TRUE) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, TRUE)) : '' ?>">
-                <?php if (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, TRUE)) === TRUE): ?>
+                <input type="text" class="form-control" placeholder="<?php //echo i18n::__('categoryID') ?>"  name="<?php// echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>" id="<?php //echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>" value="<?php //echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, TRUE)) === TRUE) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, TRUE)) : '' ?>">
+                <?php //if (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, TRUE)) === TRUE): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
-                <?php endif ?>
+                <?php //endif ?>
             </div>
         </div>-->
 
