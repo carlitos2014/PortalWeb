@@ -191,7 +191,7 @@ use mvc\i18n\i18nClass as i18n ?>
             <label for="<?php //echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>" class="col-sm-2 control-label"><?php //echo i18n::__('categoryID') ?></label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" placeholder="<?php //echo i18n::__('categoryID') ?>"  name="<?php// echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>" id="<?php //echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>" value="<?php //echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, TRUE)) === TRUE) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, TRUE)) : '' ?>">
-                <?php //if (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, TRUE)) === TRUE): ?>
+                <?php //if (  session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, TRUE)) === TRUE): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
                 <?php //endif ?>
             </div>
