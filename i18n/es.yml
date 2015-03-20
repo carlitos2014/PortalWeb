@@ -61,7 +61,7 @@ dictionary:
     #----------------------------Bitacora--------------------------------------#
     showLogBook:          Mostrar Bitacora
     logBook:              Bitacora
-    user_id:              ID del Usuario
+    user_id:              Usuario
     action:               Acción
     table:                Tabla
     record:               Registro
@@ -77,13 +77,13 @@ dictionary:
     updateDate:           Fecha de Actualización
     deleteDate:           Fecha de Borrado
     lastName:             Apellido
-    credentialId:         ID de Credencial
+    credentialId:         Credencial
     
     #-----------------------------Categoria------------------------------------#
     categoryManagement:   Gestion de Categorias de evento 
     eventCategory:        Categoria de eventos
     category:             Categoria
-    categoryID:           ID de Categoria
+    categoryID:           Categoria
     createCategory:       Crear categoria
     
     #------------------------------Evento--------------------------------------#

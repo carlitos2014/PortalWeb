@@ -28,6 +28,7 @@ class createActionClass extends controllerClass implements controllerActionInter
         $direccion = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::DIRECCION, true));
         $costo = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::COSTO, true));
         $usuid = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::USUARIO_ID, true));
+        //$usuName=  request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::))
         $categoria = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true));
         $fechainipub = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true));
         $fechafinpub = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true));
@@ -76,10 +77,10 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
 
     if (strlen($img) > eventoTableClass::IMAGEN_LENGTH) {
-      session::getInstance()->setError(i18n::__(00016, NULL, 'errors', array('%user%' => $usuario, '%caracteres%' => eventoTableClass::USER_LENGTH)));
+      session::getInstance()->setError(i18n::__(00016, NULL, 'errors', array('%user%' => $img, '%caracteres%' => eventoTableClass::IMAGEN_LENGTH)));
 
       $flag = true;
-      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::USER, true), true);
+      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::IMAGEN, true), true);
     }
 
     
