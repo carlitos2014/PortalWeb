@@ -67,7 +67,7 @@ use mvc\i18n\i18nClass as i18n ?>
                 <a href="#" class="btn btn-default btn-flat">Perfil</a>
               </div>
               <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                <a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout')?>" class="btn btn-default btn-flat">Sign out</a>
               </div>
             </li>
           </ul>
@@ -77,16 +77,17 @@ use mvc\i18n\i18nClass as i18n ?>
   </div> <!--/.container-fluid--> 
 </nav>
 
+<br>
+<br>
+<div class="container container-fluid">
 
-<div class="container container-fluid"
-
-     <div class="page-header">
-    <h1><i class="glyphicon glyphicon-screenshot"></i><i class="glyphicon glyphicon-user"></i>&nbsp;Administracion</h1>
+     <div class="page-header" id="titulo">
+    <marquee behavior="alternate" direction="left"><h1><i class="glyphicon glyphicon-screenshot"></i><i class="glyphicon glyphicon-user"></i>&nbsp;Administracion</h1></marquee>
   </div>
 
 
 
-  <div class="container container-fluid">
+<!--  <div class="container container-fluid">-->
 
     <div class="row">
       <div class="col-lg-3 col-xs-6">

@@ -38,16 +38,14 @@ class createActionClass extends controllerClass implements controllerActionInter
             organizacionTableClass::PAGINA_WEB => $webpage
         );
         organizacionTableClass::insert($data);
+        log::register('crear','usuario');
         routing::getInstance()->redirect('organizacion', 'index');
       } else {
         routing::getInstance()->redirect('organizacion', 'index');
       }
     } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 

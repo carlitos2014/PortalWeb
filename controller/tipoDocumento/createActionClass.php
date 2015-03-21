@@ -30,16 +30,14 @@ class createActionClass extends controllerClass implements controllerActionInter
             
         );
         tipoDocumentoTableClass::insert($data);
+        log::register('crear','tipo_documento');
         routing::getInstance()->redirect('tipoDocumento', 'index');
       } else {
         routing::getInstance()->redirect('tipoDocumento', 'index');
       }
     } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 

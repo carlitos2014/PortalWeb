@@ -129,7 +129,7 @@ use mvc\i18n\i18nClass as i18n ?>
 
 
     <div class="form-group" <?php echo (session::getInstance()->hasFlash(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
-<!--      <label for="<?php //echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, true) ?>" class="col-sm-2 control-label"><?php// echo i18n::__('Document_type') ?></label>-->
+      <label for="<?php //echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, true) ?>" class="col-sm-2 control-label"><?php// echo i18n::__('Document_type') ?></label>
       <div class="col-sm-10">
         <select class="form-control" id="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, true) ?>" name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, true) ?>" >
           
@@ -147,7 +147,7 @@ use mvc\i18n\i18nClass as i18n ?>
 
 
     <div class="form-group" <?php echo (session::getInstance()->hasFlash(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
-      <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('organization_id') ?></label>
+      <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, true) ?>" class="col-sm-2 control-label"><?php //echo i18n::__('organization_id') ?></label>
       <div class="col-sm-10">
         <select class="form-control" id="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, true) ?>" name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, true) ?>" >
           
@@ -161,6 +161,9 @@ use mvc\i18n\i18nClass as i18n ?>
         <?php endif ?>
       </div>
     </div>
+    
+    <br>
+    <br>
 
 <!--entrada oculta para llenar la llave foranea en dato usuario-->
 

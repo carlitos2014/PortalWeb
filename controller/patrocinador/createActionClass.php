@@ -36,16 +36,14 @@ class createActionClass extends controllerClass implements controllerActionInter
             patrocinadorTableClass::DIRECCION => $direccion
         );
         patrocinadorTableClass::insert($data);
+       log::register('crear','usuario');
         routing::getInstance()->redirect('patrocinador', 'index');
       } else {
         routing::getInstance()->redirect('patrocinador', 'index');
       }
     } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 

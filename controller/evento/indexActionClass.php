@@ -34,11 +34,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $this->objEvento = eventoTableClass::getAll($fields, true, $orderBy, 'ASC');
       $this->defineView('index', 'evento', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 

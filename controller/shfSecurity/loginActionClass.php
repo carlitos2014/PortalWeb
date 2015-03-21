@@ -36,6 +36,8 @@ class loginActionClass extends controllerClass implements controllerActionInterf
             recordarMeTableClass::insert($data);
             setcookie(config::getCookieNameRememberMe(), $hash, time() + config::getCookieTime(), config::getCookiePath());
           }
+          
+          
           log::register('identificación', 'NINGUNA');
           hook\security\securityHookClass::redirectUrl();
         } else {

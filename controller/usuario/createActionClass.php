@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
 
 /**
  * Description of ejemploClass
@@ -28,7 +29,7 @@ class createActionClass extends controllerClass implements controllerActionInter
         $apellido = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::APELLIDO, true));
         $correo = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::CORREO, true));
         $genero = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::GENERO, true));
-        $usuid =  request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::USUARIO_ID, true));
+        //$usuid =  request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::USUARIO_ID, true));
         $fecha = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::FECHA_NACIMIENTO, true));
         $idevent = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::LOCALIDAD_ID, true));
         $tipoid = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, true));
@@ -37,10 +38,16 @@ class createActionClass extends controllerClass implements controllerActionInter
         $this->validate($usuario, $password, $password2,$fecha);
         $data = array(
             usuarioTableClass::USER => $usuario,
-            usuarioTableClass::PASSWORD => md5($password)
+            usuarioTableClass::PASSWORD => md5($password),
+            '__sequence'=> 'usuario_id_seq'
         );
 
-        $data1 = array(
+        
+
+
+       $usuid= usuarioTableClass::insert($data);
+       
+       $data1 = array(
             datoUsuarioTableClass::NOMBRE => $nombre,
             datoUsuarioTableClass::APELLIDO => $apellido,
             datoUsuarioTableClass::CORREO => $correo,
@@ -50,23 +57,19 @@ class createActionClass extends controllerClass implements controllerActionInter
             datoUsuarioTableClass::LOCALIDAD_ID => $idevent,
             datoUsuarioTableClass::TIPO_DOCUMENTO_ID => $tipoid,
             datoUsuarioTableClass::ORGANIZACION_ID => $orgid,
-        );
-
-
-        usuarioTableClass::insert($data);
-        datoUsuarioTableClass::insert($data1);
-
+        ); 
+       
+       
+       datoUsuarioTableClass::insert($data1);
+       log::register('crear','usuario');
 
         routing::getInstance()->redirect('usuario', 'index');
       } else {
         routing::getInstance()->redirect('usuario', 'index');
       }
     } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 

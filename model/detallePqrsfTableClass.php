@@ -12,6 +12,6 @@ use mvc\config\configClass as config;
  *
  * @author leonardo
  */
-class detallePqrsTableClass extends detallePqrsfBaseTableClass{
+class detallePqrsfTableClass extends detallePqrsfBaseTableClass{
   //put your code here
 }
