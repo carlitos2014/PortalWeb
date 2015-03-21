@@ -11,7 +11,7 @@ use mvc\model\table\tableBaseClass;
  *
  * @author leonardo
  */
-class pqrsfTableBaseClass extends tableBaseClass{
+class pqrsfBaseTableClass extends tableBaseClass{
   //put your code here
 
   

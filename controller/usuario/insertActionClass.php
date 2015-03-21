@@ -11,7 +11,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Leonardo Betancourt <leobetacai@gmail.com>
  */
 class insertActionClass extends controllerClass implements controllerActionInterface {
 
@@ -26,6 +26,9 @@ class insertActionClass extends controllerClass implements controllerActionInter
             
             $fields2= array( organizacionTableClass::ID, organizacionTableClass::NOMBRE);
             $this-> objOrganizacion =  organizacionTableClass::getAll($fields2);
+            
+            $fields3= array( usuarioTableClass::ID);
+            $this-> objUsuario =  usuarioTableClass::getAll($fields3);
 
       $this->defineView('insert', 'usuario', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {

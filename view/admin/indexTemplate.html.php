@@ -397,7 +397,26 @@ use mvc\i18n\i18nClass as i18n ?>
       
       
       
-      
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-red">
+          <div class="inner">
+            <h3>
+              0 <?php //echo $cont12 ?>
+            
+            </h3>
+            <p>
+<?php echo i18n::__('feedback') ?>
+            </p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-earth"></i>
+          </div>
+          <a href="<?php echo routing::getInstance()->getUrlWeb('pqrsf', 'index') ?>" class="small-box-footer">
+<?php echo i18n::__('feedback') ?> <i class="fa fa-arrow-circle-right"></i>
+          </a>
+        </div>
+      </div>
       
       
       

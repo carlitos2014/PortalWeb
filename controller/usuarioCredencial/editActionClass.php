@@ -12,7 +12,7 @@ use mvc\controller\controllerClass\credencial;
 /**
  * Description of ejemploClass
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author  Leonardo Betancourt <leobetacai@gmail.com>
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 

@@ -10,6 +10,15 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php //$idUsuario = usuarioTableClass::ID   ?>
 <?php //$password = usuarioTableClass::PASSWORD   ?>
 
+<?php $usuid=usuarioTableClass::ID  ?>
+
+
+<?php $usuario = usuarioTableClass::USER ?>
+<?php $password = usuarioTableClass::PASSWORD ?>
+
+<?php $fecha = datoUsuarioTableClass::FECHA_NACIMIENTO ?>
+
+
 
 
 <div class="container container-fluid">
@@ -153,7 +162,17 @@ use mvc\i18n\i18nClass as i18n ?>
       </div>
     </div>
 
+<!--entrada oculta para llenar la llave foranea en dato usuario-->
 
+
+<?php //foreach ($objUsuario as $datoid): ?> 
+   
+<?php //$dat=array($datoid->id) ?> 
+<?php //$ope=array_pop($objusuario['id']) ?> 
+<?php //echo $id ?>
+
+<input type="hidden" id="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::USUARIO_ID, true) ?>" name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::USUARIO_ID, true) ?>" value="<?php echo max($objUsuario)+1 ?>">
+<?php //endforeach ?>
 
     <button class="btn btn-lg btn-primary btn-block" type="submit"><?php echo i18n::__('create') ?></button>
 

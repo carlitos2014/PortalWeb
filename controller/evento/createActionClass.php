@@ -11,7 +11,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Leonardo Betancourt <leobetacai@gmail.com>
  */
 class createActionClass extends controllerClass implements controllerActionInterface {
 
@@ -137,15 +137,15 @@ class createActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true), true);
     }
     
-    if ($fecha_final<$fecha_ini) {
-
-      session::getInstance()->setError(i18n::__(00036, NULL, 'errors'));
-      $flag = true;
-
-      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true), true);
-    }
-    
-    
+//    if ($fecha_final<$fecha_ini) {
+//
+//      session::getInstance()->setError(i18n::__(00045, NULL, 'errors'));
+//      $flag = true;
+//
+//      session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true), true);
+//    }
+//    
+//    
     
     
     
@@ -219,7 +219,7 @@ class createActionClass extends controllerClass implements controllerActionInter
 
       session::getInstance()->setFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true), true);
     }
-    if (empty($fechafinpub<$fechainipub)) {
+    if ($fechafinpub<$fechainipub){
 
       session::getInstance()->setError(i18n::__(00037, NULL, 'errors'));
       $flag = true;

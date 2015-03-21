@@ -12,7 +12,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Leonardo Betancourt <leobetacai@gmail.com>
  */
 class createActionClass extends controllerClass implements controllerActionInterface {
 
