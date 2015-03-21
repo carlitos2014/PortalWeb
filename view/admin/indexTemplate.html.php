@@ -333,7 +333,7 @@ use mvc\i18n\i18nClass as i18n ?>
     <div class="row">
       <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-aqua">
+        <div class="small-box bg-yellow">
           <div class="inner">
             <h3>
               <?php echo $cont12 ?>
@@ -365,7 +365,7 @@ use mvc\i18n\i18nClass as i18n ?>
             </p>
           </div>
           <div class="icon">
-            <i class="ion ion-earth"></i>
+            <i class="ion ion-refreshing"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('detallePqrsf', 'index') ?>" class="small-box-footer">
 <?php echo i18n::__('feedbackSpecs') ?> <i class="fa fa-arrow-circle-right"></i>
@@ -387,7 +387,7 @@ use mvc\i18n\i18nClass as i18n ?>
             </p>
           </div>
           <div class="icon">
-            <i class="ion ion-earth"></i>
+            <i class="ion ion-refreshing"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('estadoPqrsf', 'index') ?>" class="small-box-footer">
 <?php echo i18n::__('feedbackState') ?> <i class="fa fa-arrow-circle-right"></i>
@@ -399,7 +399,7 @@ use mvc\i18n\i18nClass as i18n ?>
       
       <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-red">
+        <div class="small-box bg-maroon">
           <div class="inner">
             <h3>
               0 <?php //echo $cont12 ?>
@@ -410,7 +410,7 @@ use mvc\i18n\i18nClass as i18n ?>
             </p>
           </div>
           <div class="icon">
-            <i class="ion ion-earth"></i>
+            <i class="ion ion-refreshing"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('pqrsf', 'index') ?>" class="small-box-footer">
 <?php echo i18n::__('feedback') ?> <i class="fa fa-arrow-circle-right"></i>

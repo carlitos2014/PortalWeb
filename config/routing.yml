@@ -874,6 +874,9 @@ pqrsf_insert:
   load:
     - model/base/pqrsfBaseTableClass.php
     - model/pqrsfTableClass.php
+    - model/base/tipoPqrsfBaseTableClass.php
+    - model/tipoPqrsfTableClass.php
+    
     
 pqrsf_create:
   url:    /pqrsf/create

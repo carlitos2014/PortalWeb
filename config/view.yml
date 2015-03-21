@@ -71,6 +71,10 @@ organizacion:
     stylesheet:
       - form.css
       
+pqrsf:
+  insert:
+    stylesheet:
+      - form.css
       
 admin:
   index:

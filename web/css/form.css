@@ -29,7 +29,7 @@ body {}
 }
 
 .form-create {
-  max-width: 600px;
+  max-width: 700px;
   padding: 15px;
   margin: 0 auto;
   background-color: #f1f1f1;
@@ -67,10 +67,28 @@ body {}
   border-top-right-radius: 0;
 }
 
+
+form-create input[type="textarea"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  height: 300px; 
+
+}
+
 .alert {
   margin-top: 15px;
   margin-bottom: 0px;
   margin-left: 15px;
  
+  
+}
+
+.text-area{
+  
+  height: 200px;
+  width: 300px;
+  padding-bottom: 5px;
+  margin: 10px;
   
 }

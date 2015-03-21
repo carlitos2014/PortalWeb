@@ -48,7 +48,7 @@ dictionary:
     place_id:             id de localidad
     user_name:            Nombre de usuario
     title:                Titulo
-    
+    content:              Contenido
     #---------------------------Usuario----------------------------------------#
     userManagement:       Gestion de Usuario
     id:                   ID
@@ -119,7 +119,7 @@ dictionary:
     
     #-----------------------------Pqrsf----------------------------------------#
     
-    
+    title:                 Titulo
     feedback:              PQRSF
     feedbackType:          Tipo de PQRSF
     feedbackManagement:    Gestion de  tipos de PQRSF
