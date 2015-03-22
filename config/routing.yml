@@ -87,6 +87,17 @@ usuario_editar:
     - model/usuarioTableClass.php 
     - model/base/datoUsuarioBaseTableClass.php
     - model/datoUsuarioTableClass.php
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+    - hooks/logHookClass.php
     
 usuario_update:
   url:    /usuario/update
@@ -99,6 +110,17 @@ usuario_update:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+    - hooks/logHookClass.php
     
 usuario_delete:
   url:    /usuario/delete

@@ -216,6 +216,8 @@ dictionary:
     00043:                el campo "pago total" se encuentra vacio
     00045:                 fecha de inicio y fin de publicacion invalida
     00044:                caracteres no permitidos
-    
-    
+    00045:                campo nombre de lugar vacio
+    00046:                El  lugar %user% excede los %caracteres% caracteres permitidos
+    00047:                El nombre de localidad ya existe
+    00048:                El campo localidad id esta vacio
     
