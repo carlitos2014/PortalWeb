@@ -17,34 +17,53 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
   public function execute() {
     try {
-      if (request::getInstance()->hasRequest(usuarioTableClass::ID)) {
+      if (request::getInstance()->hasRequest(eventoTableClass::ID)) {
         $fields = array(
-            usuarioTableClass::ID,
-            usuarioTableClass::USER,
-            usuarioTableClass::PASSWORD
-        );
+            eventoTableClass::ID,
+            eventoTableClass::IMAGEN,
+            eventoTableClass::NOMBRE,
+            eventoTableClass::DESCRIPCION,
+            eventoTableClass::FECHA_INICIAL_EVENTO,
+            eventoTableClass::FECHA_FINAL_EVENTO,
+            eventoTableClass::LUGAR_LATITUD,
+            eventoTableClass::LUGAR_LONGITUD,
+            eventoTableClass::DIRECCION,
+            eventoTableClass::COSTO,
+            eventoTableClass::USUARIO_ID,
+            eventoTableClass::CATEGORIA_ID,
+        eventoTableClass::FECHA_INICIAL_PUBLICACION,
+            eventoTableClass::FECHA_FINAL_PUBLICACION,
+            
+            
+            );
         $where = array(
-            usuarioTableClass::ID => request::getInstance()->getRequest(usuarioTableClass::ID)
+            eventoTableClass::ID => request::getInstance()->getRequest(eventoTableClass::ID)
         );
-        $this->objUsuarios = usuarioTableClass::getAll($fields, true, null, null, null, null, $where);
-        $this->defineView('edit', 'usuario', session::getInstance()->getFormatOutput());
+        
+            $fields3= array(categoriaTableClass::ID, categoriaTableClass::NOMBRE);
+            $this-> objCategoria=  categoriaTableClass::getAll($fields3);
+            
+            $fields4= array(usuarioTableClass::ID, usuarioTableClass::USER);
+            $this-> objUsuario= usuarioTableClass::getAll($fields4);
+        $this->objEvento = eventoTableClass::getAll($fields, true, null, null, null, null, $where);
+        $this->defineView('edit', 'evento', session::getInstance()->getFormatOutput());
       } else {
-        routing::getInstance()->redirect('usuario', 'index');
+        routing::getInstance()->redirect('evento', 'index');
       }
 //      if (request::getInstance()->isMethod('POST')) {
 //
-//        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USUARIO, true));
-//        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
+//        $evento = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::USUARIO, true));
+//        $password = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::PASSWORD, true));
 //
-//        if (strlen($usuario) > usuarioTableClass::USUARIO_LENGTH) {
-//          throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => usuarioTableClass::USUARIO_LENGTH)), 00001);
+//        if (strlen($evento) > eventoTableClass::USUARIO_LENGTH) {
+//          throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => eventoTableClass::USUARIO_LENGTH)), 00001);
 //        }
 //
 //        $data = array(
-//            usuarioTableClass::USUARIO => $usuario,
-//            usuarioTableClass::PASSWORD => md5($password)
+//            eventoTableClass::USUARIO => $evento,
+//            eventoTableClass::PASSWORD => md5($password)
 //        );
-//        usuarioTableClass::insert($data);
+//        eventoTableClass::insert($data);
 //        routing::getInstance()->redirect('default', 'index');
 //      } else {
 //        routing::getInstance()->redirect('default', 'index');

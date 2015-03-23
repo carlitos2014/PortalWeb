@@ -38,9 +38,15 @@ default:
       - index.js
       
 usuario:
+  create:
+    stylesheet:
+      - form.css 
+
+usuario:
   insert:
     stylesheet:
-      - form.css
+      - form.css      
+
 
 usuario:
   edit:

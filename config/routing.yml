@@ -769,6 +769,8 @@ evento_editar:
   load:
     - model/base/eventoBaseTableClass.php
     - model/eventoTableClass.php 
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
     
 evento_update:
   url:    /evento/update

@@ -10,7 +10,6 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php //$password = localidadTableClass::LOCALIDAD_ID ?>
 
 
-
 <div class="container container-fluid">
 
 <form class="form-create" role="form" action="<?php echo routing::getInstance()->getUrlWeb('localidad', 'create') ?>" method="POST">

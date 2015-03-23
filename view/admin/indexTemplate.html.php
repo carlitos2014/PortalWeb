@@ -81,8 +81,8 @@ use mvc\i18n\i18nClass as i18n ?>
 <br>
 <div class="container container-fluid">
 
-     <div class="page-header" id="titulo">
-    <marquee behavior="alternate" direction="left"><h1><i class="glyphicon glyphicon-screenshot"></i><i class="glyphicon glyphicon-user"></i>&nbsp;Administracion</h1></marquee>
+     <div class="page-header" id="titulo" >
+    <h1><i class="glyphicon glyphicon-screenshot"></i><i class="glyphicon glyphicon-user"></i>&nbsp;Administracion</h1>
   </div>
 
 
