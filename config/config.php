@@ -8,7 +8,7 @@ config::setRowGrid(10);
 config::setDbHost('127.0.0.1');
 config::setDbDriver('pgsql'); // pgsql
 config::setDbName('portal');
-config::setDbPort(5433); // 5432
+config::setDbPort(5432); // 5432
 config::setDbUser('postgres');
 config::setDbPassword('postgres');
 config::setDbDsn(
@@ -37,8 +37,8 @@ config::setDbDsn(
 //  );
 //}
 
-config::setPathAbsolute('/var/www/html/Portal/PortalWeb/');
-config::setUrlBase('http://127.0.0.1/Portal/PortalWeb/web/');
+config::setPathAbsolute('/var/www/PortalWeb/');
+config::setUrlBase('http://127.0.0.1/PortalWeb/web/');
 
 config::setScope('dev'); // prod
 
@@ -70,7 +70,7 @@ config::setCookiePath('/Portalweb/web/' . config::getIndexFile());
 config::setCookieDomain('http://127.0.0.1/');
 config::setCookieTime(3600 * 8); // una hora en segundo 3600 y por 8 serían 8 horas
 
-config::setDefaultModule('admin');
+config::setDefaultModule('homePage');
 config::setDefaultAction('index');
 
 config::setDefaultModuleSecurity('shfSecurity');

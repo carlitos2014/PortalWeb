@@ -16,6 +16,8 @@ use mvc\i18n\i18nClass as i18n ?>
 
   <form class="form-signin" role="form" action="<?php echo routing::getInstance()->getUrlWeb('tarifa', 'create') ?>" method="POST">
     <h2 class="form-signin-heading"></h2>
+    
+    
     <div class="form-group" <?php echo (session::getInstance()->hasFlash(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, TRUE))===TRUE) ? 'has-error has-feedback' : '' ?>>
       <label for="<?php echo tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true) ?>" class="sr-only"><?php echo i18n::__('desc') ?></label>
       <input type="text" class="form-control" placeholder="Descripcion"  name="<?php echo tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true) ?>" id="<?php echo tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true) ?>" value="<?php echo (session::getInstance()->hasFlash(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, TRUE))===TRUE) ? request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, TRUE)) : '' ?>">

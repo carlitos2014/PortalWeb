@@ -31,16 +31,14 @@ class createActionClass extends controllerClass implements controllerActionInter
             tarifaTableClass::VALOR => ($value)
         );
         tarifaTableClass::insert($data);
+        log::register('crear','tarifa');
         routing::getInstance()->redirect('tarifa', 'index');
       } else {
         routing::getInstance()->redirect('tarifa', 'index');
       }
     } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 

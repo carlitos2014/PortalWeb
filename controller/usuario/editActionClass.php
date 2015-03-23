@@ -11,7 +11,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Leonardo Betancourt <leobetacai@gmail.com>
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
@@ -21,22 +21,44 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         $fields = array(
             usuarioTableClass::ID,
             usuarioTableClass::USER,
-            usuarioTableClass::PASSWORD
+            usuarioTableClass::PASSWORD,
+        );
+        $fields1 = array(datoUsuarioTableClass::NOMBRE,
+            datoUsuarioTableClass::APELLIDO,
+            datoUsuarioTableClass::CORREO,
+            datoUsuarioTableClass::GENERO,
+            //$usuid =  request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::USUARIO_ID, true));
+            datoUsuarioTableClass::FECHA_NACIMIENTO,
+            datoUsuarioTableClass::LOCALIDAD_ID,
+            datoUsuarioTableClass::TIPO_DOCUMENTO_ID,
+            datoUsuarioTableClass::ORGANIZACION_ID
         );
         $where = array(
             usuarioTableClass::ID => request::getInstance()->getRequest(usuarioTableClass::ID)
         );
+
+        $where1 = array(
+            datoUsuarioTableClass::USUARIO_ID => request::getInstance()->getRequest(usuarioTableClass::ID)
+        );
+
         
+       // ---------------------- select en la accion de editar
         
-        
-        
-        
+        $fields2 = array(localidadTableClass::ID, localidadTableClass::NOMBRE);
+        $this->objLocalidad = localidadTableClass::getAll($fields2);
+
+        $fields3 = array(tipoDocumentoTableClass::ID, tipoDocumentoBaseTableClass::NOMBRE);
+        $this->objTipoDocumento = tipoDocumentoTableClass::getAll($fields3);
+
+        $fields4 = array(organizacionTableClass::ID, organizacionTableClass::NOMBRE);
+        $this->objOrganizacion = organizacionTableClass::getAll($fields4);
+
+
+
+        $this->datos = datoUsuarioBaseTableClass::getAll($fields1, true, null, null, null, null, $where1);
         $this->objUsuarios = usuarioTableClass::getAll($fields, true, null, null, null, null, $where);
         $this->defineView('edit', 'usuario', session::getInstance()->getFormatOutput());
-      
-        
-        
-    } else {
+      } else {
         routing::getInstance()->redirect('usuario', 'index');
       }
 //      if (request::getInstance()->isMethod('POST')) {
@@ -58,11 +80,8 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 //        routing::getInstance()->redirect('default', 'index');
 //      }
     } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 

@@ -11,7 +11,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author  Leonardo Betancourt <leobetacai@gmail.com>
  */
 class indexActionClass extends controllerClass implements controllerActionInterface {
 
@@ -30,11 +30,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $this->objUsuarios = usuarioTableClass::getAll($fields, true, $orderBy, 'ASC');
       $this->defineView('index', 'usuario', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 

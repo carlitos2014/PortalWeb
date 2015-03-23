@@ -11,7 +11,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Leonardo Betancourt <leobetacai@gmail.com>
  */
 class indexActionClass extends controllerClass implements controllerActionInterface {
 
@@ -26,13 +26,16 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 bitacoraTableClass::REGISTRO,
                 bitacoraTableClass::OBSERVACION
             );
-            $this->objBitacora = bitacoraTableClass::getAll($fields, FALSE);
+            
+            $orderBy = array(
+          bitacoraTableClass::FECHA
+      );
+            $this->objBitacora = bitacoraTableClass::getAll($fields, FALSE,$orderBy,'DESC');
             $this->defineView('index', 'bitacora', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo $exc->getTraceAsString();
-        }
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
+    }
 
 
         //$this->defineView('ejemplo', 'default', session::getInstance()->getFormatOutput());

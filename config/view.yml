@@ -41,7 +41,11 @@ usuario:
   insert:
     stylesheet:
       - form.css
-      
+
+usuario:
+  edit:
+    stylesheet:
+      - form.css      
 evento:
   insert:
     stylesheet:
@@ -71,6 +75,10 @@ organizacion:
     stylesheet:
       - form.css
       
+pqrsf:
+  insert:
+    stylesheet:
+      - form.css
       
 admin:
   index:
@@ -83,3 +91,14 @@ admin:
     javascript:
       - jquery-1.11.1.js 
       - index.js
+      
+      
+localidad:
+  insert:
+    stylesheet:
+      - form.css 
+      
+patrocinador:
+  insert:
+    stylesheet:
+      - form.css

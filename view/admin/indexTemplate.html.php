@@ -67,7 +67,7 @@ use mvc\i18n\i18nClass as i18n ?>
                 <a href="#" class="btn btn-default btn-flat">Perfil</a>
               </div>
               <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                <a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout')?>" class="btn btn-default btn-flat">Sign out</a>
               </div>
             </li>
           </ul>
@@ -77,16 +77,17 @@ use mvc\i18n\i18nClass as i18n ?>
   </div> <!--/.container-fluid--> 
 </nav>
 
+<br>
+<br>
+<div class="container container-fluid">
 
-<div class="container container-fluid"
-
-     <div class="page-header">
-    <h1><i class="glyphicon glyphicon-screenshot"></i><i class="glyphicon glyphicon-user"></i>&nbsp;Administracion</h1>
+     <div class="page-header" id="titulo">
+    <marquee behavior="alternate" direction="left"><h1><i class="glyphicon glyphicon-screenshot"></i><i class="glyphicon glyphicon-user"></i>&nbsp;Administracion</h1></marquee>
   </div>
 
 
 
-  <div class="container container-fluid">
+<!--  <div class="container container-fluid">-->
 
     <div class="row">
       <div class="col-lg-3 col-xs-6">
@@ -333,7 +334,7 @@ use mvc\i18n\i18nClass as i18n ?>
     <div class="row">
       <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-aqua">
+        <div class="small-box bg-yellow">
           <div class="inner">
             <h3>
               <?php echo $cont12 ?>
@@ -365,7 +366,7 @@ use mvc\i18n\i18nClass as i18n ?>
             </p>
           </div>
           <div class="icon">
-            <i class="ion ion-earth"></i>
+            <i class="ion ion-refresh"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('detallePqrsf', 'index') ?>" class="small-box-footer">
 <?php echo i18n::__('feedbackSpecs') ?> <i class="fa fa-arrow-circle-right"></i>
@@ -387,7 +388,7 @@ use mvc\i18n\i18nClass as i18n ?>
             </p>
           </div>
           <div class="icon">
-            <i class="ion ion-earth"></i>
+            <i class="ion ion-refresh"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('estadoPqrsf', 'index') ?>" class="small-box-footer">
 <?php echo i18n::__('feedbackState') ?> <i class="fa fa-arrow-circle-right"></i>
@@ -397,7 +398,26 @@ use mvc\i18n\i18nClass as i18n ?>
       
       
       
-      
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-maroon">
+          <div class="inner">
+            <h3>
+              0 <?php //echo $cont12 ?>
+            
+            </h3>
+            <p>
+<?php echo i18n::__('feedback') ?>
+            </p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-refresh"></i>
+          </div>
+          <a href="<?php echo routing::getInstance()->getUrlWeb('pqrsf', 'index') ?>" class="small-box-footer">
+<?php echo i18n::__('feedback') ?> <i class="fa fa-arrow-circle-right"></i>
+          </a>
+        </div>
+      </div>
       
       
       
