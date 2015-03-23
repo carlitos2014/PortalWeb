@@ -225,7 +225,7 @@ bitacora_reporte:
   param:  { module: bitacora, action: report, format: pdf }  
  
  
-#-------------------------------tabla credencial-------------------------------#
+#-----------------------------tabla credencial-------------------------------#
     
 credencial_index:
   url:    /credencial/index
