@@ -48,7 +48,7 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
   }
 
-  private function validate($nombre, $telefono, $correo, $direccion) {
+  private function validate($nombre, $correo,$telefono, $direccion) {
     $flag = false;
 
 
@@ -56,13 +56,13 @@ class createActionClass extends controllerClass implements controllerActionInter
 
     if (empty($nombre)) {
 
-      session::getInstance()->setError(i18n::__(00006, NULL, 'errors'));
+      session::getInstance()->setError(i18n::__(00050, NULL, 'errors'));
       $flag = true;
       session::getInstance()->setFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true), true);
     }
 
     if (strlen($nombre) > patrocinadorTableClass::NOMBRE_LENGTH) {
-      session::getInstance()->setError(i18n::__(00004, NULL, 'errors', array('%user%' => $nombre, '%caracteres%' => patrocinadorTableClass::NOMBRE_LENGTH)));
+      session::getInstance()->setError(i18n::__(00051, NULL, 'errors', array('%nombre%' => $nombre, '%letras%' => patrocinadorTableClass::NOMBRE_LENGTH)));
 
       $flag = true;
       session::getInstance()->setFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true), true);
@@ -70,13 +70,13 @@ class createActionClass extends controllerClass implements controllerActionInter
 
     if (empty($telefono)) {
 
-      session::getInstance()->setError(i18n::__(00006, NULL, 'errors'));
+      session::getInstance()->setError(i18n::__(00052, NULL, 'errors'));
       $flag = true;
       session::getInstance()->setFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true), true);
     }
 
     if (strlen($telefono) > patrocinadorTableClass::TELEFONO_LENGTH) {
-      session::getInstance()->setError(i18n::__(00004, NULL, 'errors', array('%user%' => $telefono, '%caracteres%' => patrocinadorTableClass::TELEFONO_LENGTH)));
+      session::getInstance()->setError(i18n::__(00049, NULL, 'errors', array('%tel%' => $telefono, '%numeros%' => patrocinadorTableClass::TELEFONO_LENGTH)));
 
       $flag = true;
       session::getInstance()->setFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true), true);
@@ -84,13 +84,13 @@ class createActionClass extends controllerClass implements controllerActionInter
 
     if (empty($correo)) {
 
-      session::getInstance()->setError(i18n::__(00006, NULL, 'errors'));
+      session::getInstance()->setError(i18n::__(00053, NULL, 'errors'));
       $flag = true;
       session::getInstance()->setFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true), true);
     }
 
     if (strlen($correo) > patrocinadorTableClass::CORREO_LENGTH) {
-      session::getInstance()->setError(i18n::__(00004, NULL, 'errors', array('%user%' => $correo, '%caracteres%' => patrocinadorTableClass::CORREO_LENGTH)));
+      session::getInstance()->setError(i18n::__(00054, NULL, 'errors', array('%nom%' => $correo, '%let%' => patrocinadorTableClass::CORREO_LENGTH)));
 
       $flag = true;
       session::getInstance()->setFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true), true);
@@ -98,7 +98,7 @@ class createActionClass extends controllerClass implements controllerActionInter
 
     if (empty($direccion)) {
 
-      session::getInstance()->setError(i18n::__(00006, NULL, 'errors'));
+      session::getInstance()->setError(i18n::__(00055, NULL, 'errors'));
       $flag = true;
       session::getInstance()->setFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::DIRECCION, true), true);
     }
@@ -114,7 +114,7 @@ class createActionClass extends controllerClass implements controllerActionInter
 
     foreach ($objPatrocinador as $key) {
       if ($key->nombre === $nombre) {
-        session::getInstance()->setError(i18n::__(00010, NULL, 'errors'));
+        session::getInstance()->setError(i18n::__(00056, NULL, 'errors'));
         $flag = true;
         session::getInstance()->setFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true), true);
       }

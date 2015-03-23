@@ -45,7 +45,9 @@ usuario:
 usuario:
   insert:
     stylesheet:
-      - form.css      
+      - form.css
+      
+    
 
 
 usuario:
@@ -108,3 +110,7 @@ patrocinador:
   insert:
     stylesheet:
       - form.css
+credencial:
+  insert:
+    stylesheet:
+      - form.css          

@@ -49,6 +49,8 @@ dictionary:
     user_name:            Nombre de usuario
     title:                Titulo
     content:              Contenido
+    create_credential:    Crear Credencial
+    modify_credential:    Modificar credencial
     #---------------------------Usuario----------------------------------------#
     userManagement:       Gestion de Usuario
     id:                   ID
@@ -221,3 +223,12 @@ dictionary:
     00047:                El nombre de localidad ya existe
     00048:                El campo localidad id esta vacio
     
+    
+    00049:                El  telefono %tel% excede los %numeros% caracteres permitidos
+    00050:                El campo nombre de patrocinador esta vacio
+    00051:                El  nombre %nombre% excede los %letras% caracteres permitidos
+    00052:                El campo telefono esta vacio.
+    00053:                El campo correo esta vacio 
+    00054:                El  correo %nom% excede los %let% caracteres permitidos
+    00055:                El campo direccion esta vacio.
+    00056:                El patrocinador ya existe.

@@ -18,7 +18,7 @@ class logoutActionClass extends controllerClass implements controllerActionInter
 
   public function execute() {
     try {
-      log::register('salida del sistema', 'NINGUNA', null, null, session::getInstance()->getUserId());
+      log::register('salida del sistema', 'Usuario', null, null, session::getInstance()->getUserId());
       session::getInstance()->setUserAuthenticate(false);
       session::getInstance()->setUserId(null);
       session::getInstance()->setUserName(null);

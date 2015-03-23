@@ -10,7 +10,7 @@
       <thead>
         <tr>
           <th><input type="checkbox" id="chkAll"></th>
-          <th>ID</th>
+          
           <th>ID de usuario</th>
           <th>Accion</th>
           <th>Tabla</th>
@@ -26,7 +26,7 @@
         <?php foreach ($objBitacora as $bitacora): ?>
           <tr>
             <td><input type="checkbox" name="chk[]" value="<?php echo $bitacora->$id ?>"></td>
-            <td><?php echo $bitacora->id ?></td>
+           
             <td><?php echo $bitacora->usuario_id ?></td>
             <td><?php echo $bitacora->accion?></td>
             <td><?php echo $bitacora->tabla?></td>

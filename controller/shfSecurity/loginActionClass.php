@@ -38,7 +38,7 @@ class loginActionClass extends controllerClass implements controllerActionInterf
           }
           
           
-          log::register('identificación', 'NINGUNA');
+          log::register('identificación', 'usuario');
           hook\security\securityHookClass::redirectUrl();
         } else {
           session::getInstance()->setError('Usuario y contraseña incorrectos');

@@ -152,7 +152,8 @@ usuario_deleteSelect:
 usuario_reporte:
   url:    /usuario/reporte
   param:  { module: usuario, action: report, format: pdf }
-    
+  load:
+    - libs/fpdf/fpdf.php
     
 #------------------------------tabla bitacora----------------------------------#
     
@@ -223,7 +224,8 @@ bitacora_deleteSelect:
 bitacora_reporte:
   url:    /bitacora/reporte
   param:  { module: bitacora, action: report, format: pdf }  
- 
+  load:
+    - libs/fpdf/fpdf.php
  
 #-----------------------------tabla credencial-------------------------------#
     
@@ -294,7 +296,8 @@ credencial_deleteSelect:
 credencial_reporte:
   url:    /credencial/report
   param:  { module: credencial, action: report, format: pdf }
-    
+  load:
+    - libs/fpdf/fpdf.php 
 
 #---------------------------------dato usuario---------------------------------#
     
@@ -362,7 +365,8 @@ datoUsuario_deleteSelect:
 datoUsuario_reporte:
   url:    /datoUsuario/report
   param:  { module: datoUsuario, action: report, format: pdf }    
-
+  load:
+    - libs/fpdf/fpdf.php
   
 #------------------------------usuarioCredencial-------------------------------#
     
@@ -504,7 +508,8 @@ recordarMe_deleteSelect:
 recordarMe_reporte:
   url:    /recordarMe/reporte
   param:  { module: recordarMe, action: report, format: pdf }
-    
+  load:
+    - libs/fpdf/fpdf.php 
     
 #--------------------------------estadoPqrsf-----------------------------------#
   
@@ -575,7 +580,8 @@ estadoPqrsf_deleteSelect:
 estadoPqrsf_reporte:
   url:    /estadoPqrsf/reporte
   param:  { module: estadoPqrsf, action: report, format: pdf }
-  
+  load:
+    - libs/fpdf/fpdf.php
   
 #---------------------------------detallePqsrf-----------------------------------#
   
@@ -648,7 +654,8 @@ detallePqrsf_deleteSelect:
 detallePqrsf_reporte:
   url:    /detallePqrsf/reporte
   param:  { module: detallePqrsf, action: report, format: pdf }
-  
+  load:
+    - libs/fpdf/fpdf.php
   
 #--------------------------------categoria-------------------------------------#
   
@@ -719,7 +726,8 @@ categoria_deleteSelect:
 categoria_reporte:
   url:    /categoria/reporte
   param:  { module: categoria, action: report, format: pdf }
-  
+  load:
+    - libs/fpdf/fpdf.php
   
 #-------------------------------evento-----------------------------------------#
     
@@ -805,7 +813,8 @@ evento_deleteSelect:
 evento_reporte:
   url:    /evento/report
   param:  { module: evento, action: report, format: pdf }
-    
+  load:
+    - libs/fpdf/fpdf.php  
 
 #-------------------------------eventoPatrocinador-----------------------------#
     
@@ -876,7 +885,8 @@ eventoPatrocinador_deleteSelect:
 eventoPatrocinador_reporte:
   url:    /eventoPatrocinador/report
   param:  { module: eventoPatrocinador, action: report, format: pdf }  
-  
+  load:
+    - libs/fpdf/fpdf.php
 
 #------------------------------------localidad---------------------------------#
     
@@ -947,7 +957,8 @@ localidad_deleteSelect:
 localidad_reporte:
   url:    /localidad/report
   param:  { module: localidad, action: report, format: pdf }  
-  
+  load:
+    - libs/fpdf/fpdf.php
 
 #----------------------------------organizacion--------------------------------#
     
@@ -1015,7 +1026,8 @@ organizacion_deleteSelect:
 organizacion_reporte:
   url:    /organizacion/report
   param:  { module: organizacion, action: report, format: pdf }    
-  
+  load:
+    - libs/fpdf/fpdf.php
   
 #-------------------------------patrocinador-----------------------------------#
     
@@ -1086,7 +1098,8 @@ patrocinador_deleteSelect:
 patrocinador_reporte:
   url:    /patrocinador/report
   param:  { module: patrocinador, action: report, format: pdf }    
-  
+  load:
+    - libs/fpdf/fpdf.php
   
 #-------------------------------------pqrsf------------------------------------#
     
@@ -1161,7 +1174,8 @@ pqrsf_deleteSelect:
 pqrsf_reporte:
   url:    /pqrsf/report
   param:  { module: pqrsf, action: report, format: pdf }    
-  
+  load:
+    - libs/fpdf/fpdf.php
   
 #-----------------------------recaudoEconomico---------------------------------#
     
@@ -1232,7 +1246,8 @@ recaudoEconomico_deleteSelect:
 recaudoEconomico_reporte:
   url:    /recaudoEconomico/report
   param:  { module: recaudoEconomico, action: report, format: pdf } 
-  
+  load:
+    - libs/fpdf/fpdf.php
        
 #-----------------------------------tarifa-------------------------------------#
     
@@ -1300,9 +1315,11 @@ tarifa_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-tarifa_reporte:
+tarifa_report:
   url:    /tarifa/report
-  param:  { module: tarifa, action: report, format: pdf } 
+  param:  { module: tarifa, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
   
          
 #-------------------------------tipoDocumento----------------------------------#
@@ -1371,9 +1388,11 @@ tipoDocumento_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-tipoDocumento_reporte:
+tipoDocumento_report:
   url:    /tipoDocumento/report
   param:  { module: tipoDocumento, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
   
            
 #----------------------------------tipoPqrsf-----------------------------------#
@@ -1446,7 +1465,8 @@ tipoPqrsf_deleteSelect:
 tipoPqrsf_reporte:
   url:    /tipoPqrsf/report
   param:  { module: tipoPqrsf, action: report, format: pdf }
-  
+  load:
+    - libs/fpdf/fpdf.php
   
 #---------------------------usuarioGustaCategoria------------------------------#
     
@@ -1517,7 +1537,8 @@ usuarioGustaCategoria_deleteSelect:
 usuarioGustaCategoria_reporte:
   url:    /usuarioGustaCategoria/report
   param:  { module: usuarioGustaCategoria, action: report, format: pdf }
-   
+  load:
+    - libs/fpdf/fpdf.php 
    
 #------------------------------------ EJEMPLO ---------------------------------#
 default_index:
