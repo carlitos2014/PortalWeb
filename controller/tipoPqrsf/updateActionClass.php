@@ -11,7 +11,7 @@ use hook\log\logHookClass as log;
 /**
  * Description of ejemploClass
  *
- * @author  Leonardo Betancourt <leobetacai@gmail.com>
+ * @author  CARLOS QUINTERO
  */
 class updateActionClass extends controllerClass implements controllerActionInterface {
 
