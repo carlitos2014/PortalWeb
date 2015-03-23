@@ -32,6 +32,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
         );
 
         tarifaTableClass::update($ids, $data);
+        log::register('modificar','tarifa');
       }
 
       routing::getInstance()->redirect('tarifa', 'index');

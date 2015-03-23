@@ -36,7 +36,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             patrocinadorTableClass::DIRECCION => $direccion
         );
         patrocinadorTableClass::insert($data);
-       log::register('crear','usuario');
+       log::register('crear','patrocinador');
         routing::getInstance()->redirect('patrocinador', 'index');
       } else {
         routing::getInstance()->redirect('patrocinador', 'index');

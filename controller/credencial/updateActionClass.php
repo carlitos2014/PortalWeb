@@ -33,6 +33,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
         );
 
         credencialTableClass::update($ids, $data);
+        log::register('modificar','credencial');
       }
 
       routing::getInstance()->redirect('credencial', 'index');

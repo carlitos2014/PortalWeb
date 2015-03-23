@@ -25,6 +25,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
             tarifaTableClass::ID => $id
         );
         tarifaTableClass::delete($ids, true);
+        log::register('borrar','tarifa');
         routing::getInstance()->redirect('tarifa', 'index');
       } else {
         routing::getInstance()->redirect('tarifa', 'index');

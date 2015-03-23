@@ -38,7 +38,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             organizacionTableClass::PAGINA_WEB => $webpage
         );
         organizacionTableClass::insert($data);
-        log::register('crear','usuario');
+        log::register('crear','organizacion');
         routing::getInstance()->redirect('organizacion', 'index');
       } else {
         routing::getInstance()->redirect('organizacion', 'index');

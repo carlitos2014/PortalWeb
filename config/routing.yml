@@ -66,6 +66,9 @@ usuario_insert:
     - model/organizacionTableClass.php
     - hooks/logHookClass.php
     
+    
+     
+    
 usuario_create:
   url:    /usuario/create
   param:  { module: usuario, action: create, format: html }
@@ -130,6 +133,9 @@ usuario_delete:
     - model/usuarioTableClass.php
     - model/base/datoUsuarioBaseTableClass.php
     - model/datoUsuarioTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 usuario_deleteSelect:
   url:    /usuario/deleteSelect
@@ -139,6 +145,9 @@ usuario_deleteSelect:
     - model/usuarioTableClass.php
     - model/base/datoUsuarioBaseTableClass.php
     - model/datoUsuarioTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 usuario_reporte:
   url:    /usuario/reporte
@@ -170,6 +179,9 @@ bitacora_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 bitacora_editar:
   url:    /bitacora/edit
@@ -184,11 +196,17 @@ bitacora_update:
   load:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 bitacora_delete:
   url:    /bitacora/delete
   param:  { module: bitacora, action: delete, format: html }
   load:
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
@@ -197,6 +215,9 @@ bitacora_deleteSelect:
   param:  { module: bitacora, action: deleteSelect, format: html }
   load:
     - model/bitacora/usuarioBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
 bitacora_reporte:
@@ -229,6 +250,9 @@ credencial_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 credencial_editar:
   url:    /credencial/edit
@@ -243,6 +267,9 @@ credencial_update:
   load:
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 credencial_delete:
   url:    /credencial/delete
@@ -250,6 +277,9 @@ credencial_delete:
   load:
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 credencial_deleteSelect:
   url:    /credencial/deleteSelect
@@ -257,6 +287,9 @@ credencial_deleteSelect:
   load:
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 credencial_reporte:
   url:    /credencial/report
@@ -288,6 +321,9 @@ datoUsuario_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 datoUsuario_editar:
   url:    /datoUsuario/edit
@@ -309,6 +345,9 @@ datoUsuario_delete:
   load:
     - model/base/datoUsuarioBaseTableClass.php
     - model/datoUsuarioTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 datoUsuario_deleteSelect:
   url:    /datoUsuario/deleteSelect
@@ -316,6 +355,9 @@ datoUsuario_deleteSelect:
   load:
     - model/base/datoUsuarioBaseTableClass.php
     - model/datoUsuarioTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 datoUsuario_reporte:
   url:    /datoUsuario/report
@@ -347,6 +389,9 @@ usuarioCredencial_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 usuarioCredencial_editar:
   url:    /usuarioCredencial/edit
@@ -361,6 +406,9 @@ usuarioCredencial_update:
   load:
     - model/base/usuarioCredencialBaseTableClass.php
     - model/usuarioCredencialTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 usuarioCredencial_delete:
   url:    /usuarioCredencial/delete
@@ -368,6 +416,9 @@ usuarioCredencial_delete:
   load:
     - model/base/usuarioCredencialBaseTableClass.php
     - model/usuarioCredencialTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 usuarioCredencial_deleteSelect:
   url:    /usuarioCredencial/deleteSelect
@@ -375,6 +426,9 @@ usuarioCredencial_deleteSelect:
   load:
     - model/base/usuarioCredencialBaseTableClass.php
     - model/usuarioCredencialTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 usuarioCredencial_reporte:
   url:    /usuarioCredencial/report
@@ -406,6 +460,9 @@ recordarMe_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 recordarMe_editar:
   url:    /recordarMe/edit
@@ -420,6 +477,9 @@ recordarMe_update:
   load:
     - model/base/recordarMeBaseTableClass.php
     - model/recordarMeTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 recordarMe_delete:
   url:    /recordarMe/delete
@@ -427,6 +487,9 @@ recordarMe_delete:
   load:
     - model/base/recordarMeBaseTableClass.php
     - model/recordarMeTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 recordarMe_deleteSelect:
   url:    /recordarMe/deleteSelect
@@ -434,6 +497,9 @@ recordarMe_deleteSelect:
   load:
     - model/base/recordarMeBaseTableClass.php
     - model/recordarMeTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 recordarMe_reporte:
   url:    /recordarMe/reporte
@@ -465,6 +531,10 @@ estadoPqrsf_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
 estadoPqrsf_editar:
   url:    /estadoPqrsf/edit
   param:  { module: estadoPqrsf, action: edit, format: html }
@@ -478,6 +548,9 @@ estadoPqrsf_update:
   load:
     - model/base/estadoPqrsfBaseTableClass.php
     - model/estadoPqrsfTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 estadoPqrsf_delete:
   url:    /estadoPqrsf/delete
@@ -485,6 +558,9 @@ estadoPqrsf_delete:
   load:
     - model/base/estadoPqrsfBaseTableClass.php
     - model/estadoPqrsfTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 estadoPqrsf_deleteSelect:
   url:    /estadoPqrsf/deleteSelect
@@ -492,6 +568,9 @@ estadoPqrsf_deleteSelect:
   load:
     - model/base/estadoPqrsfBaseTableClass.php
     - model/estadoPqrsfTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 estadoPqrsf_reporte:
   url:    /estadoPqrsf/reporte
@@ -525,6 +604,9 @@ detallePqrsf_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 detallePqrsf_editar:
   url:    /detallePqrsf/edit
@@ -539,6 +621,9 @@ detallePqrsf_update:
   load:
     - model/base/detallePqrsfBaseTableClass.php
     - model/detallePqrsTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 detallePqrsf_delete:
   url:    /detallePqrsf/delete
@@ -546,6 +631,9 @@ detallePqrsf_delete:
   load:
     - model/base/detallePqrsfBaseTableClass.php
     - model/detallePqrsTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 detallePqrsf_deleteSelect:
   url:    /detallePqrsf/deleteSelect
@@ -553,6 +641,9 @@ detallePqrsf_deleteSelect:
   load:
     - model/base/detallePqrsfBaseTableClass.php
     - model/detallePqrsTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 detallePqrsf_reporte:
   url:    /detallePqrsf/reporte
@@ -584,6 +675,9 @@ categoria_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 categoria_edit:
   url:    /categoria/edit
@@ -598,6 +692,9 @@ categoria_update:
   load:
     - model/base/categoriaBaseTableClass.php
     - model/categoriaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 categoria_delete:
   url:    /categoria/delete
@@ -605,6 +702,9 @@ categoria_delete:
   load:
     - model/base/categoriaBaseTableClass.php
     - model/categoriaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 categoria_deleteSelect:
   url:    /categoria/eliminarSeleccion
@@ -612,6 +712,9 @@ categoria_deleteSelect:
   load:
     - model/base/categoriaBaseTableClass.php
     - model/categoriaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 categoria_reporte:
   url:    /categoria/reporte
@@ -656,6 +759,9 @@ evento_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 evento_editar:
   url:    /evento/edit
@@ -670,6 +776,9 @@ evento_update:
   load:
     - model/base/eventoBaseTableClass.php
     - model/eventoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 evento_delete:
   url:    /evento/delete
@@ -677,6 +786,9 @@ evento_delete:
   load:
     - model/base/eventoBaseTableClass.php
     - model/eventoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 evento_deleteSelect:
   url:    /evento/deleteSelect
@@ -684,6 +796,9 @@ evento_deleteSelect:
   load:
     - model/base/eventoBaseTableClass.php
     - model/eventoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 evento_reporte:
   url:    /evento/report
@@ -715,6 +830,9 @@ eventoPatrocinador_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 eventoPatrocinador_editar:
   url:    /eventoPatrocinador/edit
@@ -729,6 +847,9 @@ eventoPatrocinador_update:
   load:
     - model/base/eventoPatrocinadorBaseTableClass.php
     - model/eventoPatrocinadorTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 eventoPatrocinador_delete:
   url:    /eventoPatrocinador/delete
@@ -736,6 +857,9 @@ eventoPatrocinador_delete:
   load:
     - model/base/eventoPatrocinadorBaseTableClass.php
     - model/eventoPatrocinadorTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 eventoPatrocinador_deleteSelect:
   url:    /eventoPatrocinador/deleteSelect
@@ -743,6 +867,9 @@ eventoPatrocinador_deleteSelect:
   load:
     - model/base/eventoPatrocinadorBaseTableClass.php
     - model/eventoPatrocinadorTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 eventoPatrocinador_reporte:
   url:    /eventoPatrocinador/report
@@ -774,6 +901,9 @@ localidad_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 localidad_editar:
   url:    /localidad/edit
@@ -788,6 +918,9 @@ localidad_update:
   load:
     - model/base/localidadBaseTableClass.php
     - model/localidadTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 localidad_delete:
   url:    /localidad/delete
@@ -795,6 +928,9 @@ localidad_delete:
   load:
     - model/base/localidadBaseTableClass.php
     - model/localidadTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 localidad_deleteSelect:
   url:    /localidad/deleteSelect
@@ -802,6 +938,9 @@ localidad_deleteSelect:
   load:
     - model/base/localidadBaseTableClass.php
     - model/localidadTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 localidad_reporte:
   url:    /localidad/report
@@ -833,6 +972,9 @@ organizacion_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 organizacion_editar:
   url:    /organizacion/edit
@@ -854,6 +996,9 @@ organizacion_delete:
   load:
     - model/base/organizacionBaseTableClass.php
     - model/organizacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 organizacion_deleteSelect:
   url:    /organizacion/deleteSelect
@@ -861,6 +1006,9 @@ organizacion_deleteSelect:
   load:
     - model/base/organizacionBaseTableClass.php
     - model/organizacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 organizacion_reporte:
   url:    /organizacion/report
@@ -892,6 +1040,9 @@ patrocinador_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 patrocinador_editar:
   url:    /patrocinador/edit
@@ -906,6 +1057,9 @@ patrocinador_update:
   load:
     - model/base/patrocinadorBaseTableClass.php
     - model/patrocinadorTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 patrocinador_delete:
   url:    /patrocinador/delete
@@ -913,6 +1067,9 @@ patrocinador_delete:
   load:
     - model/base/patrocinadorBaseTableClass.php
     - model/patrocinadorTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 patrocinador_deleteSelect:
   url:    /patrocinador/deleteSelect
@@ -920,6 +1077,9 @@ patrocinador_deleteSelect:
   load:
     - model/base/patrocinadorBaseTableClass.php
     - model/patrocinadorTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 patrocinador_reporte:
   url:    /patrocinador/report
@@ -954,6 +1114,9 @@ pqrsf_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 pqrsf_editar:
   url:    /pqrsf/edit
@@ -962,12 +1125,16 @@ pqrsf_editar:
     - model/base/pqrsfBaseTableClass.php
     - model/pqrsfTableClass.php 
     
+    
 pqrsf_update:
   url:    /pqrsf/update
   param:  { module: pqrsf, action: update, format: html }
   load:
     - model/base/pqrsfBaseTableClass.php
     - model/pqrsfTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 pqrsf_delete:
   url:    /pqrsf/delete
@@ -975,6 +1142,9 @@ pqrsf_delete:
   load:
     - model/base/pqrsfBaseTableClass.php
     - model/pqrsfTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 pqrsf_deleteSelect:
   url:    /pqrsf/deleteSelect
@@ -982,6 +1152,9 @@ pqrsf_deleteSelect:
   load:
     - model/base/pqrsfBaseTableClass.php
     - model/pqrsfTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 pqrsf_reporte:
   url:    /pqrsf/report
@@ -1013,6 +1186,9 @@ recaudoEconomico_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 recaudoEconomico_editar:
   url:    /recaudoEconomico/edit
@@ -1027,6 +1203,9 @@ recaudoEconomico_update:
   load:
     - model/base/recaudoEconomicoBaseTableClass.php
     - model/recaudoEconomicoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 recaudoEconomico_delete:
   url:    /recaudoEconomico/delete
@@ -1034,6 +1213,9 @@ recaudoEconomico_delete:
   load:
     - model/base/recaudoEconomicoBaseTableClass.php
     - model/recaudoEconomicoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 recaudoEconomico_deleteSelect:
   url:    /recaudoEconomico/deleteSelect
@@ -1041,6 +1223,9 @@ recaudoEconomico_deleteSelect:
   load:
     - model/base/recaudoEconomicoBaseTableClass.php
     - model/recaudoEconomicoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 recaudoEconomico_reporte:
   url:    /recaudoEconomico/report
@@ -1072,6 +1257,9 @@ tarifa_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 tarifa_editar:
   url:    /tarifa/edit
@@ -1086,6 +1274,9 @@ tarifa_update:
   load:
     - model/base/tarifaBaseTableClass.php
     - model/tarifaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 tarifa_delete:
   url:    /tarifa/delete
@@ -1093,6 +1284,9 @@ tarifa_delete:
   load:
     - model/base/tarifaBaseTableClass.php
     - model/tarifaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 tarifa_deleteSelect:
   url:    /tarifa/deleteSelect
@@ -1100,6 +1294,9 @@ tarifa_deleteSelect:
   load:
     - model/base/tarifaBaseTableClass.php
     - model/tarifaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 tarifa_reporte:
   url:    /tarifa/report
@@ -1131,6 +1328,9 @@ tipoDocumento_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 tipoDocumento_editar:
   url:    /tipoDocumento/edit
@@ -1145,6 +1345,9 @@ tipoDocumento_update:
   load:
     - model/base/tipoDocumentoBaseTableClass.php
     - model/tipoDocumentoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 tipoDocumento_delete:
   url:    /tipoDocumento/delete
@@ -1152,6 +1355,9 @@ tipoDocumento_delete:
   load:
     - model/base/tipoDocumentoBaseTableClass.php
     - model/tipoDocumentoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 tipoDocumento_deleteSelect:
   url:    /tipoDocumento/deleteSelect
@@ -1159,6 +1365,9 @@ tipoDocumento_deleteSelect:
   load:
     - model/base/tipoDocumentoBaseTableClass.php
     - model/tipoDocumentoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 tipoDocumento_reporte:
   url:    /tipoDocumento/report
@@ -1191,6 +1400,9 @@ tipoPqrsf_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 tipoPqrsf_editar:
   url:    /tipoPqrsf/edit
@@ -1205,6 +1417,9 @@ tipoPqrsf_update:
   load:
     - model/base/tipoPqrsfBaseTableClass.php
     - model/tipoPqrsfTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 tipoPqrsf_delete:
   url:    /tipoPqrsf/delete
@@ -1212,6 +1427,9 @@ tipoPqrsf_delete:
   load:
     - model/base/tipoPqrsfBaseTableClass.php
     - model/tipoPqrsfTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 tipoPqrsf_deleteSelect:
   url:    /tipoPqrsf/deleteSelect
@@ -1219,6 +1437,9 @@ tipoPqrsf_deleteSelect:
   load:
     - model/base/tipoPqrsfBaseTableClass.php
     - model/tipoPqrsfTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 tipoPqrsf_reporte:
   url:    /tipoPqrsf/report
@@ -1250,6 +1471,9 @@ usuarioGustaCategoria_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 usuarioGustaCategoria_editar:
   url:    /usuarioGustaCategoria/edit
@@ -1264,6 +1488,9 @@ usuarioGustaCategoria_update:
   load:
     - model/base/usuarioGustaCategoriaBaseTableClass.php
     - model/usuarioGustaCategoriaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 usuarioGustaCategoria_delete:
   url:    /usuarioGustaCategoria/delete
@@ -1271,6 +1498,9 @@ usuarioGustaCategoria_delete:
   load:
     - model/base/usuarioGustaCategoriaBaseTableClass.php
     - model/usuarioGustaCategoriaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 usuarioGustaCategoria_deleteSelect:
   url:    /usuarioGustaCategoria/deleteSelect
@@ -1278,6 +1508,9 @@ usuarioGustaCategoria_deleteSelect:
   load:
     - model/base/usuarioGustaCategoriaBaseTableClass.php
     - model/usuarioGustaCategoriaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 usuarioGustaCategoria_reporte:
   url:    /usuarioGustaCategoria/report
@@ -1308,6 +1541,9 @@ default_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 default_edit:
   url:    /usuario/editar
@@ -1322,6 +1558,9 @@ default_update:
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 default_delete:
   url:    /usuario/eliminar
@@ -1329,6 +1568,9 @@ default_delete:
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 default_deleteSelect:
   url:    /usuario/eliminarSeleccion
@@ -1336,6 +1578,9 @@ default_deleteSelect:
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 default_reporte:
   url:    /usuario/reporte

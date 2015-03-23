@@ -31,6 +31,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             usuarioTableClass::PASSWORD => md5($password)
         );
         usuarioTableClass::insert($data);
+        log::register('crear','datoUsuario');
         routing::getInstance()->redirect('default', 'index');
       } else {
         routing::getInstance()->redirect('default', 'index');

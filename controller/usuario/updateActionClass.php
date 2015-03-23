@@ -66,6 +66,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
 
         usuarioTableClass::update($ids, $data);
         datoUsuarioTableClass::update($ids2, $data2);
+        log::register('modificar','usuario');
         
         
       }

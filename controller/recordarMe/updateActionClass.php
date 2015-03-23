@@ -36,6 +36,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
       }
 
       routing::getInstance()->redirect('default', 'index');
+      log::register('modificar','recordarMe');
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');

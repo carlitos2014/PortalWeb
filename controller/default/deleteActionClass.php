@@ -25,6 +25,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
             usuarioTableClass::ID => $id
         );
         usuarioTableClass::delete($ids, true);
+        log::register('borrar','default');
         routing::getInstance()->redirect('default', 'index');
       } else {
         routing::getInstance()->redirect('default', 'index');

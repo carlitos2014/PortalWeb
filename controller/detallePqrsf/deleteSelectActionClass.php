@@ -26,6 +26,7 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
             usuarioTableClass::ID => $id
           );
           usuarioTableClass::delete($ids, true);
+          log::register('borrarSeleccion','detallePqrsf');
         }
         
         routing::getInstance()->redirect('usuario', 'index');

@@ -31,6 +31,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
         );
 
         tipoDocumentoTableClass::update($ids, $data);
+        log::register('modificar','tipo_documento');
       }
 
       routing::getInstance()->redirect('tipoDocumento', 'index');

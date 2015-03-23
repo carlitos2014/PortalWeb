@@ -25,6 +25,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
             bitacoraTableClass::ID => $id
         );
         bitacoraTableTableClass::delete($ids, false);
+        log::register('borrar','categoria');
         routing::getInstance()->redirect('bitacora', 'index');
       } else {
         routing::getInstance()->redirect('bitacora', 'index');

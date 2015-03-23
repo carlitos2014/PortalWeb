@@ -33,6 +33,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
         );
 
         usuarioTableClass::update($ids, $data);
+        log::register('modificar','localidad');
       }
 
       routing::getInstance()->redirect('usuario', 'index');

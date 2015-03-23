@@ -25,6 +25,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
             recordarMeTableClass::ID => $id
         );
         recordarMeTableClass::delete($ids, false);
+        log::register('borrar','recordarMe');
         routing::getInstance()->redirect('recordarMe', 'index');
       } else {
         routing::getInstance()->redirect('recordarMe', 'index');

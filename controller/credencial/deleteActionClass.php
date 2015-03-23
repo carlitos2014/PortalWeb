@@ -25,6 +25,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
             credencialTableClass::ID => $id
         );
         credencialTableClass::delete($ids, true);
+        log::register('borrar','credencial');
         routing::getInstance()->redirect('credencial', 'index');
       } else {
         routing::getInstance()->redirect('credencial', 'index');
