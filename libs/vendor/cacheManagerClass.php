@@ -39,7 +39,7 @@ namespace mvc\cache {
      */
     public function loadYaml($yaml, $index) {
       try {
-        if (session::getInstance()->hasCache($index) and config::getScope() === 'prod') {
+        if (session::getInstance()->hasCache($index) and config::getScope() === 'dev') {
           $answer = session::getInstance()->getCache($index);
         } else {
           $answer = \sfYaml::load($yaml);

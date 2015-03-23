@@ -7,11 +7,12 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
 
 /**
  * Description of ejemploClass
  *
- * @author Leonardo Betancourt <leobetacai@gmail.com>
+ * @author CARLOS QUINTERO
  */
 class createActionClass extends controllerClass implements controllerActionInterface {
 

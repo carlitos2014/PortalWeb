@@ -3,9 +3,9 @@
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\routing\routingClass as routing ?>
-<?php $usu = usuarioTableClass::USER ?>
-<?php $id = usuarioTableClass::ID ?>
-<?php $last = usuarioTableClass::LAST_LOGIN_AT ?>
+<?php $categoria = categoriaTableClass::NOMBRE ?>
+<?php $id = categoriaTableClass::ID ?>
+<?php //$last = categoriaarioTableClass::LAST_LOGIN_AT ?>
 
 
 
@@ -32,31 +32,31 @@ use mvc\routing\routingClass as routing ?>
         </tr>
       </thead>
       <tbody >
-<?php foreach ($objCategoria as $categoria): ?>
+<?php foreach ($objCategoria as $categoriadato): ?>
           <tr>
-            <td><input type="checkbox" name="chk[]" value="<?php echo $usuario->$id ?>" class="chk"></td>
-            <td><?php echo $categoria->id ?></td>
-            <td><?php echo $categoria->nombre ?></td>
+            <td><input type="checkbox" name="chk[]" value="<?php echo $categoriadato->$id ?>" class="chk"></td>
+            <td><?php echo $categoriadato->$id ?></td>
+            <td><?php echo $categoriadato->$categoria ?></td>
           
 
             <td>
               <!--              <a href="#" class="btn btn-warning btn-xs">Ver</a>-->
-              <a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open" data-toggle="popover" title="Ver" data-content="datos de usuario"></i></a>
-              <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'edit', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="Editar" data-content="edicion de usuario"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="#" onclick="confirmarEliminar(<?php echo $usuario->$id ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar usuario"></i></a>
+              <a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open" data-toggle="popover" title="Ver" data-content="datos de categoriadatoario"></i></a>
+              <a href="<?php echo routing::getInstance()->getUrlWeb('categoria', 'edit', array(categoriaTableClass::ID => $categoriadato->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="Editar" data-content="edicion de categoriaario"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="#" onclick="confirmarEliminar(<?php echo $categoriadato->$id ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar categoriaario"></i></a>
             </td>
           </tr>
 <?php endforeach ?>
       </tbody>
     </table>
   </form>
-  <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'delete') ?>" method="POST">
-    <input type="hidden" id="idDelete" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>">
+  <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('categoria', 'delete') ?>" method="POST">
+    <input type="hidden" id="idDelete" name="<?php echo categoriaTableClass::getNameField(categoriaTableClass::ID, true) ?>">
   </form>
   <div style="margin-bottom: 10px; margin-top: 30px" align="center">
 
     <a href="<?php echo routing::getInstance()->getUrlWeb('homePage', 'index') ?>"  class="btn btn-info" data-toggle="popover" title="Pagina de inicio" data-content="Index" ><i class="glyphicon glyphicon-home"></i></a> 
-    <a href="<?php echo routing::getInstance()->getUrlWeb('categoria', 'insert') ?>" class="btn btn-success" data-toggle="popover" title="Crear Nuevo Usuario" data-content="creacion de usuario"><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-user"></i></a>
+    <a href="<?php echo routing::getInstance()->getUrlWeb('categoria', 'insert') ?>" class="btn btn-success" data-toggle="popover" title="Crear Nuevo Usuario" data-content="creacion de categoriaario"><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-user"></i></a>
     <a href="#" class="btn btn-danger " onclick="borrarSeleccion()" data-toggle="popover" title="Borrar seleccion" data-content="borrar seleccion"><i class="glyphicon glyphicon-check"></i><i class="glyphicon glyphicon-trash"></i></a>
     <!--        <a href="#" id="example" class="btn btn-primary" rel="popover" data-content="cuerpo-del-popover" data-original-title="ejemplo">Popover</a>-->
     <!--        <a href="#" class="btn btn-lg btn-danger" data-toggle="popover" title="A Title" data-content="And here's some amazing content. It's very engaging. right?">Hover to toggle popover</a>-->

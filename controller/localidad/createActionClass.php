@@ -8,6 +8,7 @@ use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 use hook\log\logHookClass as log;
+use hook\log\logHookClass as log;
 
 /**
  * Description of ejemploClass
