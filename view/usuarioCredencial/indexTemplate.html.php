@@ -43,7 +43,6 @@ use mvc\routing\routingClass as routing ?>
     <div style="margin-bottom: 10px; margin-top: 30px" align="center">
         <a href="<?php echo routing::getInstance()->getUrlWeb('homePage', 'index') ?>"  class="btn btn-success ">Inicio</a>  
         <a href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'insert') ?>" class="btn btn-success">Nuevo</a>
-        <a href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'report') ?>" target="_blank" class="btn btn-warning " data-toggle="popover" title="Generar Reporte PDF" data-content="Generar Reporte PDF"><i class="glyphicon glyphicon-print"></i></a></a>
         <a href="#" class="btn btn-danger " onclick="borrarSeleccion()">Borrar Seleccion</a>
     </div>
 

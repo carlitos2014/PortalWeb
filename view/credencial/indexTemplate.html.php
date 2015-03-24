@@ -58,7 +58,6 @@ use mvc\i18n\i18nClass as i18n ?>
   <div style="margin-bottom: 10px; margin-top: 30px" align="center">
     <a href="<?php echo routing::getInstance()->getUrlWeb('homePage', 'index') ?>"  class="btn btn-info" data-toggle="popover" title="Pagina de inicio" data-content="Index" ><i class="glyphicon glyphicon-home"></i></a>
     <a href="<?php echo routing::getInstance()->getUrlWeb('credencial', 'insert') ?>" class="btn btn-success" data-toggle="popover" title="Nueva Bitacora" data-content="creacion de bitacora"><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-credit-card"></i></a>
-    <a href="<?php echo routing::getInstance()->getUrlWeb('credencial', 'report') ?>" target="_blank" class="btn btn-warning " data-toggle="popover" title="Generar Reporte PDF" data-content="Generar Reporte PDF"><i class="glyphicon glyphicon-print"></i></a></a>
     <a href="#" class="btn btn-danger " onclick="borrarSeleccion()" data-toggle="popover" title="Borrar seleccion" data-content="borrar seleccion"><i class="glyphicon glyphicon-check"></i><i class="glyphicon glyphicon-trash"></i></a>
   </div>
 

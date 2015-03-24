@@ -150,7 +150,7 @@ usuario_deleteSelect:
     - model/bitacoraTableClass.php
 
 usuario_reporte:
-  url:    /usuario/report
+  url:    /usuario/reporte
   param:  { module: usuario, action: report, format: pdf }
   load:
     - libs/fpdf/fpdf.php
@@ -221,8 +221,8 @@ bitacora_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-bitacora_report:
-  url:    /bitacora/report
+bitacora_reporte:
+  url:    /bitacora/reporte
   param:  { module: bitacora, action: report, format: pdf }  
   load:
     - libs/fpdf/fpdf.php
@@ -293,7 +293,7 @@ credencial_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-credencial_report:
+credencial_reporte:
   url:    /credencial/report
   param:  { module: credencial, action: report, format: pdf }
   load:
@@ -362,7 +362,7 @@ datoUsuario_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-datoUsuario_report:
+datoUsuario_reporte:
   url:    /datoUsuario/report
   param:  { module: datoUsuario, action: report, format: pdf }    
   load:
@@ -434,7 +434,7 @@ usuarioCredencial_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-usuarioCredencial_report:
+usuarioCredencial_reporte:
   url:    /usuarioCredencial/report
   param:  { module: usuarioCredencial, action: report, format: pdf }    
     
@@ -505,8 +505,8 @@ recordarMe_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-recordarMe_report:
-  url:    /recordarMe/report
+recordarMe_reporte:
+  url:    /recordarMe/reporte
   param:  { module: recordarMe, action: report, format: pdf }
   load:
     - libs/fpdf/fpdf.php 
@@ -577,8 +577,8 @@ estadoPqrsf_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-estadoPqrsf_report:
-  url:    /estadoPqrsf/report
+estadoPqrsf_reporte:
+  url:    /estadoPqrsf/reporte
   param:  { module: estadoPqrsf, action: report, format: pdf }
   load:
     - libs/fpdf/fpdf.php
@@ -651,8 +651,8 @@ detallePqrsf_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-detallePqrsf_report:
-  url:    /detallePqrsf/report
+detallePqrsf_reporte:
+  url:    /detallePqrsf/reporte
   param:  { module: detallePqrsf, action: report, format: pdf }
   load:
     - libs/fpdf/fpdf.php
@@ -723,8 +723,8 @@ categoria_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-categoria_report:
-  url:    /categoria/report
+categoria_reporte:
+  url:    /categoria/reporte
   param:  { module: categoria, action: report, format: pdf }
   load:
     - libs/fpdf/fpdf.php
@@ -810,7 +810,7 @@ evento_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-evento_report:
+evento_reporte:
   url:    /evento/report
   param:  { module: evento, action: report, format: pdf }
   load:
@@ -882,7 +882,7 @@ eventoPatrocinador_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-eventoPatrocinador_report:
+eventoPatrocinador_reporte:
   url:    /eventoPatrocinador/report
   param:  { module: eventoPatrocinador, action: report, format: pdf }  
   load:
@@ -954,7 +954,7 @@ localidad_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-localidad_report:
+localidad_reporte:
   url:    /localidad/report
   param:  { module: localidad, action: report, format: pdf }  
   load:
@@ -1023,7 +1023,7 @@ organizacion_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-organizacion_report:
+organizacion_reporte:
   url:    /organizacion/report
   param:  { module: organizacion, action: report, format: pdf }    
   load:
@@ -1095,7 +1095,7 @@ patrocinador_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-patrocinador_report:
+patrocinador_reporte:
   url:    /patrocinador/report
   param:  { module: patrocinador, action: report, format: pdf }    
   load:
@@ -1171,7 +1171,7 @@ pqrsf_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-pqrsf_report:
+pqrsf_reporte:
   url:    /pqrsf/report
   param:  { module: pqrsf, action: report, format: pdf }    
   load:
@@ -1243,7 +1243,7 @@ recaudoEconomico_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-recaudoEconomico_report:
+recaudoEconomico_reporte:
   url:    /recaudoEconomico/report
   param:  { module: recaudoEconomico, action: report, format: pdf } 
   load:
@@ -1462,7 +1462,7 @@ tipoPqrsf_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-tipoPqrsf_report:
+tipoPqrsf_reporte:
   url:    /tipoPqrsf/report
   param:  { module: tipoPqrsf, action: report, format: pdf }
   load:
@@ -1534,7 +1534,7 @@ usuarioGustaCategoria_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-usuarioGustaCategoria_report:
+usuarioGustaCategoria_reporte:
   url:    /usuarioGustaCategoria/report
   param:  { module: usuarioGustaCategoria, action: report, format: pdf }
   load:
@@ -1605,8 +1605,8 @@ default_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-default_report:
-  url:    /usuario/report
+default_reporte:
+  url:    /usuario/reporte
   param:  { module: default, action: report, format: pdf }
   load:
     - libs/fpdf/fpdf.php

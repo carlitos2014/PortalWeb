@@ -101,6 +101,12 @@ namespace mvc\routing {
     public function getUrlJs($javascript) {
       return configClass::getUrlBase() . 'js/' . $javascript;
     }
+    
+  //funcion para leer los archivos txt delimitados por comas ,en la produccion de reportes
+    
+    public function getUrlTxt($txt) {
+      return configClass::getUrlBase() . 'txt/' . $txt;
+    }
 
     /**
      * $module = '@default_index';
