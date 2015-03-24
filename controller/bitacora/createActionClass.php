@@ -10,6 +10,7 @@ use mvc\i18n\i18nClass as i18n;
 use hook\log\logHookClass as log;
 
 
+
 /**
  * Description of ejemploClass
  *
