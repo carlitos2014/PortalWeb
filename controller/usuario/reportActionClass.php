@@ -18,10 +18,6 @@ class reportActionClass extends controllerClass implements controllerActionInter
   public function execute() {
     try {
       
-      //$this->mensaje = 'Hola a todos';
-      
-      
-      //$this->msj=array();
       
       $fields=array(
           
@@ -37,12 +33,11 @@ class reportActionClass extends controllerClass implements controllerActionInter
           usuarioTableClass::ID
       ); 
       
-      $this->objUsuario = usuarioTableClass::getAll($fields, true, $orderBy, 'ASC');
       
-      
-      
-      
-      $this->defineView('index', 'usuario', session::getInstance()->getFormatOutput());
+     
+     
+     $this->objUsuario = usuarioTableClass::getAll($fields, true, $orderBy, 'ASC');
+     $this->defineView('index', 'usuario', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');

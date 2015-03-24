@@ -49,7 +49,7 @@ use mvc\routing\routingClass as routing ?>
         <input type="hidden" id="idDelete" name="<?php echo bitacoraTableClass::getNameField(bitacoraTableClass::ID, true) ?>">
     </form>
     <div style="margin-bottom: 10px; margin-top: 30px" align="center">
-        <a href="<?php echo routing::getInstance()->getUrlWeb('bitacora', 'report') ?>" target="_blank" class="btn btn-warning " data-toggle="popover" title="Generar Reporte PDF" data-content="Generar Reporte PDF"><i class="glyphicon glyphicon-print"></i></a></a>     
+        <a href="<?php echo routing::getInstance()->getUrlWeb('bitacora','report') ?>" target="_blank" class="btn btn-warning " data-toggle="popover" title="Generar Reporte PDF" data-content="Generar Reporte PDF"><i class="glyphicon glyphicon-print"></i></a></a>     
 
     </div>
 

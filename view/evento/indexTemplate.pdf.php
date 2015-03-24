@@ -9,7 +9,7 @@ class PDF extends FPDF
 function Header()
 {
     // Logo
-    $this->Image(routing::getInstance()->getUrlImg('alcaldia.gif'),10,1,20);
+    $this->Image(routing::getInstance()->getUrlImg('Logo.png'),10,1,40);
     // Arial bold 15
     $this->SetFont('Arial','B',15);
     // Movernos a la derecha
@@ -39,7 +39,7 @@ $pdf = new PDF();
 $pdf->AddPage();
 
 $pdf->SetFont('Arial','B',16);
-$pdf->Cell(30,10,'ID ',1);
+$pdf->Cell(30,10,'ID',1);
 //$pdf->Ln();
 $pdf->Cell(40,10,'Nombre ',1);
 

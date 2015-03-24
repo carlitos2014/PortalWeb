@@ -45,17 +45,8 @@ class loginActionClass extends controllerClass implements controllerActionInterf
           routing::getInstance()->redirect(config::getDefaultModuleSecurity(), config::getDefaultActionSecurity());
         }
       } else {
-        if ($objUsuario[0]->user_name==='admin'){
-          
-          
-          routing::getInstance()->redirect('admin', 'index');
-        }
-          
-          
-          
-     
         
-        routing::getInstance()->redirect(config::getDefaultModule(), config::getDefaultAction());
+          routing::getInstance()->redirect(config::getDefaultModule(), config::getDefaultAction());
       }
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

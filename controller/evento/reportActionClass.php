@@ -20,9 +20,7 @@ class reportActionClass extends controllerClass implements controllerActionInter
   public function execute() {
     try {
       
-//      $this->mensaje = 'EL GRUPO DE LUZBELL APRENDIENDO FPDF EN PHP';
-//      $this->msj='Otro mensaje con salto de linea';
-        
+
         
         $fields=array(
             

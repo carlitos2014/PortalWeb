@@ -39,7 +39,7 @@ class PDF extends FPDF
 function Header()
 {
     // Logo
-    $this->Image(routing::getInstance()->getUrlImg('alcaldia.gif'),10,1,20);
+    $this->Image(routing::getInstance()->getUrlImg('logo.png'),10,1,40);
     // Arial bold 15
     $this->SetFont('Arial','B',15);
     // Movernos a la derecha
