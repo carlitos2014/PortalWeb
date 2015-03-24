@@ -20,7 +20,7 @@ class reportActionClass extends controllerClass implements controllerActionInter
       
       $this->mensaje = 'Hola a todos';
       
-      $this->defineView('index', 'usuario', session::getInstance()->getFormatOutput());
+      $this->defineView('index', 'bitacora', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');

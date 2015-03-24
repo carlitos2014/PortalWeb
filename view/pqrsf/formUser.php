@@ -48,7 +48,7 @@ use mvc\i18n\i18nClass as i18n ?>
     <div class="form-group" <?php echo (session::getInstance()->hasFlash(pqrsfTableClass::getNameField(pqrsfTableClass::CONTENIDO, TRUE)) === TRUE) ? 'has-error has-feedback' : '' ?>>
       <label for="<?php echo pqrsfTableClass::getNameField(pqrsfTableClass::CONTENIDO, true) ?>" class="col-sm-2 control-label"><?php //echo i18n::__('content') ?></label>
       <div class="col-sm-10">
-        <textarea></textarea>
+        <input type="textarea" id="<?php echo pqrsfTableClass::getNameField(pqrsfTableClass::CONTENIDO, true) ?>" name="<?php echo pqrsfTableClass::getNameField(pqrsfTableClass::CONTENIDO, true) ?>" class="text-area" placeholder="<?php echo i18n::__('content')."    " ?>" >
         <?php if (session::getInstance()->hasFlash(pqrsfTableClass::getNameField(pqrsfTableClass::CONTENIDO, TRUE)) === TRUE): ?>
           <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
 <?php endif ?>
