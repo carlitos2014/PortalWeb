@@ -120,7 +120,10 @@ namespace mvc\model\table {
         $line2 = substr($line2, 0, $newLeng) . ')';
 
         $sql = $sql . $line1 . $line2;
-
+//        
+//        echo $sql;
+//        exit();
+        
         model::getInstance()->beginTransaction();
         model::getInstance()->exec($sql);
         model::getInstance()->commit();
@@ -135,6 +138,7 @@ namespace mvc\model\table {
         model::getInstance()->rollback();
         throw $exc;
       }
+      
     }
 
     /**

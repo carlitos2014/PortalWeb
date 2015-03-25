@@ -31,7 +31,7 @@ class reportActionClass extends controllerClass implements controllerActionInter
         bitacoraTableClass::USUARIO_ID
         );
       
-      $this->objBitacoraReport=  bitacoraTableClass::getAll($fields2);
+      $this->objBitacoraReport=  bitacoraTableClass::getAll($fields2, FALSE);
       $this->defineView('index', 'bitacora', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

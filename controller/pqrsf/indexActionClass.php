@@ -22,6 +22,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
           pqrsfTableClass::ID,
           pqrsfTableClass::TIPO_PQRS_ID,
           pqrsfTableClass::TITULO,
+          pqrsfTableClass::USUARIO_ID
           //pqrsfTableClass::CONTENIDO    
           );
       $orderBy = array(

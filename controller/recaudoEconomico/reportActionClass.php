@@ -11,16 +11,28 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author  Leonardo Betancourt <leobetacai@gmail.com>
+ * @author  carlos Quintero <calitos.quintero0519@gmail.com>
  */
 class reportActionClass extends controllerClass implements controllerActionInterface {
 
   public function execute() {
     try {
       
-      $this->mensaje = 'Hola a todos';
+      //$this->mensaje = 'Hola a todos';
+        
+        $fields=array(
+            
+        recaudoEconomicoTableClass::ID,
+        recaudoEconomicoTableClass::EVENTO_ID,
+        recaudoEconomicoTableClass::OBSERVACION,
+        recaudoEconomicoTableClass::TARIFA_ID,
+        recaudoEconomicoTableClass::USUARIO_ID,
+        recaudoEconomicoTableClass::VALOR_PARCIAL,
+        recaudoEconomicoTableClass::VALOR_TOTAL
+        );
       
-      $this->defineView('index', 'usuario', session::getInstance()->getFormatOutput());
+        $this->objRecaudo=recaudoEconomicoTableClass::getAll($fields);
+      $this->defineView('index', 'recaudoEconomico', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');

@@ -132,9 +132,9 @@ dictionary:
     user_select:           Seleccione un usuario
     feedback_select:       Seleccione una Opcion
     #----------------------------Tarifas---------------------------------------#
-    ratesManagement:       Gestion de tarifas
-    rates:                 Tarifas por tiempo
-    rateId:                Id de tarifa
+    ratesManagement:       Gestion de Tarifas
+    rates:                 Tarifas por Tiempo
+    rateId:                Id de Tarifa
     partialPayment:        Pago parcial
     totalPayment:          pago total
      
@@ -145,7 +145,15 @@ dictionary:
      
     #------------------------Recaudo Economico---------------------------------#
     EconomicManagement:    Recaudo economico
-    
+    EconomicId:            Id Recaudo Economico 
+    EventId:               Evento Id
+    Observation:           Observacion
+    valueParcial:          Valor Parcial
+    valueTotal:            Valor Total
+    newEconomic:           Nuevo Recaudo
+    #------------------------Reports Recaudo Economico-------------------------#
+    Economic_id:           Id
+    msjReport:             Reporte Recaudo Economico
     #---------------------------RecordarMe-------------------------------------#
     rememberMeManagement:  Manejo de Cookies
     rememberMe:            RecordarMe

@@ -18,7 +18,12 @@ class reportActionClass extends controllerClass implements controllerActionInter
   public function execute() {
     try {
       
-      $this->mensaje = 'Hola a todos';
+      $fields= array(
+          
+      patrocinadorTableClass::ID,
+      patrocinadorTableClass::NOMBRE,
+          
+      );
       
       $this->defineView('index', 'usuario', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {

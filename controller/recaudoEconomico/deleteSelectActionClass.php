@@ -11,7 +11,7 @@ use hook\log\logHookClass as log;
 /**
  * Description of ejemploClass
  *
- * @author  Leonardo Betancourt <leobetacai@gmail.com>
+ * @author Carlos Quintero <carlitos.quintero0519@gmail.com>
  */
 class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
 
@@ -23,15 +23,15 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
         
         foreach ($idsToDelete as $id) {
           $ids = array(
-            usuarioTableClass::ID => $id
+              recaudoEconomicoTableClass::ID => $id
           );
-          usuarioTableClass::delete($ids, true);
+          recaudoEconomicoTableClass::delete($ids, true);
           log::register('borrarSeleccion','recaudo');
         }
         
-        routing::getInstance()->redirect('usuario', 'index');
+        routing::getInstance()->redirect('recaudoEconomico', 'index');
       } else {
-        routing::getInstance()->redirect('usuario', 'index');
+        routing::getInstance()->redirect('recaudoEconomico', 'index');
       }
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
