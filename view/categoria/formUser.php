@@ -19,7 +19,7 @@ use mvc\i18n\i18nClass as i18n ?>
   <div class="container container-fluid">
 
 
-    <form class="form-create" role="form" action="<?php echo routing::getInstance()->getUrlWeb('categoria', ((isset($objCategoria)) ? 'update' : 'create' )) ?>"" method="POST">
+    <form class="form-create" role="form" action="<?php echo routing::getInstance()->getUrlWeb('categoria', ((isset($objCategoria)) ? 'update' : 'create' )) ?>" method="POST">
       <!--    <h2 class="form-signin-heading"></h2>-->
       
         <?php if(isset($objCategoria) == true): ?>

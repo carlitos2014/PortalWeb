@@ -14,4 +14,4 @@ use mvc\view\viewClass as view ?>
   
 <?php view::includeHandlerMessage() ?>
 
-<?php view::includePartial('evento/formUser', array('objPatrocinador'=> $objPatrocinador,'objCategoria'=>$objCategoria,'objUsuario'=>$objUsuario, 'objCategoria'=>$objCategoria)) ?>
+<?php view::includePartial('evento/formUser', array('objUsuario'=>$objUsuario, 'objCategoria'=>$objCategoria)) ?>

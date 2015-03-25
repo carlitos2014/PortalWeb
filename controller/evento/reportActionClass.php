@@ -14,13 +14,28 @@ use mvc\i18n\i18nClass as i18n;
  * @author Leonardo Betancourt <leobetacai@gmail.com>
  */
 class reportActionClass extends controllerClass implements controllerActionInterface {
+    
+    
 
   public function execute() {
     try {
       
-      $this->mensaje = 'Hola a todos';
-      
-      $this->defineView('index', 'usuario', session::getInstance()->getFormatOutput());
+//      $this->mensaje = 'EL GRUPO DE LUZBELL APRENDIENDO FPDF EN PHP';
+//      $this->msj='Otro mensaje con salto de linea';
+        
+        
+        $fields=array(
+            
+        eventoTableClass::ID,
+        eventoTableClass::NOMBRE,
+        eventoTableClass::CATEGORIA_ID,
+        eventoTableClass::COSTO,
+        eventoTableClass::FECHA_INICIAL_EVENTO
+            
+        );
+        
+      $this->objEvento=  eventoTableClass::getAll($fields);
+      $this->defineView('index', 'evento', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');

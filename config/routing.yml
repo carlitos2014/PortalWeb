@@ -814,7 +814,9 @@ evento_reporte:
   url:    /evento/report
   param:  { module: evento, action: report, format: pdf }
   load:
-    - libs/fpdf/fpdf.php  
+    - libs/fpdf/fpdf.php 
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
 
 #-------------------------------eventoPatrocinador-----------------------------#
     
