@@ -226,6 +226,8 @@ bitacora_reporte:
   param:  { module: bitacora, action: report, format: pdf }  
   load:
     - libs/fpdf/fpdf.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
  
 #-----------------------------tabla credencial-------------------------------#
     
@@ -635,9 +637,9 @@ detallePqrsf_delete:
   url:    /detallePqrsf/delete
   param:  { module: detallePqrsf, action: delete, format: html }
   load:
-    - model/base/detallePqrsfBaseTableClass.php
+    - model/basedetallePqrsfBaseTableClass.php
     - model/detallePqrsTableClass.php
-    - hooks/logHookClass.php
+    - hooks/logH/ookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
@@ -728,6 +730,8 @@ categoria_reporte:
   param:  { module: categoria, action: report, format: pdf }
   load:
     - libs/fpdf/fpdf.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
   
 #-------------------------------evento-----------------------------------------#
     
@@ -1120,7 +1124,10 @@ pqrsf_insert:
     - model/pqrsfTableClass.php
     - model/base/tipoPqrsfBaseTableClass.php
     - model/tipoPqrsfTableClass.php
-    
+    - model/base/detallePqrsfBaseTableClass.php
+    - model/detallePqrsfTableClass.php
+    - model/base/tipoPqrsfBaseTableClass.php
+    - model/tipoPqrsfTableClass.php
     
 pqrsf_create:
   url:    /pqrsf/create
@@ -1178,6 +1185,8 @@ pqrsf_reporte:
   param:  { module: pqrsf, action: report, format: pdf }    
   load:
     - libs/fpdf/fpdf.php
+    - model/base/pqrsfBaseTableClass.php
+    - model/pqrsfTableClass.php
   
 #-----------------------------recaudoEconomico---------------------------------#
     

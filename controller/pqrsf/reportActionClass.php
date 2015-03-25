@@ -18,9 +18,19 @@ class reportActionClass extends controllerClass implements controllerActionInter
   public function execute() {
     try {
       
-      $this->mensaje = 'Hola a todos';
-      
-      $this->defineView('index', 'usuario', session::getInstance()->getFormatOutput());
+    //  $this->mensaje = 'Hola a todos';
+        
+        $fields= array(
+            
+        pqrsfTableClass::ID,
+        pqrsfTableClass::TIPO_PQRS_ID,
+        pqrsfTableClass::TITULO,
+        pqrsfTableClass::USUARIO_ID
+            
+        );
+        
+      $this->objPqrsfReport=  pqrsfTableClass::getAll($fields);
+      $this->defineView('index', 'pqrsf', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');

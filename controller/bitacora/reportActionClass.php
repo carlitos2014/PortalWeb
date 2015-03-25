@@ -18,8 +18,19 @@ class reportActionClass extends controllerClass implements controllerActionInter
   public function execute() {
     try {
       
-      $this->mensaje = 'Hola a todos';
+      //$this->mensaje = 'Hola a todos';
+        
+        $fields2=array(
+        
+        bitacoraTableClass::ID,    
+        bitacoraTableClass::FECHA,
+        bitacoraTableClass::OBSERVACION,
+        bitacoraTableClass::REGISTRO,
+        bitacoraTableClass::TABLA,
+        bitacoraTableClass::USUARIO_ID
+        );
       
+      $this->objBitacoraReport=  bitacoraTableClass::getAll($fields2);
       $this->defineView('index', 'bitacora', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
