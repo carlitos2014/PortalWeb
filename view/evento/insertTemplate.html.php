@@ -8,7 +8,7 @@ use mvc\view\viewClass as view ?>
 
 <div class="container container-fluid">
   <div class="page-header">
-    <h1><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-user"></i><?php echo i18n::__('eventCreate')?></h1>
+    <h1><i class="glyphicon glyphicon-plus"></i><i class="glyphicon  glyphicon-film"></i><i class="glyphicon glyphicon-music"></i><?php echo i18n::__('eventCreate')?></h1>
   </div>
 </div>
   

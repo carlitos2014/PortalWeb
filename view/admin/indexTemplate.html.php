@@ -35,7 +35,7 @@ use mvc\i18n\i18nClass as i18n ?>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="<?php echo routing::getInstance()->getUrlWeb('homePage', 'index') ?>">Inicio <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Portal Socio-Cultural de Santiago de Cali (Administracion)</a></li>
+        <li><a href="#">Portal Socio Cultural de Santiago de Cali (Administracion)</a></li>
 
       </ul>
 
@@ -44,15 +44,15 @@ use mvc\i18n\i18nClass as i18n ?>
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="glyphicon glyphicon-user"></i>
-            <span>Leonardo Betancourt (admin) <i class="caret"></i></span>
+            <span>Grupo de Desarrollo (admin) <i class="caret"></i></span>
           </a>
           <ul class="dropdown-menu">
             <!--User image--> 
             <li class="user-header bg-light-blue">
-              <img src="<?php echo routing::getInstance()->getUrlImg('admin.jpg') ?>" class="img-circle" alt="User Image" />
+              <img src="<?php echo routing::getInstance()->getUrlImg('log.png') ?>" class="img-circle" alt="User Image" />
               <p>
-                Leonardo Betancourt
-                <small>Analista y desarrollador web</small>
+                Cali Cultural
+                <small>Grupo de Desarrollo</small>
               </p>
             </li>
             <!--Menu Body--> 
@@ -239,7 +239,7 @@ use mvc\i18n\i18nClass as i18n ?>
             </p>
           </div>
           <div class="icon">
-            <i class="ion ion-social-bitcoin-outline"></i>
+            <i class="ion ion-briefcase"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('patrocinador', 'index') ?>" class="small-box-footer">
 <?php echo i18n::__('partnerManagement') ?><i class="fa fa-arrow-circle-right"></i>
@@ -281,7 +281,7 @@ use mvc\i18n\i18nClass as i18n ?>
             </p>
           </div>
           <div class="icon">
-            <i class="ion ion-connection-bars"></i>
+             <i class="ion ion-calendar"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('tarifa', 'index') ?>" class="small-box-footer">
 <?php echo i18n::__('ratesManagement') ?> <i class="fa fa-arrow-circle-right"></i>
@@ -319,7 +319,7 @@ use mvc\i18n\i18nClass as i18n ?>
             </p>
           </div>
           <div class="icon">
-            <i class="ion ion-pie-graph"></i>
+            <i class="ion ion-social-bitcoin-outline"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('recaudoEconomico', 'index') ?>" class="small-box-footer">
 <?php echo i18n::__('EconomicManagement') ?> <i class="fa fa-arrow-circle-right"></i>
@@ -411,7 +411,7 @@ use mvc\i18n\i18nClass as i18n ?>
             </p>
           </div>
           <div class="icon">
-            <i class="ion ion-refresh"></i>
+            <i class="ion ion-thumbsup"></i><i class="ion ion-thumbsdown"></i>
           </div>
           <a href="<?php echo routing::getInstance()->getUrlWeb('pqrsf', 'index') ?>" class="small-box-footer">
 <?php echo i18n::__('feedback') ?> <i class="fa fa-arrow-circle-right"></i>

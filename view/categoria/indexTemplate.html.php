@@ -41,9 +41,9 @@ use mvc\routing\routingClass as routing ?>
 
             <td>
               <!--              <a href="#" class="btn btn-warning btn-xs">Ver</a>-->
-              <a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open" data-toggle="popover" title="Ver" data-content="datos de categoriadatoario"></i></a>
-              <a href="<?php echo routing::getInstance()->getUrlWeb('categoria', 'edit', array(categoriaTableClass::ID => $categoriadato->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="Editar" data-content="edicion de categoriaario"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="#" onclick="confirmarEliminar(<?php echo $categoriadato->$id ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar categoriaario"></i></a>
+              <a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open" data-toggle="popover" title="Ver" data-content="Datos de Categoria"></i></a>
+              <a href="<?php echo routing::getInstance()->getUrlWeb('categoria', 'edit', array(categoriaTableClass::ID => $categoriadato->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="Editar" data-content="Edicion de Categoria"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="#" onclick="confirmarEliminar(<?php echo $categoriadato->$id ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar Categoria"></i></a>
             </td>
           </tr>
 <?php endforeach ?>
@@ -56,9 +56,9 @@ use mvc\routing\routingClass as routing ?>
   <div style="margin-bottom: 10px; margin-top: 30px" align="center">
 
     <a href="<?php echo routing::getInstance()->getUrlWeb('homePage', 'index') ?>"  class="btn btn-info" data-toggle="popover" title="Pagina de inicio" data-content="Index" ><i class="glyphicon glyphicon-home"></i></a> 
-    <a href="<?php echo routing::getInstance()->getUrlWeb('categoria', 'insert') ?>" class="btn btn-success" data-toggle="popover" title="Crear Nuevo Usuario" data-content="creacion de categoriaario"><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-user"></i></a>
+    <a href="<?php echo routing::getInstance()->getUrlWeb('categoria', 'insert') ?>" class="btn btn-success" data-toggle="popover" title="Crear Nueva Categoria" data-content="Creacion de Categoria"><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-list"></i></a>
     <a href="<?php echo routing::getInstance()->getUrlWeb('categoria', 'report') ?>" target="_blank" class="btn btn-warning " data-toggle="popover" title="Generar Reporte PDF" data-content="Generar Reporte PDF"><i class="glyphicon glyphicon-print"></i></a></a>
-    <a href="#" class="btn btn-danger " onclick="borrarSeleccion()" data-toggle="popover" title="Borrar seleccion" data-content="borrar seleccion"><i class="glyphicon glyphicon-check"></i><i class="glyphicon glyphicon-trash"></i></a>
+    <a href="#" class="btn btn-danger " onclick="borrarSeleccion()" data-toggle="popover" title="Borrar Seleccion" data-content="Borrar seleccion"><i class="glyphicon glyphicon-check"></i><i class="glyphicon glyphicon-trash"></i></a>
     
   </div>
 

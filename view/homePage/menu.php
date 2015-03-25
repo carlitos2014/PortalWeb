@@ -25,10 +25,10 @@
           <ul class="dropdown-menu">
             <!--User image--> 
             <li class="user-header bg-light-blue">
-              <img src="<?php echo routing::getInstance()->getUrlImg('admin.jpg')  ?>" class="img-circle" alt="User Image" />
+              <img src="<?php echo routing::getInstance()->getUrlImg('log.png')  ?>" class="img-circle" alt="User Image" />
               <p>
-                Leonardo Betancourt
-                <small>Analista y desarrollador web </small>
+                Cali Cultural
+                <small>Grupo de Desarrollo</small>
                 
               </p>
             </li>
