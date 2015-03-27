@@ -19,8 +19,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
     try {
 
       $fields = array(
-          detallePqrsTableClass::ID,
           
+          detallePqrsTableClass::ID,
           detallePqrsTableClass::PQRS_ID,
           detallePqrsTableClass::RESPUESTA,
           detallePqrsTableClass::USUARIO_ID   

@@ -33,19 +33,19 @@ use mvc\routing\routingClass as routing ?>
         </tr>
       </thead>
       <tbody >
-        <?php foreach ($objDetallePqrsf as $detallePqrsf): ?>
+        <?php foreach ($objDetallePqrsf as $data): ?>
           <tr>
-            <td><input type="checkbox" name="chk[]" value="<?php echo $detallePqrsf->$id ?>" class="chk"></td>
-            <td><?php echo $detallePqrsf->$id ?></td>
-            <td><?php echo $detallePqrsf->$pqid ?></td>
-            <td><?php echo $detallePqrsf->$res ?></td>
-            <td><?php echo $detallePqrsf->$usuid ?></td>
+            <td><input type="checkbox" name="chk[]" value="<?php echo $data->$id ?>" class="chk"></td>
+            <td><?php echo $data->$id ?></td>
+            <td><?php echo $data->$pqid ?></td>
+            <td><?php echo $data->$res ?></td>
+            <td><?php echo $data->$usuid ?></td>
 
             <td>
               <!--              <a href="#" class="btn btn-warning btn-xs">Ver</a>-->
               <a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open" data-toggle="popover" title="Ver" data-content="Datos de DetallePqrsf"></i></a>
               <a href="<?php echo routing::getInstance()->getUrlWeb('detallePqrsf', 'edit', array(detallePqrsTableClass::ID => $detallePqrsf->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="Editar" data-content="Edicion de DetallePqrsf"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="#" onclick="confirmarEliminar(<?php echo $detallePqrsf->$id ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar DetallePqrsf"></i></a>
+              <a href="#" onclick="confirmarEliminar(<?php echo $data->$id ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar DetallePqrsf"></i></a>
             </td>
           </tr>
         <?php endforeach ?>
